@@ -1,0 +1,212 @@
+# Sunrise Gen AI Website Design System - FINAL LOCKED AGREEMENT
+
+This rule contains the FINAL and AGREED design specifications for the Sunrise Gen AI website. All future changes must strictly adhere to these specifications unless explicitly overridden by the client.
+
+## 🎨 Color Palette (FINAL - DO NOT CHANGE)
+
+### Exact Logo Colors ONLY
+```css
+--logo-orange: #FF6B35;    /* Circuit sun, headings, project titles */
+--logo-cyan: #00F5FF;      /* Palm trees, navigation, content text */
+--logo-yellow: #FFD23F;    /* Sun glow, accents */
+--logo-background: #060814; /* FINAL background color - slightly darker */
+```
+
+**CRITICAL**: Only use these 4 colors. No other colors are permitted.
+
+## 🖼️ Logo Specifications (FINAL)
+
+### Logo Usage
+- **Main logo file**: `sunrise_gen_ai_logo_enhanced.png`
+- **Hero section size**: `h-96` (384px height - DOUBLED from original)
+- **Navigation**: NO logo in navigation (removed redundant logo)
+- **Blending**: Logo must blend completely into background
+- **Glow effects**: REMOVED - logo uses `filter: none` and `opacity: 0.9`
+
+### Logo Classes
+```css
+.logo-with-glow {
+  filter: none;
+  opacity: 0.9;
+}
+```
+
+## 🔤 Typography (FINAL - SQUARED FONTS ONLY)
+
+### Font Family
+**PRIMARY FONT**: `Orbitron` - Technical, squared font matching "GEN AI" style in logo
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Russo+One&display=swap');
+
+body {
+  font-family: 'Orbitron', monospace;
+}
+```
+
+### Font Classes (FINAL)
+```css
+.gen-ai-font {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.gen-ai-font-medium {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.gen-ai-font-light {
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+```
+
+**NO ROUNDED FONTS** - Only squared, technical fonts like Orbitron are permitted.
+
+## 🏗️ Layout Structure (FINAL)
+
+### Navigation (FINAL)
+- **Position**: Fixed top, centered
+- **NO redundant logo** in navigation
+- **Menu items**: About, Mobile Apps, Multimedia, Consulting, Contact
+- **Layout**: `justify-center` - centered navigation items
+- **Background**: `bg-black/50 backdrop-blur-sm border-b border-orange-500/30`
+
+### Hero Section (FINAL)
+- **Logo size**: `h-96` (doubled from h-48)
+- **NO "SUNRISE GEN AI" heading** - logo already shows the name
+- **Subtitle only**: "Cutting-Edge AI Solutions for the Future"
+- **Buttons**: "Explore Our Apps" and "Watch Our Films"
+
+## 🎭 Background Design (FINAL - CLEAN)
+
+### Background Specification
+- **CLEAN background only** - NO circuit patterns, NO animations, NO pulse effects
+- **Single background layer**: `var(--logo-background)` (#060814)
+- **Logo blending**: Logo must blend seamlessly into background
+
+```css
+.logo-blend-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--logo-background);
+  z-index: -1;
+}
+```
+
+**NO CIRCUIT PATTERNS** - Client explicitly requested removal of all background patterns and animations.
+
+## 🃏 Component Styles (FINAL)
+
+### Project Cards
+```css
+.project-card {
+  background: rgba(10, 11, 30, 0.95);
+  border: 2px solid var(--logo-orange);
+  border-radius: 0;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+```
+
+### Buttons
+```css
+.logo-button {
+  background: transparent;
+  border: 2px solid var(--logo-cyan);
+  color: var(--logo-cyan);
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+}
+```
+
+### Navigation Links
+```css
+.nav-link {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--logo-cyan);
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--logo-cyan);
+}
+```
+
+## 📱 Business Content (FINAL)
+
+### Company Information
+- **Name**: Sunrise Gen AI LLC
+- **Location**: Florida, USA
+- **Domains**: sunrisegen.ai, sunrisegenai.com
+
+### Mobile Apps Portfolio
+1. **LabelSaber.com** - Intelligent Ingredient Analyzer (AI + Computer Vision OCR)
+2. **Swaram.ai** - AI Voice Companion
+3. **Lensort.com** - Photos & Documents Organizer
+
+### AI Multimedia Portfolio
+1. **Apocalyptic Roulette** - AI Short Film (Extinction Events)
+2. **No Planet For Humans** - AI Dystopian Film
+3. **Arcane Legacy** - 48-hour RunwayML Festival Entry
+
+### Services
+- Mobile Apps Development
+- AI Multimedia Creation
+- Enterprise AI Consulting
+
+## 🚫 FORBIDDEN CHANGES
+
+### DO NOT:
+1. Add circuit patterns or background animations
+2. Change from Orbitron font to any rounded fonts
+3. Add redundant logos to navigation
+4. Add "SUNRISE GEN AI" heading text
+5. Change the agreed color palette
+6. Add glow effects to the logo
+7. Make logo smaller than h-96
+8. Add any colors outside the 4 approved colors
+
+### ALWAYS:
+1. Use only the 4 approved logo colors
+2. Keep Orbitron font for all text
+3. Maintain clean background without patterns
+4. Keep logo blended into background
+5. Center navigation without redundant logo
+6. Use h-96 for main logo size
+
+## 📋 Implementation Rules
+
+When working on this project:
+
+1. **Colors**: Reference only `var(--logo-orange)`, `var(--logo-cyan)`, `var(--logo-yellow)`, `var(--logo-background)`
+2. **Fonts**: Always use Orbitron font family with appropriate weights
+3. **Layout**: Maintain the agreed structure - centered nav, large logo, clean sections
+4. **Logo**: Always use `logo-with-glow` class with no filter effects
+5. **Background**: Keep single clean background layer only
+
+## 🎯 Quality Standards
+
+- **Professional appearance**: Clean, minimal, sophisticated
+- **Brand consistency**: Logo colors throughout all elements
+- **Technical aesthetic**: Squared fonts, circuit-board inspired cards
+- **Focus**: Content-driven without distracting visual elements
+- **Accessibility**: Maintain proper contrast and readability
+
+---
+
+**This design system represents the FINAL AGREEMENT between client and developer. Any deviations require explicit client approval.**
+alwaysApply: true
+---
