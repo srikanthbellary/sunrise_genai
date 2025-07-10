@@ -1,0 +1,71 @@
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile Responsive Optimizations */
+@media (max-width: 768px) {
+  /* Mobile hero section adjustments */
+  .logo-with-glow {
+    height: 240px !important; /* Smaller logo on mobile */
+  }
+  
+  /* Mobile navigation spacing */
+  .nav-link {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  /* Mobile button stacking */
+  .mobile-button-stack {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Mobile section padding */
+  section {
+    padding: 3rem 0 !important;
+  }
+  
+  /* Mobile card grid */
+  .mobile-single-column {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+  
+  /* Mobile text sizing */
+  .section-heading {
+    font-size: 2rem !important;
+  }
+  
+  .content-text {
+    font-size: 1rem !important;
+  }
+  
+  .project-title {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small mobile adjustments */
+  .logo-with-glow {
+    height: 200px !important;
+  }
+  
+  .section-heading {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Mobile navigation */
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  /* Mobile containers */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+} 
