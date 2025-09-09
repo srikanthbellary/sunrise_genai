@@ -24,11 +24,12 @@ export default function Home() {
       {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <div className="logo-container mb-6 md:mb-8 animate-fade-in-up">
+          <div className="logo-container mb-6 md:mb-8 animate-fade-in-up" style={{maxHeight: '400px', overflow: 'hidden'}}>
             <img 
               src="/logo.webp" 
               alt="Sunrise Gen AI" 
-              className="h-48 md:h-64 lg:h-96 w-auto mx-auto logo-with-glow"
+              className="h-48 md:h-64 lg:h-96 w-auto mx-auto logo-with-glow max-w-full object-contain"
+              style={{maxHeight: '384px', maxWidth: '100%', display: 'block'}}
             />
           </div>
           <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 gen-ai-font-light content-text animate-fade-in-up animate-delay-200 px-4">
@@ -205,6 +206,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
   );
 }
