@@ -7,8 +7,6 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/sunrise_genai' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/sunrise_genai' : '',
   typescript: {
     ignoreBuildErrors: true,
   },
