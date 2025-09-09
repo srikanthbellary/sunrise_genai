@@ -1,26 +1,544 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Section reveal animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Pulse animation for buttons */
+@keyframes pulse-neon {
+  0%, 100% {
+    box-shadow: 0 0 5px #FF6B35, 0 0 10px #FF6B35, 0 0 15px #FF6B35;
+  }
+  50% {
+    box-shadow: 0 0 10px #FF6B35, 0 0 20px #FF6B35, 0 0 30px #FF6B35;
+  }
+}
+
+/* Floating animation for logo */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Russo+One&display=swap');
+
+:root {
+  /* Exact Logo Colors ONLY */
+  --logo-orange: #FF6B35;
+  --logo-cyan: #00F5FF;
+  --logo-yellow: #FFD23F;
+  --logo-background: #060814;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--logo-background);
+  color: var(--logo-cyan);
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  overflow-x: hidden;
+}
+
+/* Clean background that blends with logo edges */
+.logo-blend-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--logo-background);
+  z-index: -1;
+}
+
+/* Logo that blends completely into background */
+.logo-with-glow {
+  filter: none;
+  opacity: 0.9;
+}
+
+/* Logo Container */
+.logo-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* GEN AI Squared Font - Matching Logo Exactly */
+.gen-ai-font {
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.gen-ai-font-medium {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.gen-ai-font-light {
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+/* Section Headings with glow */
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--logo-orange);
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px var(--logo-orange);
+}
+
+/* Content Text with glow */
+.content-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--logo-cyan);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 8px var(--logo-cyan);
+}
+
+/* Project Cards - Circuit Board Style */
+.project-card {
+  background: rgba(10, 11, 30, 0.95);
+  border: 2px solid var(--logo-orange);
+  border-radius: 0;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--logo-orange), var(--logo-cyan), var(--logo-yellow), var(--logo-orange));
+  background-size: 400% 400%;
+  animation: border-pulse 4s ease-in-out infinite;
+  z-index: -1;
+  border-radius: 0;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--logo-background);
+  z-index: -1;
+  border-radius: 0;
+}
+
+@keyframes border-pulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 10px 30px rgba(255, 107, 53, 0.5),
+    0 0 50px rgba(0, 245, 255, 0.3);
+}
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--logo-orange);
+  margin-bottom: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px var(--logo-orange);
+}
+
+.project-description {
+  font-size: 1rem;
+  color: var(--logo-cyan);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 8px var(--logo-cyan);
+}
+
+/* Buttons - Circuit Board Style */
+.logo-button {
+  background: transparent;
+  border: 2px solid var(--logo-cyan);
+  color: var(--logo-cyan);
+  padding: 12px 24px;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+  min-height: 44px; /* Touch target size */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.logo-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--logo-cyan), transparent);
+  transition: left 0.5s ease;
+}
+
+.logo-button:hover::before {
+  left: 100%;
+}
+
+.logo-button:hover {
+  background: var(--logo-cyan);
+  color: var(--logo-background);
+  border-color: var(--logo-orange);
+  box-shadow: 0 0 25px var(--logo-cyan);
+  text-shadow: none;
+}
+
+/* Navigation */
+.nav-link {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--logo-cyan);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  position: relative;
+  text-shadow: 0 0 8px var(--logo-cyan);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--logo-orange);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 8px var(--logo-orange);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--logo-orange);
+  text-shadow: 0 0 15px var(--logo-orange);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--logo-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--logo-orange), var(--logo-cyan), var(--logo-yellow));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--logo-yellow), var(--logo-orange), var(--logo-cyan));
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 640px) {
+  .logo-with-glow {
+    height: 12rem !important; /* h-48 equivalent */
+  }
+  
+  .section-heading {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.15em;
+  }
+  
+  .content-text {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+  
+  .project-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+  }
+  
+  .project-description {
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+  }
+  
+  .project-card {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .logo-button {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+  
+  .nav-link {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    padding: 0.25rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .logo-with-glow {
+    height: 16rem !important; /* h-64 equivalent */
+  }
+  
+  .section-heading {
+    font-size: 2.25rem;
+  }
+  
+  .content-text {
+    font-size: 1rem;
+  }
+  
+  .project-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .logo-with-glow {
+    height: 24rem !important; /* h-96 equivalent */
+  }
+}
+
+/* Enhanced Button Animations */
+.logo-button {
+  animation: pulse-neon 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.logo-button:hover {
+  animation: none;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+/* Section animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Staggered animation delays */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Enhanced hover effects for project cards */
+.project-card-enhanced {
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.project-card-enhanced:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(255, 107, 53, 0.2);
+}
+
+/* Navigation link animations */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FF6B35, #00F5FF);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Logo floating animation */
+.logo-with-glow {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Text typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.typing-animation {
+  overflow: hidden;
+  border-right: 3px solid #FF6B35;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #FF6B35; }
+}
+
+/* Performance Optimizations */
+* {
+  will-change: auto;
+}
+
+.logo-with-glow,
+.project-card-enhanced,
+.logo-button {
+  will-change: transform;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .logo-with-glow {
+    animation: none;
+  }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) {
+  .project-card:hover,
+  .logo-button:hover,
+  .nav-link:hover {
+    transform: none;
+  }
+  
+  .project-card-enhanced:hover {
+    transform: none;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
+  }
+}
+
+/* Optimize fonts for better performance */
+@font-display: swap;
