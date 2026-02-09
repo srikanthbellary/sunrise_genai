@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         neon: {
           orange: '#FF6B35',
-          yellow: '#FFD23F', 
+          yellow: '#FFD23F',
           cyan: '#00F5FF',
           blue: '#0080FF',
           pink: '#FF0080',
@@ -44,20 +44,20 @@ module.exports = {
       },
       keyframes: {
         'pulse-neon': {
-          '0%': { 
+          '0%': {
             textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
             transform: 'scale(1)'
           },
-          '100%': { 
+          '100%': {
             textShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
             transform: 'scale(1.02)'
           },
         },
         'glow': {
-          '0%': { 
+          '0%': {
             boxShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
           },
-          '100%': { 
+          '100%': {
             boxShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
           },
         },

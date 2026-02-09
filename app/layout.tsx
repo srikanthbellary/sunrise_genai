@@ -2,16 +2,16 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Sunrise Gen AI - Future of AI Technology | AI Apps, Multimedia & Consulting',
-  description: 'Florida-based Sunrise Gen AI LLC creates cutting-edge AI mobile apps (LabelSaber, Swaram, Lensort), AI-generated multimedia content, and enterprise AI consulting services. Leading the future of generative AI technology.',
-  keywords: 'AI, artificial intelligence, mobile apps, multimedia, consulting, generative AI, machine learning, LabelSaber, Swaram, Lensort, AI data pipelines, AI agents, AI chatbots, Florida AI company',
+  title: 'Sunrise Gen AI - Future of AI Technology | AI Apps & Consulting',
+  description: 'Florida-based Sunrise Gen AI LLC creates cutting-edge AI mobile apps (LabelSaber, Swaram, Analytics Engine) and enterprise AI consulting services. Leading the future of generative AI technology.',
+  keywords: 'AI, artificial intelligence, mobile apps, consulting, generative AI, machine learning, LabelSaber, Swaram, Analytics Engine, AI data pipelines, AI agents, AI chatbots, Florida AI company',
   authors: [{ name: 'Sunrise Gen AI LLC' }],
   creator: 'Sunrise Gen AI LLC',
   publisher: 'Sunrise Gen AI LLC',
@@ -72,14 +72,14 @@ export default function RootLayout({
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-orange-500 text-white px-4 py-2 rounded z-50">
           Skip to main content
         </a>
-        
+
         <div className="min-h-screen">
           {/* Main Content */}
           <main id="main-content" className="relative z-10">
             {children}
           </main>
         </div>
-        
+
         {/* Structured Data */}
         <script
           type="application/ld+json"

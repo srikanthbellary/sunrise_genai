@@ -13,6 +13,7 @@ html {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -24,6 +25,7 @@ html {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -35,6 +37,7 @@ html {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -43,9 +46,12 @@ html {
 
 /* Pulse animation for buttons */
 @keyframes pulse-neon {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 5px #FF6B35, 0 0 10px #FF6B35, 0 0 15px #FF6B35;
   }
+
   50% {
     box-shadow: 0 0 10px #FF6B35, 0 0 20px #FF6B35, 0 0 30px #FF6B35;
   }
@@ -53,9 +59,12 @@ html {
 
 /* Floating animation for logo */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -201,14 +210,22 @@ body {
 }
 
 @keyframes border-pulse {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 
+  box-shadow:
     0 10px 30px rgba(255, 107, 53, 0.5),
     0 0 50px rgba(0, 245, 255, 0.3);
 }
@@ -249,7 +266,8 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
-  min-height: 44px; /* Touch target size */
+  min-height: 44px;
+  /* Touch target size */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -340,41 +358,42 @@ html {
 /* Enhanced Mobile Responsiveness */
 @media (max-width: 640px) {
   .logo-with-glow {
-    height: 12rem !important; /* h-48 equivalent */
+    height: 12rem !important;
+    /* h-48 equivalent */
   }
-  
+
   .section-heading {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
     letter-spacing: 0.15em;
   }
-  
+
   .content-text {
     font-size: 0.9rem;
     letter-spacing: 0.08em;
   }
-  
+
   .project-title {
     font-size: 1.1rem;
     letter-spacing: 0.15em;
   }
-  
+
   .project-description {
     font-size: 0.85rem;
     letter-spacing: 0.06em;
   }
-  
+
   .project-card {
     padding: 1.5rem;
     margin-bottom: 1rem;
   }
-  
+
   .logo-button {
     padding: 10px 20px;
     font-size: 0.8rem;
     letter-spacing: 0.2em;
   }
-  
+
   .nav-link {
     font-size: 0.75rem;
     letter-spacing: 0.15em;
@@ -384,17 +403,18 @@ html {
 
 @media (min-width: 641px) and (max-width: 768px) {
   .logo-with-glow {
-    height: 16rem !important; /* h-64 equivalent */
+    height: 16rem !important;
+    /* h-64 equivalent */
   }
-  
+
   .section-heading {
     font-size: 2.25rem;
   }
-  
+
   .content-text {
     font-size: 1rem;
   }
-  
+
   .project-title {
     font-size: 1.25rem;
   }
@@ -402,7 +422,8 @@ html {
 
 @media (min-width: 769px) {
   .logo-with-glow {
-    height: 24rem !important; /* h-96 equivalent */
+    height: 24rem !important;
+    /* h-96 equivalent */
   }
 }
 
@@ -496,8 +517,13 @@ html {
 
 /* Text typing animation */
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 .typing-animation {
@@ -508,8 +534,15 @@ html {
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #FF6B35; }
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #FF6B35;
+  }
 }
 
 /* Performance Optimizations */
@@ -525,6 +558,7 @@ html {
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -532,7 +566,7 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   .logo-with-glow {
     animation: none;
   }
@@ -540,12 +574,13 @@ html {
 
 /* Touch-friendly interactions */
 @media (hover: none) {
+
   .project-card:hover,
   .logo-button:hover,
   .nav-link:hover {
     transform: none;
   }
-  
+
   .project-card-enhanced:hover {
     transform: none;
     box-shadow: 0 5px 15px rgba(255, 107, 53, 0.2);
