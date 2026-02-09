@@ -70,7 +70,7 @@ html {
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap');
 
 :root {
   /* Exact Logo Colors ONLY */
@@ -89,9 +89,10 @@ html {
 body {
   background: var(--logo-background);
   color: var(--logo-cyan);
-  font-family: 'Orbitron', monospace;
-  font-weight: 600;
+  font-family: 'Rajdhani', 'Exo 2', sans-serif;
+  font-weight: 500;
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
 /* Clean background that blends with logo edges */
@@ -145,9 +146,9 @@ body {
 }
 
 .gen-ai-font-light {
-  font-family: 'Orbitron', monospace;
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  font-family: 'Exo 2', 'Rajdhani', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
 }
 
 /* Section Headings with glow */
@@ -255,23 +256,33 @@ body {
   background: transparent;
   border: 2px solid var(--logo-cyan);
   color: var(--logo-cyan);
-  padding: 12px 24px;
+  padding: 12px 20px;
   font-family: 'Orbitron', monospace;
   font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.25em;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
-  min-height: 44px;
+  min-height: 48px;
   /* Touch target size */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .logo-button {
+    padding: 10px 16px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    min-height: 44px;
+  }
 }
 
 .logo-button::before {

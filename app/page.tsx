@@ -1,6 +1,7 @@
 'use client';
 
 import LocationClocks from './components/LocationClocks';
+import Navigation from './components/Navigation';
 
 export default function Home() {
   return (
@@ -9,20 +10,7 @@ export default function Home() {
       <div className="logo-blend-background"></div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-sm border-b border-orange-500/30">
-        <div className="container mx-auto px-4 md:px-6 py-3 md:py-4">
-          <div className="flex justify-center items-center">
-            <div className="flex flex-wrap justify-center space-x-4 md:space-x-8">
-              <a href="#hero" className="nav-link text-xs md:text-sm">Home</a>
-              <a href="#about" className="nav-link text-xs md:text-sm">About</a>
-              <a href="#services" className="nav-link text-xs md:text-sm">Services</a>
-              <a href="#products" className="nav-link text-xs md:text-sm">Products</a>
-              <a href="#locations" className="nav-link text-xs md:text-sm">Locations</a>
-              <a href="#contact" className="nav-link text-xs md:text-sm">Contact</a>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center relative pt-20">
