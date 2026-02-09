@@ -1,5 +1,7 @@
 'use client';
 
+import LocationClocks from './components/LocationClocks';
+
 export default function Home() {
   return (
     <main className="min-h-screen relative">
@@ -239,41 +241,9 @@ export default function Home() {
       {/* Locations Section */}
       <section id="locations" className="py-12 md:py-20 relative">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">Global Presence</h2>
-          <div className="max-w-4xl mx-auto">
-            {/* Simple SVG World Map */}
-            <div className="relative mb-8 animate-fade-in-up animate-delay-200">
-              <svg viewBox="0 0 800 400" className="w-full h-auto opacity-30">
-                <ellipse cx="400" cy="200" rx="380" ry="180" fill="none" stroke="#00F5FF" strokeWidth="1" />
-                <path d="M100,200 Q200,100 300,150 T500,120 T700,180" fill="none" stroke="#00F5FF" strokeWidth="0.5" opacity="0.5" />
-                <path d="M80,250 Q250,300 400,280 T720,220" fill="none" stroke="#00F5FF" strokeWidth="0.5" opacity="0.5" />
-              </svg>
-              {/* Florida Marker */}
-              <div className="absolute" style={{ left: '22%', top: '35%' }}>
-                <div className="w-4 h-4 bg-neon-orange rounded-full animate-pulse"></div>
-              </div>
-              {/* Hyderabad Marker */}
-              <div className="absolute" style={{ left: '68%', top: '45%' }}>
-                <div className="w-4 h-4 bg-neon-cyan rounded-full animate-pulse"></div>
-              </div>
-              {/* Connection Line */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                <line x1="23%" y1="37%" x2="69%" y2="47%" stroke="#FF6B35" strokeWidth="1" strokeDasharray="5,5" opacity="0.6" />
-              </svg>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="project-card project-card-enhanced animate-slide-in-left animate-delay-300">
-                <h3 className="project-title gen-ai-font-medium text-lg">🇺🇸 Florida, USA</h3>
-                <p className="project-description gen-ai-font-light text-sm mb-2">Headquarters</p>
-                <p className="text-neon-cyan text-sm gen-ai-font-light">Sunrise Gen AI LLC</p>
-              </div>
-              <div className="project-card project-card-enhanced animate-slide-in-right animate-delay-400">
-                <h3 className="project-title gen-ai-font-medium text-lg">🇮🇳 Hyderabad, India</h3>
-                <p className="project-description gen-ai-font-light text-sm mb-2">Offshore Operations</p>
-                <p className="text-neon-cyan text-sm gen-ai-font-light">Sunrise Gen AI India Pvt. Ltd.</p>
-              </div>
-            </div>
+          <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">Locations</h2>
+          <div className="max-w-4xl mx-auto animate-fade-in-up animate-delay-200">
+            <LocationClocks />
           </div>
         </div>
       </section>
