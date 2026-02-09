@@ -13,8 +13,9 @@ export default function Home() {
             <div className="flex flex-wrap justify-center space-x-4 md:space-x-8">
               <a href="#hero" className="nav-link text-xs md:text-sm">Home</a>
               <a href="#about" className="nav-link text-xs md:text-sm">About</a>
-              <a href="#consulting" className="nav-link text-xs md:text-sm">AI Consulting</a>
-              <a href="#apps" className="nav-link text-xs md:text-sm">Mobile Apps</a>
+              <a href="#services" className="nav-link text-xs md:text-sm">Services</a>
+              <a href="#products" className="nav-link text-xs md:text-sm">Products</a>
+              <a href="#locations" className="nav-link text-xs md:text-sm">Locations</a>
               <a href="#contact" className="nav-link text-xs md:text-sm">Contact</a>
             </div>
           </div>
@@ -33,14 +34,14 @@ export default function Home() {
             />
           </div>
           <p className="text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 gen-ai-font-light content-text animate-fade-in-up animate-delay-200 px-4">
-            Cutting-Edge AI Solutions for the Future
+            AI-Native Software Development
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up animate-delay-400">
-            <a href="#consulting" className="logo-button w-full sm:w-auto text-sm md:text-base">
-              AI Consulting
+            <a href="#services" className="logo-button w-full sm:w-auto text-sm md:text-base">
+              Explore Services
             </a>
-            <a href="#apps" className="logo-button w-full sm:w-auto text-sm md:text-base">
-              Explore Our Apps
+            <a href="#contact" className="logo-button w-full sm:w-auto text-sm md:text-base">
+              Start a Project
             </a>
           </div>
         </div>
@@ -52,78 +53,125 @@ export default function Home() {
           <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">About Sunrise Gen AI</h2>
           <div className="max-w-4xl mx-auto text-center">
             <p className="content-text gen-ai-font-light text-base md:text-lg mb-6 md:mb-8 animate-fade-in-up animate-delay-200 px-2">
-              We are a Florida-based company pushing the boundaries of what's possible with Generative AI.
-              Our mission is to create cutting-edge solutions that transform industries and revolutionize user experiences.
+              We are an AI-native software development company building the future of intelligent software.
+              Our hybrid team of human experts and AI agents delivers cutting-edge solutions that transform how businesses operate.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <div className="project-card project-card-enhanced animate-slide-in-left animate-delay-300">
-                <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">AI Consulting</h3>
+                <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">Human + AI Teams</h3>
                 <p className="project-description gen-ai-font-light text-sm md:text-base">
-                  Expert AI consulting services to help enterprises harness the power of generative AI.
+                  Expert developers working alongside AI agents for accelerated delivery.
                 </p>
               </div>
-              <div className="project-card project-card-enhanced animate-slide-in-right animate-delay-400">
-                <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">Mobile Apps</h3>
-                <p className="project-description gen-ai-font-light text-sm md:text-base">
-                  AI-powered mobile applications that solve real-world problems with intelligent automation.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Consulting Section */}
-      <section id="consulting" className="py-12 md:py-20 relative">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">AI Consulting</h2>
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="content-text gen-ai-font-light text-base md:text-lg mb-6 md:mb-8 animate-fade-in-up animate-delay-200 px-2">
-              We help enterprises and organizations harness the power of Generative AI
-              to transform their operations and unlock new possibilities.
-            </p>
-            <div className="space-y-6 md:space-y-8">
-              <div className="project-card project-card-enhanced animate-slide-in-left animate-delay-300">
-                <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">AI Data Pipelines</h3>
-                <p className="project-description gen-ai-font-light text-sm md:text-base mb-4">
-                  AI/LLM enabled Data Pipelines with highly accurate schema mapping
-                  (Up to 60% workload reduction achieved).
-                </p>
-                <button className="logo-button text-sm md:text-base">Learn More</button>
-              </div>
-
               <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-400">
-                <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">AI Agents</h3>
-                <p className="project-description gen-ai-font-light text-sm md:text-base mb-4">
-                  AI/LLM enabled Agents providing real-time suggestions for Site Reliability Engineering [SRE] Platforms
-                  (Reduce Mean Time to Resolution [MTTR]).
+                <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">AI-First Approach</h3>
+                <p className="project-description gen-ai-font-light text-sm md:text-base">
+                  Every solution optimized with AI for maximum efficiency and innovation.
                 </p>
-                <button className="logo-button text-sm md:text-base">Learn More</button>
               </div>
-
               <div className="project-card project-card-enhanced animate-slide-in-right animate-delay-500">
-                <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">AI Chatbots</h3>
-                <p className="project-description gen-ai-font-light text-sm md:text-base mb-4">
-                  AI/LLM enabled Chatbots to query cloud logs and monitoring alerts
-                  (Providing valuable insights and reduce turn around times).
+                <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">24/7 Operations</h3>
+                <p className="project-description gen-ai-font-light text-sm md:text-base">
+                  Autonomous agentic systems that never sleep, continuously delivering value.
                 </p>
-                <button className="logo-button text-sm md:text-base">Learn More</button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mobile Apps Section */}
-      <section id="apps" className="py-12 md:py-20 relative">
+      {/* Services Section */}
+      <section id="services" className="py-12 md:py-20 relative">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">Gen AI Mobile Apps</h2>
+          <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">AI-Powered Services</h2>
+          <div className="max-w-5xl mx-auto">
+            <p className="content-text gen-ai-font-light text-base md:text-lg mb-8 md:mb-12 animate-fade-in-up animate-delay-200 px-2 text-center">
+              Every service we offer is optimized with AI for maximum efficiency, quality, and innovation.
+            </p>
+
+            {/* Tier 1: AI Agents & Intelligence */}
+            <div className="mb-12">
+              <h3 className="text-xl md:text-2xl gen-ai-font-medium text-neon-cyan mb-6 text-center">AI Agents & Intelligence</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="project-card project-card-enhanced animate-slide-in-left animate-delay-300">
+                  <h4 className="project-title gen-ai-font-medium text-lg">Autonomous AI Agents</h4>
+                  <p className="project-description gen-ai-font-light text-sm">
+                    Custom agents that automate complex workflows, make decisions, and operate 24/7.
+                  </p>
+                </div>
+                <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-400">
+                  <h4 className="project-title gen-ai-font-medium text-lg">AI Chatbots</h4>
+                  <p className="project-description gen-ai-font-light text-sm">
+                    Intelligent conversational interfaces for customer service and knowledge bases.
+                  </p>
+                </div>
+                <div className="project-card project-card-enhanced animate-slide-in-right animate-delay-500">
+                  <h4 className="project-title gen-ai-font-medium text-lg">Agentic IT Operations</h4>
+                  <p className="project-description gen-ai-font-light text-sm">
+                    AI-driven infrastructure management and autonomous incident response.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tier 2: AI-Accelerated Development */}
+            <div className="mb-12">
+              <h3 className="text-xl md:text-2xl gen-ai-font-medium text-neon-cyan mb-6 text-center">AI-Accelerated Development</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="project-card project-card-enhanced animate-slide-in-left animate-delay-300">
+                  <h4 className="project-title gen-ai-font-medium text-lg">Mobile Apps</h4>
+                  <p className="project-description gen-ai-font-light text-sm">
+                    Rapid prototyping and development using AI-assisted coding and design.
+                  </p>
+                </div>
+                <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-400">
+                  <h4 className="project-title gen-ai-font-medium text-lg">Web Applications</h4>
+                  <p className="project-description gen-ai-font-light text-sm">
+                    Full-stack web apps built with AI-enhanced development workflows.
+                  </p>
+                </div>
+                <div className="project-card project-card-enhanced animate-slide-in-right animate-delay-500">
+                  <h4 className="project-title gen-ai-font-medium text-lg">Websites</h4>
+                  <p className="project-description gen-ai-font-light text-sm">
+                    Modern, responsive websites with AI-generated content and optimization.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Tier 3: AI Multimedia Studio */}
+            <div>
+              <h3 className="text-xl md:text-2xl gen-ai-font-medium text-neon-cyan mb-6 text-center">AI Multimedia Studio</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-300 text-center">
+                  <h4 className="project-title gen-ai-font-medium text-base">T2T</h4>
+                  <p className="project-description gen-ai-font-light text-xs">Text-to-Text</p>
+                </div>
+                <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-400 text-center">
+                  <h4 className="project-title gen-ai-font-medium text-base">T2A</h4>
+                  <p className="project-description gen-ai-font-light text-xs">Text-to-Audio</p>
+                </div>
+                <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-500 text-center">
+                  <h4 className="project-title gen-ai-font-medium text-base">T2I</h4>
+                  <p className="project-description gen-ai-font-light text-xs">Text-to-Image</p>
+                </div>
+                <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-500 text-center">
+                  <h4 className="project-title gen-ai-font-medium text-base">T2V</h4>
+                  <p className="project-description gen-ai-font-light text-xs">Text-to-Video</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section id="products" className="py-12 md:py-20 relative">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">Our Products</h2>
           <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
             <p className="content-text gen-ai-font-light text-base md:text-lg animate-fade-in-up animate-delay-200 px-2">
-              We develop AI-enabled and LLM-integrated cutting-edge mobile applications that
-              innovate new solutions for diverse user needs. Our apps harness the power of
-              artificial intelligence to deliver intelligent, intuitive experiences that
-              transform how people interact with technology.
+              Products we've built using our AI-first approach - proof of our capabilities.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -131,23 +179,20 @@ export default function Home() {
               <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">LabelSaber.com</h3>
               <p className="project-description gen-ai-font-light text-sm md:text-base mb-4">
                 Intelligent Ingredient Analyzer powered by AI and Computer Vision OCR.
-                Instantly analyze food labels and get detailed nutritional insights.
               </p>
               <button className="logo-button text-sm md:text-base">Learn More</button>
             </div>
             <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-400">
               <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">Swaram.ai</h3>
               <p className="project-description gen-ai-font-light text-sm md:text-base mb-4">
-                Your intelligent AI Voice Companion that understands context and provides
-                natural, human-like conversations.
+                Your intelligent AI Voice Companion with natural, human-like conversations.
               </p>
               <button className="logo-button text-sm md:text-base">Explore</button>
             </div>
             <div className="project-card project-card-enhanced animate-slide-in-right animate-delay-500">
-              <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">Lensort.com - Analytics Engine</h3>
+              <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">Lensort.com</h3>
               <p className="project-description gen-ai-font-light text-sm md:text-base mb-4">
-                Powerful AI-driven analytics platform that transforms raw data into actionable
-                insights with intelligent reporting and predictive capabilities.
+                AI-driven analytics platform for intelligent reporting and insights.
               </p>
               <button className="logo-button text-sm md:text-base">Learn More</button>
             </div>
@@ -155,24 +200,116 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Agentic Future Section - Full */}
+      <section id="agentic-future" className="py-12 md:py-20 relative">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">The Agentic Future</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-300">
+              <p className="content-text gen-ai-font-light text-base md:text-lg mb-6 text-center">
+                We're building something revolutionary: an autonomous agentic software team where AI agents
+                take on roles like Developer, QA Engineer, DevOps, and Project Manager - operating 24/7.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                <div className="text-center">
+                  <div className="text-3xl mb-2">🤖</div>
+                  <p className="project-description gen-ai-font-light text-xs">AI Developer</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">🔍</div>
+                  <p className="project-description gen-ai-font-light text-xs">AI QA Engineer</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">⚙️</div>
+                  <p className="project-description gen-ai-font-light text-xs">AI DevOps</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl mb-2">📋</div>
+                  <p className="project-description gen-ai-font-light text-xs">AI PM</p>
+                </div>
+              </div>
+              <p className="content-text gen-ai-font-light text-sm mt-6 text-center opacity-80">
+                Currently: Human + AI hybrid teams | Future: Fully autonomous operations
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Locations Section */}
+      <section id="locations" className="py-12 md:py-20 relative">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">Global Presence</h2>
+          <div className="max-w-4xl mx-auto">
+            {/* Simple SVG World Map */}
+            <div className="relative mb-8 animate-fade-in-up animate-delay-200">
+              <svg viewBox="0 0 800 400" className="w-full h-auto opacity-30">
+                <ellipse cx="400" cy="200" rx="380" ry="180" fill="none" stroke="#00F5FF" strokeWidth="1" />
+                <path d="M100,200 Q200,100 300,150 T500,120 T700,180" fill="none" stroke="#00F5FF" strokeWidth="0.5" opacity="0.5" />
+                <path d="M80,250 Q250,300 400,280 T720,220" fill="none" stroke="#00F5FF" strokeWidth="0.5" opacity="0.5" />
+              </svg>
+              {/* Florida Marker */}
+              <div className="absolute" style={{ left: '22%', top: '35%' }}>
+                <div className="w-4 h-4 bg-neon-orange rounded-full animate-pulse"></div>
+              </div>
+              {/* Hyderabad Marker */}
+              <div className="absolute" style={{ left: '68%', top: '45%' }}>
+                <div className="w-4 h-4 bg-neon-cyan rounded-full animate-pulse"></div>
+              </div>
+              {/* Connection Line */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none">
+                <line x1="23%" y1="37%" x2="69%" y2="47%" stroke="#FF6B35" strokeWidth="1" strokeDasharray="5,5" opacity="0.6" />
+              </svg>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="project-card project-card-enhanced animate-slide-in-left animate-delay-300">
+                <h3 className="project-title gen-ai-font-medium text-lg">🇺🇸 Florida, USA</h3>
+                <p className="project-description gen-ai-font-light text-sm mb-2">Headquarters</p>
+                <p className="text-neon-cyan text-sm gen-ai-font-light">Sunrise Gen AI LLC</p>
+              </div>
+              <div className="project-card project-card-enhanced animate-slide-in-right animate-delay-400">
+                <h3 className="project-title gen-ai-font-medium text-lg">🇮🇳 Hyderabad, India</h3>
+                <p className="project-description gen-ai-font-light text-sm mb-2">Offshore Operations</p>
+                <p className="text-neon-cyan text-sm gen-ai-font-light">Sunrise Gen AI India Pvt. Ltd.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-12 md:py-20 relative">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">Contact Us</h2>
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="content-text gen-ai-font-light text-base md:text-lg mb-6 md:mb-8 animate-fade-in-up animate-delay-200 px-2">
-              Ready to explore the future of AI? Get in touch with our team.
-            </p>
-            <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-400">
-              <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">Sunrise Gen AI LLC</h3>
-              <p className="project-description gen-ai-font-light text-sm md:text-base mb-4">
-                Florida, USA<br />
-                sunrisegen.ai | sunrisegenai.com
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
-                <button className="logo-button w-full sm:w-auto text-sm md:text-base">Send Email</button>
-                <button className="logo-button w-full sm:w-auto text-sm md:text-base">Schedule Call</button>
+          <h2 className="section-heading gen-ai-font animate-fade-in-up text-2xl md:text-3xl lg:text-4xl">Get In Touch</h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Contact Form */}
+              <div className="project-card project-card-enhanced animate-slide-in-left animate-delay-300">
+                <h3 className="project-title gen-ai-font-medium text-lg mb-4">Send a Message</h3>
+                <form action="mailto:sunrisegenai@gmail.com" method="post" encType="text/plain">
+                  <input type="text" placeholder="Your Name" className="w-full mb-4 p-3 bg-cyber-navy border border-neon-cyan/30 text-neon-cyan gen-ai-font-light text-sm focus:border-neon-cyan outline-none" />
+                  <input type="email" placeholder="Your Email" className="w-full mb-4 p-3 bg-cyber-navy border border-neon-cyan/30 text-neon-cyan gen-ai-font-light text-sm focus:border-neon-cyan outline-none" />
+                  <textarea placeholder="Your Message" rows={4} className="w-full mb-4 p-3 bg-cyber-navy border border-neon-cyan/30 text-neon-cyan gen-ai-font-light text-sm focus:border-neon-cyan outline-none resize-none"></textarea>
+                  <button type="submit" className="logo-button w-full text-sm">Send Message</button>
+                </form>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-6 animate-slide-in-right animate-delay-400">
+                <div className="project-card project-card-enhanced">
+                  <h3 className="project-title gen-ai-font-medium text-lg mb-2">📞 Phone</h3>
+                  <p className="text-neon-cyan gen-ai-font-light text-lg">440-340-8383</p>
+                </div>
+                <div className="project-card project-card-enhanced">
+                  <h3 className="project-title gen-ai-font-medium text-lg mb-2">📧 Email</h3>
+                  <p className="text-neon-cyan gen-ai-font-light text-sm">sunrisegenai@gmail.com</p>
+                </div>
+                <div className="project-card project-card-enhanced">
+                  <h3 className="project-title gen-ai-font-medium text-lg mb-2">🤖 AI Assistant</h3>
+                  <p className="project-description gen-ai-font-light text-sm">Coming Soon</p>
+                  <p className="text-neon-orange text-xs gen-ai-font-light mt-1">Chatbot integration in progress</p>
+                </div>
               </div>
             </div>
           </div>

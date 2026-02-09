@@ -9,9 +9,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Sunrise Gen AI - Future of AI Technology | AI Apps & Consulting',
-  description: 'Florida-based Sunrise Gen AI LLC creates cutting-edge AI mobile apps (LabelSaber, Swaram, Analytics Engine) and enterprise AI consulting services. Leading the future of generative AI technology.',
-  keywords: 'AI, artificial intelligence, mobile apps, consulting, generative AI, machine learning, LabelSaber, Swaram, Analytics Engine, AI data pipelines, AI agents, AI chatbots, Florida AI company',
+  title: 'Sunrise Gen AI - AI-Native Software Development',
+  description: 'AI-native software development company building autonomous agents, AI chatbots, mobile apps, web applications, and multimedia solutions. Florida HQ with global delivery.',
+  keywords: 'AI software development, autonomous agents, AI chatbots, mobile apps, web development, generative AI, Florida, Hyderabad, AI services',
   authors: [{ name: 'Sunrise Gen AI LLC' }],
   creator: 'Sunrise Gen AI LLC',
   publisher: 'Sunrise Gen AI LLC',
