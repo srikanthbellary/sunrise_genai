@@ -236,14 +236,14 @@ export default function Home() {
               loop
               muted
               playsInline
-              poster="/media/poster-frame.jpg"
+              poster="/media/sunrise-causeway-poster.jpg"
               className="video-bg"
             >
-              <source src="/media/sunrise-logo-loop.mp4" type="video/mp4" />
+              <source src="/media/sunrise-causeway.mp4" type="video/mp4" />
             </video>
           ) : (
             <Image
-              src="/media/poster-frame.jpg"
+              src="/media/sunrise-causeway-poster.jpg"
               alt="Sunrise Gen AI"
               fill
               className="poster-fallback object-cover"
