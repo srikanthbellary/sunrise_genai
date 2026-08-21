@@ -296,7 +296,7 @@ export default function Home() {
               <div className="horizontal-rail-item flex items-center pl-4 md:pl-16">
                 <div>
                   <p className="chapter-number mb-4 text-teal">02 — What We Do</p>
-                  <h2 className="chapter-title text-sun text-3xl md:text-5xl lg:text-6xl">CAPABILITIES</h2>
+                  <h2 className="chapter-title text-sun text-2xl md:text-4xl lg:text-5xl">CAPABILITIES</h2>
                 </div>
               </div>
               
