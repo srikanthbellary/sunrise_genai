@@ -15,6 +15,7 @@ export default function Home() {
   
   const mainRef = useRef<HTMLElement>(null)
   const heroRef = useRef<HTMLDivElement>(null)
+  const heroVideoRef = useRef<HTMLVideoElement>(null)
   const studioRef = useRef<HTMLDivElement>(null)
   const capabilitiesRef = useRef<HTMLElement>(null)
   const railRef = useRef<HTMLDivElement>(null)
@@ -38,6 +39,10 @@ export default function Home() {
       })
       .catch(() => setStars(null))
   }, [])
+
+  useEffect(() => {
+    heroVideoRef.current?.play().catch(() => {})
+  }, [mounted, reducedMotion])
 
   useEffect(() => {
     if (!mounted || reducedMotion) return
@@ -232,6 +237,7 @@ export default function Home() {
         <section ref={heroRef} className="video-hero">
           {!reducedMotion ? (
             <video
+              ref={heroVideoRef}
               autoPlay
               loop
               muted
