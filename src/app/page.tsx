@@ -293,20 +293,20 @@ export default function Home() {
         <section ref={capabilitiesRef} id="capabilities" className="h-screen bg-void-deep overflow-hidden">
           <div className="h-full flex items-center">
             <div ref={railRef} className="horizontal-rail">
-              <div className="horizontal-rail-item flex items-center pl-8 md:pl-16">
+              <div className="horizontal-rail-item flex items-center pl-4 md:pl-16">
                 <div>
                   <p className="chapter-number mb-4 text-teal">02 — What We Do</p>
-                  <h2 className="chapter-title text-sun">CAPABILITIES</h2>
+                  <h2 className="chapter-title text-sun text-3xl md:text-5xl lg:text-6xl">CAPABILITIES</h2>
                 </div>
               </div>
               
               <div className="horizontal-rail-item">
-                <div className="card-sharp p-8 h-full">
+                <div className="card-sharp p-6 md:p-8 h-full">
                   <span className="text-sun text-xs tracking-widest uppercase">Apps</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-teal mt-4 mb-4 uppercase tracking-tight">
+                  <h3 className="text-lg md:text-xl font-bold text-teal mt-3 mb-3 uppercase tracking-tight">
                     Mobile &amp; Web
                   </h3>
-                  <p className="text-teal/70 text-sm leading-relaxed">
+                  <p className="text-teal/70 text-xs md:text-sm leading-relaxed">
                     AI-powered applications with computer vision, natural language processing, 
                     and intelligent automation. From concept to app store.
                   </p>
@@ -314,12 +314,12 @@ export default function Home() {
               </div>
               
               <div className="horizontal-rail-item">
-                <div className="card-sharp p-8 h-full">
+                <div className="card-sharp p-6 md:p-8 h-full">
                   <span className="text-sun text-xs tracking-widest uppercase">Media</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-teal mt-4 mb-4 uppercase tracking-tight">
+                  <h3 className="text-lg md:text-xl font-bold text-teal mt-3 mb-3 uppercase tracking-tight">
                     T2S / T2I / T2V
                   </h3>
-                  <p className="text-teal/70 text-sm leading-relaxed">
+                  <p className="text-teal/70 text-xs md:text-sm leading-relaxed">
                     Text-to-speech voice overs, text-to-image posters and assets, 
                     text-to-video short films and advertisements. Full gen-AI media pipeline.
                   </p>
@@ -327,20 +327,20 @@ export default function Home() {
               </div>
               
               <div className="horizontal-rail-item">
-                <div className="card-sharp p-8 h-full">
+                <div className="card-sharp p-6 md:p-8 h-full">
                   <span className="text-sun text-xs tracking-widest uppercase">Enterprise</span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-teal mt-4 mb-4 uppercase tracking-tight">
+                  <h3 className="text-lg md:text-xl font-bold text-teal mt-3 mb-3 uppercase tracking-tight">
                     Consulting
                   </h3>
-                  <p className="text-teal/70 text-sm leading-relaxed">
+                  <p className="text-teal/70 text-xs md:text-sm leading-relaxed">
                     LLM-enabled data pipelines, AI agents for SRE, intelligent log analysis. 
                     Enterprise-grade AI solutions that deliver measurable ROI.
                   </p>
                 </div>
               </div>
               
-              <div className="horizontal-rail-item flex items-center pr-16">
-                <div className="text-center">
+              <div className="horizontal-rail-item flex items-center pr-4 md:pr-16">
+                <div className="text-center w-full">
                   <div className="stat-number text-sun text-glow-sun">60<span className="stat-unit">%</span></div>
                   <p className="text-teal/60 text-xs tracking-widest uppercase mt-4">
                     Workload Reduction Achieved
