@@ -79,9 +79,40 @@ export default function Home() {
         scrub: 1,
       }
     })
-    studioTl.from('.studio-title', { y: 100, opacity: 0 }, 0)
+    studioTl.from('.studio-title', { 
+      clipPath: 'inset(0 0 100% 0)', 
+      y: 100, 
+      opacity: 0 
+    }, 0)
+    studioTl.to('.studio-title', { 
+      clipPath: 'inset(0 0 0% 0)' 
+    }, 0)
     studioTl.from('.studio-subtitle', { y: 60, opacity: 0 }, 0.1)
     studioTl.from('.studio-locations', { y: 40, opacity: 0 }, 0.2)
+
+    gsap.from('.products-header', {
+      clipPath: 'inset(0 100% 0 0)',
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.inOut',
+      scrollTrigger: {
+        trigger: productsRef.current,
+        start: 'top 75%',
+        toggleActions: 'play none none reverse',
+      }
+    })
+
+    gsap.from('.consulting-header', {
+      clipPath: 'inset(0 0 0 100%)',
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.inOut',
+      scrollTrigger: {
+        trigger: consultingRef.current,
+        start: 'top 75%',
+        toggleActions: 'play none none reverse',
+      }
+    })
 
     if (railRef.current && capabilitiesRef.current) {
       const railWidth = railRef.current.scrollWidth
@@ -323,9 +354,11 @@ export default function Home() {
         {/* Products Section */}
         <section ref={productsRef} id="products" className="min-h-screen px-6 py-32 bg-void">
           <div className="max-w-5xl mx-auto">
-            <p className="chapter-number mb-4 text-teal">03 — Products</p>
-            <h2 className="chapter-title text-sun text-glow-sun mb-4">WHAT WE BUILD</h2>
-            <p className="text-teal/50 text-xs tracking-widest uppercase mb-16">Open Source First</p>
+            <div className="products-header">
+              <p className="chapter-number mb-4 text-teal">03 — Products</p>
+              <h2 className="chapter-title text-sun text-glow-sun mb-4">WHAT WE BUILD</h2>
+              <p className="text-teal/50 text-xs tracking-widest uppercase mb-16">Open Source First</p>
+            </div>
             
             <div className="products-grid">
               {/* OpenStinger - Featured */}
@@ -410,9 +443,11 @@ export default function Home() {
         {/* Consulting Section */}
         <section ref={consultingRef} id="consulting" className="min-h-screen px-6 py-32 bg-void-deep">
           <div className="max-w-5xl mx-auto">
-            <p className="chapter-number mb-4 text-teal">04 — Consulting</p>
-            <h2 className="chapter-title text-sun text-glow-sun mb-4">ENTERPRISE AI</h2>
-            <p className="text-teal/50 text-xs tracking-widest uppercase mb-16">Solutions That Scale</p>
+            <div className="consulting-header">
+              <p className="chapter-number mb-4 text-teal">04 — Consulting</p>
+              <h2 className="chapter-title text-sun text-glow-sun mb-4">ENTERPRISE AI</h2>
+              <p className="text-teal/50 text-xs tracking-widest uppercase mb-16">Solutions That Scale</p>
+            </div>
             
             <div className="consulting-grid">
               <div className="consulting-item capability-item">
