@@ -102,18 +102,6 @@ export default function Home() {
       }
     })
 
-    gsap.from('.consulting-header', {
-      clipPath: 'inset(0 0 0 100%)',
-      opacity: 0,
-      duration: 1.2,
-      ease: 'power3.inOut',
-      scrollTrigger: {
-        trigger: consultingRef.current,
-        start: 'top 75%',
-        toggleActions: 'play none none reverse',
-      }
-    })
-
     if (railRef.current && capabilitiesRef.current) {
       const railWidth = railRef.current.scrollWidth
       const viewportWidth = window.innerWidth
@@ -152,7 +140,7 @@ export default function Home() {
     const consultingItems = gsap.utils.toArray('.consulting-item')
     consultingItems.forEach((item, i) => {
       gsap.from(item as Element, {
-        x: -60,
+        y: 50,
         opacity: 0,
         duration: 0.8,
         ease: 'power3.out',
@@ -161,7 +149,7 @@ export default function Home() {
           start: 'top 85%',
           toggleActions: 'play none none reverse',
         },
-        delay: i * 0.1
+        delay: i * 0.08
       })
     })
 
@@ -232,9 +220,8 @@ export default function Home() {
           />
         </a>
         <div className="nav-links">
-          <a href="#studio" className="nav-link">Studio</a>
-          <a href="#products" className="nav-link">Products</a>
           <a href="#consulting" className="nav-link">Consulting</a>
+          <a href="#products" className="nav-link">Products</a>
           <a href="#contact" className="nav-link">Contact</a>
         </div>
         <span className="nav-logo-spacer" aria-hidden="true" />
@@ -280,27 +267,105 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Studio Section */}
-        <section ref={studioRef} id="studio" className="min-h-screen flex items-center justify-center px-6 py-32 bg-void">
-          <div className="max-w-5xl mx-auto text-center">
+        {/* Consulting — first chapter after hero */}
+        <section ref={consultingRef} id="consulting" className="px-6 py-32 bg-void">
+          <div ref={studioRef} className="max-w-5xl mx-auto text-center">
             <div className="divider-sharp mx-auto mb-12" />
-            
-            <p className="chapter-number mb-6 text-teal">01 — Studio</p>
-            
+
+            <p className="chapter-number mb-6 text-teal">01 — Consulting</p>
+
             <h2 className="studio-title chapter-title text-sun text-glow-sun mb-8">
-              AI-NATIVE
+              ENTERPRISE AI
             </h2>
-            
+
             <p className="studio-subtitle text-lg md:text-xl text-teal/80 leading-relaxed max-w-3xl mx-auto mb-16">
-              Sunrise Gen AI LLC is a software studio building for the autonomous era. 
-              We create open-source tools, intelligent applications, and AI-generated media 
-              that push the boundaries of what&apos;s possible.
+              Sunrise Gen AI LLC is an enterprise AI and data consultancy. We design
+              production systems for operations, knowledge, and messy multi-source data —
+              and we ship the tools we use, including open-source OpenStinger and a mobile product.
             </p>
-            
+
             <div className="studio-locations flex flex-wrap justify-center gap-4 md:gap-8 text-xs tracking-widest uppercase">
               <span className="text-hot/80">Wellington, FL — HQ</span>
               <span className="text-teal/30 hidden md:inline">|</span>
               <span className="text-hot/80">Hyderabad — Ops</span>
+            </div>
+          </div>
+
+          <div className="consulting-grid max-w-6xl mx-auto mt-20">
+            <div className="consulting-item consulting-tile card-sharp p-6 md:p-8">
+              <span className="text-sun text-xs tracking-widest uppercase">SRE / Ops</span>
+              <h3 className="text-lg font-bold text-teal mt-3 mb-3 tracking-wide uppercase">
+                Agentic Operations
+              </h3>
+              <p className="text-teal/70 text-sm leading-relaxed">
+                Incident intelligence, recommended actions, and guided remediation for SRE
+                and operations — agents wired to your tools over MCP.
+              </p>
+            </div>
+
+            <div className="consulting-item consulting-tile card-sharp p-6 md:p-8">
+              <span className="text-sun text-xs tracking-widest uppercase">Knowledge</span>
+              <h3 className="text-lg font-bold text-teal mt-3 mb-3 tracking-wide uppercase">
+                Enterprise RAG
+              </h3>
+              <p className="text-teal/70 text-sm leading-relaxed">
+                RAG and GraphRAG over tickets, docs, and runbooks, with guardrails and
+                confidence scoring so answers stay grounded.
+              </p>
+            </div>
+
+            <div className="consulting-item consulting-tile card-sharp p-6 md:p-8">
+              <span className="text-sun text-xs tracking-widest uppercase">Data</span>
+              <h3 className="text-lg font-bold text-teal mt-3 mb-3 tracking-wide uppercase">
+                GenAI Data Pipelines
+              </h3>
+              <p className="text-teal/70 text-sm leading-relaxed">
+                Schema and attribute mapping across messy, multi-source enterprise data.
+                Up to 60% workload reduction on schema and data-pipeline work.
+              </p>
+            </div>
+
+            <div className="consulting-item consulting-tile card-sharp p-6 md:p-8">
+              <span className="text-sun text-xs tracking-widest uppercase">Cloud</span>
+              <h3 className="text-lg font-bold text-teal mt-3 mb-3 tracking-wide uppercase">
+                Multi-Cloud Platforms
+              </h3>
+              <p className="text-teal/70 text-sm leading-relaxed">
+                Data lakes, ETL/ELT, streaming, and production ML/MLOps on AWS, Azure, and GCP.
+              </p>
+            </div>
+
+            <div className="consulting-item consulting-tile card-sharp p-6 md:p-8">
+              <span className="text-sun text-xs tracking-widest uppercase">Modernization</span>
+              <h3 className="text-lg font-bold text-teal mt-3 mb-3 tracking-wide uppercase">
+                Legacy to Cloud
+              </h3>
+              <p className="text-teal/70 text-sm leading-relaxed">
+                Mainframe-to-cloud data modernization — extract, reshape, and land critical
+                systems without losing lineage.
+              </p>
+            </div>
+
+            <div className="consulting-item consulting-tile card-sharp p-6 md:p-8">
+              <span className="text-sun text-xs tracking-widest uppercase">LLM</span>
+              <h3 className="text-lg font-bold text-teal mt-3 mb-3 tracking-wide uppercase">
+                Production LLM Systems
+              </h3>
+              <p className="text-teal/70 text-sm leading-relaxed">
+                Prompt and context engineering, evaluation, and operational chatbots —
+                including cost visibility once models are in production.
+              </p>
+            </div>
+
+            <div className="consulting-item consulting-tile consulting-tile-wide card-sharp p-6 md:p-8">
+              <span className="text-sun text-xs tracking-widest uppercase">Delivery</span>
+              <h3 className="text-lg font-bold text-teal mt-3 mb-3 tracking-wide uppercase">
+                Architecture &amp; Delivery
+              </h3>
+              <p className="text-teal/70 text-sm leading-relaxed max-w-3xl">
+                ARB-ready designs and delivery with business stakeholders, from C-level
+                through engineering.
+              </p>
             </div>
           </div>
         </section>
@@ -318,13 +383,39 @@ export default function Home() {
               
               <div className="horizontal-rail-item">
                 <div className="card-sharp p-6 md:p-8 h-full">
-                  <span className="text-sun text-xs tracking-widest uppercase">Apps</span>
+                  <span className="text-sun text-xs tracking-widest uppercase">Enterprise</span>
                   <h3 className="text-lg md:text-xl font-bold text-teal mt-3 mb-3 uppercase tracking-tight">
-                    Mobile &amp; Web
+                    Consulting
                   </h3>
                   <p className="text-teal/70 text-xs md:text-sm leading-relaxed">
-                    AI-powered applications with computer vision, natural language processing, 
-                    and intelligent automation. From concept to app store.
+                    Agentic ops, RAG over enterprise knowledge, GenAI pipelines,
+                    multi-cloud platforms, and ARB-ready delivery.
+                  </p>
+                </div>
+              </div>
+
+              <div className="horizontal-rail-item">
+                <div className="card-sharp p-6 md:p-8 h-full">
+                  <span className="text-sun text-xs tracking-widest uppercase">Data</span>
+                  <h3 className="text-lg md:text-xl font-bold text-teal mt-3 mb-3 uppercase tracking-tight">
+                    Platforms
+                  </h3>
+                  <p className="text-teal/70 text-xs md:text-sm leading-relaxed">
+                    Lakes, ETL/ELT, streaming, and production ML on AWS, Azure, and GCP.
+                    Mainframe-to-cloud when the source still lives there.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="horizontal-rail-item">
+                <div className="card-sharp p-6 md:p-8 h-full">
+                  <span className="text-sun text-xs tracking-widest uppercase">Products</span>
+                  <h3 className="text-lg md:text-xl font-bold text-teal mt-3 mb-3 uppercase tracking-tight">
+                    OSS &amp; Mobile
+                  </h3>
+                  <p className="text-teal/70 text-xs md:text-sm leading-relaxed">
+                    OpenStinger — portable MCP agent memory. Ingredient Scanner —
+                    a mobile product in testing.
                   </p>
                 </div>
               </div>
@@ -333,24 +424,10 @@ export default function Home() {
                 <div className="card-sharp p-6 md:p-8 h-full">
                   <span className="text-sun text-xs tracking-widest uppercase">Media</span>
                   <h3 className="text-lg md:text-xl font-bold text-teal mt-3 mb-3 uppercase tracking-tight">
-                    T2S / T2I / T2V
+                    T2V Films
                   </h3>
                   <p className="text-teal/70 text-xs md:text-sm leading-relaxed">
-                    Text-to-speech voice overs, text-to-image posters and assets, 
-                    text-to-video short films and advertisements. Full gen-AI media pipeline.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="horizontal-rail-item">
-                <div className="card-sharp p-6 md:p-8 h-full">
-                  <span className="text-sun text-xs tracking-widest uppercase">Enterprise</span>
-                  <h3 className="text-lg md:text-xl font-bold text-teal mt-3 mb-3 uppercase tracking-tight">
-                    Consulting
-                  </h3>
-                  <p className="text-teal/70 text-xs md:text-sm leading-relaxed">
-                    LLM-enabled data pipelines, AI agents for SRE, intelligent log analysis. 
-                    Enterprise-grade AI solutions that deliver measurable ROI.
+                    Text-to-video short films.
                   </p>
                 </div>
               </div>
@@ -359,7 +436,7 @@ export default function Home() {
                 <div className="text-center w-full">
                   <div className="stat-number text-sun text-glow-sun">60<span className="stat-unit">%</span></div>
                   <p className="text-teal/60 text-xs tracking-widest uppercase mt-4">
-                    Workload Reduction Achieved
+                    Up to 60% workload reduction on schema / data-pipeline work
                   </p>
                 </div>
               </div>
@@ -456,55 +533,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Consulting Section */}
-        <section ref={consultingRef} id="consulting" className="min-h-screen px-6 py-32 bg-void-deep">
+        {/* Media Section — last, quieter */}
+        <section ref={mediaRef} id="media" className="media-section px-6 py-20 bg-void-deep">
           <div className="max-w-5xl mx-auto">
-            <div className="consulting-header">
-              <p className="chapter-number mb-4 text-teal">04 — Consulting</p>
-              <h2 className="chapter-title text-sun text-glow-sun mb-4">ENTERPRISE AI</h2>
-              <p className="text-teal/50 text-xs tracking-widest uppercase mb-16">Solutions That Scale</p>
-            </div>
-            
-            <div className="consulting-grid">
-              <div className="consulting-item capability-item">
-                <h3 className="text-lg font-bold text-sun tracking-wide uppercase mb-3">
-                  AI Data Pipelines
-                </h3>
-                <p className="text-teal/70 text-sm leading-relaxed">
-                  LLM-enabled data pipelines with highly accurate schema mapping. 
-                  Up to 60% workload reduction achieved for enterprise clients.
-                </p>
-              </div>
-              
-              <div className="consulting-item capability-item">
-                <h3 className="text-lg font-bold text-sun tracking-wide uppercase mb-3">
-                  AI Agents for SRE
-                </h3>
-                <p className="text-teal/70 text-sm leading-relaxed">
-                  Real-time suggestions for Site Reliability Engineering platforms. 
-                  Reduce Mean Time to Resolution across your infrastructure.
-                </p>
-              </div>
-              
-              <div className="consulting-item capability-item">
-                <h3 className="text-lg font-bold text-sun tracking-wide uppercase mb-3">
-                  Intelligent Log Analysis
-                </h3>
-                <p className="text-teal/70 text-sm leading-relaxed">
-                  Query cloud logs and monitoring alerts with natural language. 
-                  Valuable insights with reduced turnaround times.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Media Section - Films Rail */}
-        <section ref={mediaRef} id="media" className="px-6 py-32 bg-void">
-          <div className="max-w-5xl mx-auto">
-            <p className="chapter-number mb-4 text-teal">05 — Media</p>
+            <p className="chapter-number mb-4 text-teal">04 — Media</p>
             <h2 className="chapter-title text-sun text-glow-sun mb-4">T2V FILMS</h2>
-            <p className="text-teal/50 text-xs tracking-widest uppercase mb-16">Gen-AI Short Films</p>
+            <p className="text-teal/50 text-xs tracking-widest uppercase mb-10">Gen-AI Short Films</p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="media-item">
@@ -532,17 +566,17 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section ref={contactRef} id="contact" className="min-h-screen flex items-center px-6 py-32 bg-void-deep">
+        <section ref={contactRef} id="contact" className="min-h-screen flex items-center px-6 py-32 bg-void border-t border-sun/10">
           <div className="max-w-3xl mx-auto text-center contact-content">
             <div className="divider-sharp mx-auto mb-12" />
             
-            <p className="chapter-number mb-6 text-teal">06 — Contact</p>
+            <p className="chapter-number mb-6 text-teal">05 — Contact</p>
             
             <h2 className="chapter-title text-sun text-glow-sun mb-8">LET&apos;S TALK</h2>
             
             <p className="text-teal/70 text-lg mb-12 max-w-xl mx-auto">
-              Building something that needs AI expertise? 
-              Interested in OpenStinger? Let&apos;s connect.
+              Enterprise AI and data work — architecture through delivery.
+              Wellington, FL.
             </p>
             
             <div className="space-y-4 mb-12">
@@ -561,7 +595,7 @@ export default function Home() {
             </div>
             
             <a
-              href="mailto:sunrisegenai@gmail.com?subject=Project%20Inquiry"
+              href="mailto:sunrisegenai@gmail.com?subject=Enterprise%20Inquiry"
               className="magnetic-cta magnetic-cta-sun"
               onMouseMove={handleMagneticMove}
               onMouseLeave={handleMagneticLeave}
