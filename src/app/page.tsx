@@ -220,7 +220,7 @@ export default function Home() {
     <>
       <div className="grain-overlay" aria-hidden="true" />
       
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6 flex justify-center gap-8 md:gap-12">
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-center gap-8 md:gap-12 bg-void/80 backdrop-blur-sm border-b border-sun/10">
         <a href="#studio" className="nav-link">Studio</a>
         <a href="#products" className="nav-link">Products</a>
         <a href="#consulting" className="nav-link">Consulting</a>
