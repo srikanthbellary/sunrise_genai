@@ -15,7 +15,7 @@ export default function Home() {
   
   const mainRef = useRef<HTMLElement>(null)
   const heroRef = useRef<HTMLDivElement>(null)
-  const studioRef = useRef<HTMLElement>(null)
+  const studioRef = useRef<HTMLDivElement>(null)
   const capabilitiesRef = useRef<HTMLElement>(null)
   const railRef = useRef<HTMLDivElement>(null)
   const productsRef = useRef<HTMLElement>(null)
