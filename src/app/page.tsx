@@ -220,11 +220,24 @@ export default function Home() {
     <>
       <div className="grain-overlay" aria-hidden="true" />
       
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-5 flex justify-center gap-8 md:gap-12 bg-void/80 backdrop-blur-sm border-b border-sun/10">
-        <a href="#studio" className="nav-link">Studio</a>
-        <a href="#products" className="nav-link">Products</a>
-        <a href="#consulting" className="nav-link">Consulting</a>
-        <a href="#contact" className="nav-link">Contact</a>
+      <nav className="site-nav">
+        <a href="/" className="nav-logo" aria-label="Sunrise Gen AI">
+          <Image
+            src="/logo-nav.webp"
+            alt="Sunrise Gen AI"
+            width={192}
+            height={192}
+            className="nav-logo-img"
+            priority
+          />
+        </a>
+        <div className="nav-links">
+          <a href="#studio" className="nav-link">Studio</a>
+          <a href="#products" className="nav-link">Products</a>
+          <a href="#consulting" className="nav-link">Consulting</a>
+          <a href="#contact" className="nav-link">Contact</a>
+        </div>
+        <span className="nav-logo-spacer" aria-hidden="true" />
       </nav>
 
       <main ref={mainRef}>
@@ -236,14 +249,14 @@ export default function Home() {
               loop
               muted
               playsInline
-              poster="/media/poster-frame.jpg"
+              poster="/media/sunrise-causeway-poster.jpg"
               className="video-bg"
             >
-              <source src="/media/sunrise-logo-loop.mp4" type="video/mp4" />
+              <source src="/media/sunrise-causeway.mp4" type="video/mp4" />
             </video>
           ) : (
             <Image
-              src="/media/poster-frame.jpg"
+              src="/media/sunrise-causeway-poster.jpg"
               alt="Sunrise Gen AI"
               fill
               className="poster-fallback object-cover"
@@ -256,7 +269,10 @@ export default function Home() {
           <div className="video-edge-fade" />
           
           <div className="hero-tagline">
-            <p className="hero-wordmark">Grounding the Autonomous Era</p>
+            <div className="hero-lockup">
+              <h1 className="hero-title">SUNRISE GEN AI</h1>
+              <p className="hero-wordmark">Grounding the Autonomous Era</p>
+            </div>
           </div>
           
           <div className="scroll-indicator">
