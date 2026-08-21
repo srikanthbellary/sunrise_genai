@@ -9,16 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        sunrise: {
-          orange: '#FF6B35',
-          cyan: '#00F5FF',
-          yellow: '#FFD23F',
-          bg: '#060814',
-          'bg-light': '#0a0e1a',
+        void: {
+          DEFAULT: '#000818',
+          deep: '#000000',
         },
+        sun: '#D9661C',
+        hot: '#FAC345',
+        teal: '#06B6C3',
       },
       fontFamily: {
         orbitron: ['Orbitron', 'monospace'],
+      },
+      letterSpacing: {
+        'tighter': '-0.04em',
+        'tight': '-0.02em',
+        'wide': '0.1em',
+        'wider': '0.2em',
+        'widest': '0.3em',
       },
     },
   },
