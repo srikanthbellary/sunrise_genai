@@ -164,27 +164,25 @@ export default function Home() {
               Products we've built using our AI-first approach - proof of our capabilities.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
             <div className="project-card project-card-enhanced animate-slide-in-left animate-delay-300">
-              <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">LabelSaber.com</h3>
-              <p className="project-description gen-ai-font-light text-sm md:text-base mb-4">
-                Intelligent Ingredient Analyzer powered by AI and Computer Vision OCR.
+              <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">OpenStinger</h3>
+              <p className="project-description gen-ai-font-light text-sm md:text-base mb-2">
+                Our open-source flagship product. Portable memory harness for MCP agent memory — grounding the autonomous era.
               </p>
-              <button className="logo-button text-sm md:text-base">Learn More</button>
+              <p className="project-description gen-ai-font-light text-xs mb-4 opacity-80">
+                MIT licensed · Self-hosted · MCP-compatible · ⭐ 124 stars
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href="https://github.com/srikanthbellary/openstinger" target="_blank" rel="noopener noreferrer" className="logo-button text-sm">GitHub</a>
+                <a href="https://openstinger.com" target="_blank" rel="noopener noreferrer" className="logo-button text-sm">Website</a>
+              </div>
             </div>
-            <div className="project-card project-card-enhanced animate-fade-in-up animate-delay-400">
-              <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">Swaram.ai</h3>
-              <p className="project-description gen-ai-font-light text-sm md:text-base mb-4">
-                Your intelligent AI Voice Companion with natural, human-like conversations.
+            <div className="project-card project-card-enhanced animate-slide-in-right animate-delay-400">
+              <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">Ingredient Scanner</h3>
+              <p className="project-description gen-ai-font-light text-sm md:text-base">
+                Scans product labels for harmful ingredients. Android app currently in Google testing; iOS coming next.
               </p>
-              <button className="logo-button text-sm md:text-base">Explore</button>
-            </div>
-            <div className="project-card project-card-enhanced animate-slide-in-right animate-delay-500">
-              <h3 className="project-title gen-ai-font-medium text-lg md:text-xl">Lensort.com</h3>
-              <p className="project-description gen-ai-font-light text-sm md:text-base mb-4">
-                AI-driven analytics platform for intelligent reporting and insights.
-              </p>
-              <button className="logo-button text-sm md:text-base">Learn More</button>
             </div>
           </div>
         </div>
