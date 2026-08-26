@@ -26,15 +26,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Sunrise Gen AI',
+    images: [
+      {
+        url: '/sunrise-gen-ai-icon.png',
+        width: 1024,
+        height: 1024,
+        alt: 'Sunrise Gen AI',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sunrise Gen AI — Grounding the Autonomous Era',
     description: 'Enterprise GenAI, built to run. Agents, retrieval, and data platforms in production.',
+    images: ['/sunrise-gen-ai-icon.png'],
   },
   icons: {
-    icon: '/logo-nav.webp',
-    apple: '/logo-nav.webp',
+    icon: '/sunrise-gen-ai-icon.png',
+    apple: '/sunrise-gen-ai-icon.png',
   },
 }
 
