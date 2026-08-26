@@ -398,10 +398,13 @@ html.lenis body {
   align-items: center;
   gap: 0.65rem;
 }
-.nav-mark {
-  width: 26px;
-  height: 26px;
+.nav-lockup {
+  display: block;
+  width: clamp(160px, 18vw, 220px);
+  height: auto;
+  max-height: calc(var(--nav-h) - 0.5rem);
   object-fit: contain;
+  object-position: left center;
 }
 .nav-name {
   font-family: var(--font-body);
@@ -480,6 +483,9 @@ html.lenis body {
   .nav-links,
   .nav-name {
     display: none;
+  }
+  .nav-lockup {
+    width: 160px;
   }
   .nav {
     grid-template-columns: auto 1fr;
