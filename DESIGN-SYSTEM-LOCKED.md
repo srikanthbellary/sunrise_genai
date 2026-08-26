@@ -1,231 +1,114 @@
-# 🔒 SUNRISE GEN AI DESIGN SYSTEM - LOCKED AGREEMENT
+# Sunrise Gen AI — design lock
 
-**Status**: ✅ FINAL - LOCKED  
-**Date**: December 2024  
-**Version**: 1.0.0  
+**Status:** locked by the owner  
+**Fold:** approved mock (left copy, circuit sun on a digital horizon)  
+**Type:** real self-hosted Geist Sans. The mock’s painted letters are not a font.
 
-This document represents the **FINAL AGREED DESIGN SPECIFICATIONS** for the Sunrise Gen AI website. This design system has been locked into Cursor rules and should not be modified without explicit client approval.
-
----
-
-## 🎨 FINAL COLOR PALETTE
-
-### Exact Logo Colors (ONLY THESE 4 COLORS)
-```css
-:root {
-  --logo-orange: #FF6B35;    /* Circuit sun, headings, project titles */
-  --logo-cyan: #00F5FF;      /* Palm trees, navigation, content text */
-  --logo-yellow: #FFD23F;    /* Sun glow, accents */
-  --logo-background: #060814; /* Background - slightly darker final version */
-}
-```
-
-**⚠️ CRITICAL**: Only these 4 colors are permitted. No other colors may be used.
+This is the only design source for sunrisegenai.com. Do not revert to Orbitron, a black room, billboard type, empty ovals, or a video hero.
 
 ---
 
-## 🖼️ LOGO SPECIFICATIONS
+## What the first screen is
 
-### Final Logo Requirements
-- **File**: `sunrise_gen_ai_logo_enhanced.png`
-- **Hero Size**: `h-96` (384px height - **DOUBLED** from original)
-- **Navigation**: **NO LOGO** - removed redundant navigation logo
-- **Blending**: Logo must blend completely into background
-- **Effects**: **NO GLOW** - removed all filter effects
+Desktop fold: dark navy void, warm dawn. A **circuit-board sun** rising on a digital horizon (gold/orange traces, teal accents). Light comes from the sun.
 
-### Logo Implementation
-```css
-.logo-with-glow {
-  filter: none;
-  opacity: 0.9;
-}
-```
+- Modest wordmark, top-left: `Sunrise Gen AI` (AI may use `--sun`; same family).
+- Human-sized headline, left column: **Production systems for operations and messy knowledge.**
+- Two short body lines, then Wellington, Florida.
+- Small nav, top-right: Work, Product, Contact.
+- Email `sbellary@sunrisegenai.com` small at the bottom of the fold.
+- A tiny rising-sun mark is allowed.
+
+This is original Sunrise. Do not mention or imitate other sites in code or comments.
 
 ---
 
-## 🔤 TYPOGRAPHY - SQUARED FONTS ONLY
+## Hero sun (graphic lock)
 
-### Primary Font: Orbitron
-**Technical, squared font matching "GEN AI" style in logo**
+The circuit sun is **hero only**, built with **Three.js** as a thin layer over the approved fold (`three` is a project dependency). It is a graphic, not a 3D world: one quiet loop (slow drift, light mouse parallax, traces that breathe). No orbit controls, fly-through, spaceship, particle fountain, or HUD.
 
-```css
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+Owner corrections that override the painted mock:
 
-body {
-  font-family: 'Orbitron', monospace;
-}
-```
+- **Smaller:** about half the mock’s sun scale. Sit it lower on the horizon. It must not dominate the viewport.
+- **Ember, not a spotlight:** no white-hot glare. Warm gold/orange/teal traces. The page stays dark-navy; light is present but not blinding.
 
-### Font Classes
-```css
-.gen-ai-font {
-  font-family: 'Orbitron', monospace;
-  font-weight: 900;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
-
-.gen-ai-font-medium {
-  font-family: 'Orbitron', monospace;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-.gen-ai-font-light {
-  font-family: 'Orbitron', monospace;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-}
-```
-
-**🚫 NO ROUNDED FONTS** - Only squared, technical fonts are permitted.
+Once the user scrolls, **do not** repeat the sun and **do not** use Three.js or any extra 3D. No background images, photos, film stills, canvas fields, or decorative illustrations in later sections.
 
 ---
 
-## 🏗️ LAYOUT STRUCTURE
+## Type lock
 
-### Navigation (FINAL)
-- **Position**: Fixed top
-- **Layout**: **CENTERED** navigation items (`justify-center`)
-- **NO redundant logo** in navigation
-- **Menu**: About, Mobile Apps, Multimedia, Consulting, Contact
-- **Background**: `bg-black/50 backdrop-blur-sm border-b border-orange-500/30`
+The fold mock painted glyphs. Do not recreate or trace that lettering.
 
-### Hero Section (FINAL)
-- **Logo**: `h-96` (doubled size)
-- **NO "SUNRISE GEN AI" heading** - logo already shows the name
-- **Subtitle only**: "Cutting-Edge AI Solutions for the Future"
-- **Buttons**: "Explore Our Apps" and "Watch Our Films"
+| Token | Spec |
+| --- | --- |
+| Family | Geist Sans (OFL), files in `public/fonts` |
+| Load | `@font-face` only. No runtime Google Fonts CSS |
+| Headline | ~36–40px desktop, weight 500–600, normal tracking (not 0.2em+) |
+| Body | 16–18px |
+| Wordmark | Small, same family |
+| Forbidden | Orbitron, painted/traced mock letters, giant viewport-filling words, novelty “AI” cuts |
 
 ---
 
-## 🎭 BACKGROUND DESIGN - CLEAN ONLY
+## Color system
 
-### Background Specification
-- **CLEAN background ONLY** - NO patterns, NO animations, NO effects
-- **Single layer**: `var(--logo-background)` (#060814)
-- **Logo blending**: Seamless integration with background
+Use these as a system — royal, enterprise, tech, digital — not a flat black page and not a poster.
 
 ```css
-.logo-blend-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--logo-background);
-  z-index: -1;
-}
+--void: #000818;
+--royal: #0a1633;
+--indigo: #0d1b3f;
+--sun: #D9661C;
+--hot: #FAC345;
+--teal: #06B6C3;
 ```
 
-**🚫 NO CIRCUIT PATTERNS** - Client explicitly requested removal of all background patterns and animations.
+- Void and deeper navy/indigo fields for sections.
+- Sun and hot as **signal**: rules, links, small marks.
+- Teal as the cool digital accent.
+- Enough chroma to feel like a Gen AI firm.
+
+Below the fold: **type + this palette only**.
 
 ---
 
-## 🎯 BUSINESS CONTENT
+## Page (one scroll)
 
-### Company Information
-- **Name**: Sunrise Gen AI LLC
-- **Location**: Florida, USA
-- **Domains**: sunrisegen.ai, sunrisegenai.com
+One page. After the fold:
 
-### Portfolio
+1. **Work** — two or three short offers in English (not seven tiles).
+2. **Product** — OpenStinger only.
+3. **Craft** — films as a small text row, not a business unit.
+4. **Contact** — `sbellary@sunrisegenai.com`, `440-340-8383`, Wellington, Florida.
 
-#### Mobile Apps
-1. **LabelSaber.com** - Intelligent Ingredient Analyzer (AI + Computer Vision OCR)
-2. **Swaram.ai** - AI Voice Companion
-3. **Lensort.com** - Photos & Documents Organizer
-
-#### AI Multimedia
-1. **Apocalyptic Roulette** - AI Short Film (Extinction Events)
-2. **No Planet For Humans** - AI Dystopian Film
-3. **Arcane Legacy** - 48-hour RunwayML Festival Entry
-
-#### Services
-- Mobile Apps Development
-- AI Multimedia Creation
-- Enterprise AI Consulting
+Body line for the firm: we design production systems for operations and messy knowledge, and we ship the tools we use.
 
 ---
 
-## 🚫 FORBIDDEN CHANGES
+## Hosting
 
-### DO NOT:
-1. ❌ Add circuit patterns or background animations
-2. ❌ Change from Orbitron font to any rounded fonts
-3. ❌ Add redundant logos to navigation
-4. ❌ Add "SUNRISE GEN AI" heading text
-5. ❌ Change the agreed color palette
-6. ❌ Add glow effects to the logo
-7. ❌ Make logo smaller than h-96
-8. ❌ Add any colors outside the 4 approved colors
+Keep GitHub Pages static export:
 
-### ALWAYS:
-1. ✅ Use only the 4 approved logo colors
-2. ✅ Keep Orbitron font for all text
-3. ✅ Maintain clean background without patterns
-4. ✅ Keep logo blended into background
-5. ✅ Center navigation without redundant logo
-6. ✅ Use h-96 for main logo size
+- `output: 'export'`
+- `trailingSlash: true`
+- `images.unoptimized: true`
+- Existing `.github/workflows/deploy.yml`
 
 ---
 
-## 📋 IMPLEMENTATION CHECKLIST
+## Do not
 
-When working on this project:
-
-- [ ] **Colors**: Reference only approved CSS variables
-- [ ] **Fonts**: Always use Orbitron font family
-- [ ] **Layout**: Maintain agreed structure
-- [ ] **Logo**: Use `logo-with-glow` class with no effects
-- [ ] **Background**: Keep single clean layer only
+- Recreate the black-room / billboard / empty-oval / corner-bracket homepage.
+- Use video or the causeway clip.
+- List Ingre, Ingredient Scanner, LabelSaber, Swaram, Lensort, Job Book, or parked domains.
+- Add Hyderabad. No Gmail. No fake case studies.
+- Use decorative ovals or rings that mean nothing.
 
 ---
 
-## 🎯 QUALITY STANDARDS
+## Always
 
-- **Professional**: Clean, minimal, sophisticated
-- **Consistent**: Logo colors throughout all elements
-- **Technical**: Squared fonts, circuit-board inspired cards
-- **Focused**: Content-driven without distracting elements
-- **Accessible**: Proper contrast and readability
-
----
-
-## 📁 PROJECT STRUCTURE
-
-```
-Sunrise_GenAI/                          # Project root
-├── .cursor/                             # Cursor rules
-│   └── rules/
-│       └── sunrise-genai-design-system.mdc  # Design system rule
-├── sunrise-genai-website/               # Next.js website
-│   ├── app/
-│   │   ├── globals.css                  # Design system CSS
-│   │   └── page.tsx                     # Main page
-│   └── public/
-│       └── logo.png                     # Logo file
-├── sunrise_gen_ai_logo_enhanced.png     # Original logo
-├── README.md                            # Project documentation
-├── project-structure.md                 # Architecture docs
-├── project-tracker.md                   # Development tracker
-└── DESIGN-SYSTEM-LOCKED.md             # This file
-```
-
----
-
-## 📞 CLIENT AGREEMENT
-
-**This design system represents the FINAL AGREEMENT between client and developer.**
-
-✅ **Client Approved**: All specifications locked  
-✅ **Cursor Rules**: Implemented for consistency  
-✅ **Documentation**: Complete and comprehensive  
-
-**Any deviations require explicit client approval.**
-
----
-
-*Document created: December 2024*  
-*Status: LOCKED AND FINAL* 
+- Start from this lock, not from older docs that named Orbitron.
+- Keep the first screen recognizable as the approved fold, with real type and a smaller ember sun.
+- Keep later sections quiet: type and color, no second graphic.
