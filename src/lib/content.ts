@@ -144,6 +144,32 @@ export const CAPABILITIES = [
   },
 ]
 
+export const MEDIA_SENTENCE =
+  'Image models for the visuals, text models for the words, video models for the motion.'
+
+export const MEDIA_USES = ['Marketing materials', 'Campaigns', 'Web content']
+
+export const MEDIA_MODELS = [
+  {
+    n: '01',
+    title: 'Image models',
+    body: 'Key visuals, product and lifestyle imagery, and the social and display variants that all come off one art direction rather than six.',
+    output: 'Key art · Product shots · Social & display',
+  },
+  {
+    n: '02',
+    title: 'Text models',
+    body: 'Campaign copy, landing and product page content, and long-form written to a brief and held to a brand voice across every variant.',
+    output: 'Campaign copy · Web content · Long-form',
+  },
+  {
+    n: '03',
+    title: 'Video models',
+    body: 'Short-form video, motion cutdowns, and animated variants for the placements that need moving image instead of a still.',
+    output: 'Short-form · Cutdowns · Motion variants',
+  },
+]
+
 export const PROOF = [
   { value: '60%', label: 'Up to 60% less time on schema and mapping work' },
   { value: '3×', label: 'Throughput on attribute mapping' },

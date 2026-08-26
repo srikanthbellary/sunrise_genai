@@ -55,7 +55,11 @@ Display type is Cormorant at `letter-spacing: -0.012em` — never tight grotesqu
    figure. Links to github.com/srikanthbellary/openstinger and openstinger.com.
 4. **03 Ingre** — the light chapter. **Ingre is a pitch and must stay on the page.**
    *Scan food and beauty labels. See harmful ingredients.* Android and iOS. ingre.ai.
-5. **04 Media** — exactly one sentence about image, video, and audio with generative AI.
+   Carries two originals: the device scan, and Fig. 03 — an original schematic in the
+   same drawn language as the OpenStinger figure, reading scan → parse → flag → call.
+5. **04 Media** — a full chapter, not a one-liner: content generation with image, text,
+   and video models, for marketing materials, campaigns, and web content. No film
+   titles, no reel, no portfolio of shorts.
 6. **05 Contact** — Wellington, FL · sbellary@sunrisegenai.com · 440-340-8383.
 
 ---
@@ -85,8 +89,12 @@ history. A principal may be named in the footer; the hero and the offers are the
 deliver, not where anyone worked: *up to 60% less time on schema and mapping work* and
 *3× throughput on attribute mapping*.
 
-**Always keep**: the five offers, the capability matrix, OpenStinger, Ingre, the one
-media sentence, and the Wellington contact block.
+Every diagram on the page is drawn by us in the house language — hairline grid,
+bordered stations, small caps labels, corner ticks, travelling packets. No stock icons,
+no illustration packs, no photography of people.
+
+**Always keep**: the five offers, the capability matrix, OpenStinger, Ingre with both of
+its graphics, the media chapter, and the Wellington contact block.
 
 ---
 

@@ -28,7 +28,8 @@ lives in `src/app/globals.css`.
 ## Page order
 
 Fold → 01 What we do (pinned offers rail + capability matrix) → 02 OpenStinger →
-03 Ingre (light chapter) → 04 Media (one sentence) → 05 Contact.
+03 Ingre (light chapter, device scan + Fig. 03 pipeline schematic) → 04 Media (a full
+chapter on content generation) → 05 Contact.
 
 Hero headline is **"Enterprise GenAI, built to run."** with the subline *Agents,
 retrieval, and data platforms in production.* The old line "Production systems for
@@ -50,6 +51,12 @@ operations and messy knowledge" is dead — do not restore it, and keep the phra
 - **Ingre must stay on the page** and is written as a pitch: "Scan food and beauty
   labels. See harmful ingredients." Android and iOS. ingre.ai. Never write, for Ingre:
   Play testing, Google testing, Mac Studio, Flutter, "in development", or LabelSaber.
+- Media is a real chapter: content generation with image, text, and video models for
+  marketing materials, campaigns, and web content. Never a film reel, named short films,
+  or a portfolio of student shorts.
+- Diagrams are original and drawn in the house language — hairline grid, bordered
+  stations, small caps labels, corner ticks, travelling packets. No stock icons, no
+  illustration packs, no photography of people.
 - Never write: a Gmail address, Hyderabad, a film reel or named short films,
   Job Book, Swaram, Lensort, parked domains, PBL, or study forks.
 - Contact is Wellington, FL · sbellary@sunrisegenai.com · 440-340-8383.

@@ -95,14 +95,27 @@ export default function Consulting({ reduced }: { reduced: boolean }) {
           </div>
           <h2 className="section-title">
             <span className="line-mask">
-              <span className="line-inner">We build the AI</span>
+              <span className="line-inner">We build</span>
             </span>
             <span className="line-mask">
-              <span className="line-inner">that has to work</span>
+              <span className="line-inner">production</span>
+            </span>
+            <span className="line-mask">
+              <span className="line-inner">GenAI for</span>
             </span>
             <span className="line-mask">
               <span className="line-inner">
-                <span className="dim">on Monday.</span>
+                <span className="dim">operations,</span>
+              </span>
+            </span>
+            <span className="line-mask">
+              <span className="line-inner">
+                <span className="dim">knowledge, and</span>
+              </span>
+            </span>
+            <span className="line-mask">
+              <span className="line-inner">
+                <span className="dim">data.</span>
               </span>
             </span>
           </h2>

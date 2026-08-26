@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { gsap, revealLines, riseIn } from '@/lib/motion'
+import IngreCanvas from './IngreCanvas'
 import Magnetic from './Magnetic'
 
 const LABEL_ROWS: { name: string; flag?: 'high' | 'watch' }[] = [
@@ -204,6 +205,20 @@ export default function Ingre({ reduced }: { reduced: boolean }) {
             </div>
           </div>
           <p className="scanner-note">Illustrative scan · Ingre for Android and iOS · ingre.ai</p>
+        </div>
+      </div>
+
+      <div className="ingre-figure-wrap js-rise" data-cursor="figure">
+        <div className="ingre-figure-legend">
+          <span className="mono">Fig. 03 — scan · parse · flag · call</span>
+          <span className="mono">Food and beauty labels · Android and iOS · ingre.ai</span>
+        </div>
+        <div className="ingre-figure">
+          <IngreCanvas reduced={reduced} />
+          <span className="canvas-corner canvas-corner-ink tl" />
+          <span className="canvas-corner canvas-corner-ink tr" />
+          <span className="canvas-corner canvas-corner-ink bl" />
+          <span className="canvas-corner canvas-corner-ink br" />
         </div>
       </div>
     </section>

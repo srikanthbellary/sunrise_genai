@@ -48,8 +48,8 @@ export default function Contact({ reduced }: { reduced: boolean }) {
 
       <div className="contact-lead">
         <p className="lede js-rise">
-          Architecture through delivery, for enterprises that need the AI to work on Monday. Tell us what is breaking,
-          what is buried, or what nobody wants to map by hand.
+          Architecture through delivery, for enterprises that need the AI to hold up in production. Tell us what is
+          breaking, what is buried, or what nobody wants to map by hand.
         </p>
         <div className="contact-brief js-rise">
           <div className="contact-brief-row">
