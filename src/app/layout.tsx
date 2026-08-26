@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: 'Sunrise Gen AI',
     images: [
       {
-        url: '/sunrise-gen-ai-icon.png',
+        url: '/sunrise-gen-ai-logo.png',
         width: 1024,
         height: 1024,
         alt: 'Sunrise Gen AI',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sunrise Gen AI — Grounding the Autonomous Era',
     description: 'Enterprise GenAI, built to run. Agents, retrieval, and data platforms in production.',
-    images: ['/sunrise-gen-ai-icon.png'],
+    images: ['/sunrise-gen-ai-logo.png'],
   },
   icons: {
     icon: '/sunrise-gen-ai-icon.png',
