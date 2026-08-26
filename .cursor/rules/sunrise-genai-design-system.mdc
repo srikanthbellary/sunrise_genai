@@ -23,9 +23,12 @@ Supersedes the December 2024 lock. Srikanth Bellary authorized this on 25 August
 
 ## Type and color
 
-- Body/UI: Geist. Optional one Instrument Serif italic display line. **Orbitron is not the body font.** Never set paragraphs in a display/sci-fi mono.
-- Colors: void `#000818`, sun `#D9661C`, hot `#FAC345`, teal `#06B6C3`. Body text is warm paper `#E8E2D6`, not teal neon.
-- Header is title-only. Wordmark as the name. No giant logo-as-the-page.
+- Body/UI: Geist at 16–18px, leading ~1.5. Display headings **cap at 40–56px desktop**, smaller on phone. **Orbitron is not the body font.**
+- No viewport-filling words. No billboard nouns. No L-corner frames. No `01 —` chapter chrome.
+- Work is a dense grid/rows — three offers visible at once, not pinned one-word posters.
+- Optional one Instrument Serif italic line at body size. Never set paragraphs in a display/sci-fi mono.
+- Colors: void `#000818`, sun `#D9661C`, hot `#FAC345`, teal `#06B6C3`. Body text is warm paper `#E8E2D6`.
+- Header is title-only and modest. Wordmark as the name.
 
 ## Content
 
@@ -40,5 +43,5 @@ Supersedes the December 2024 lock. Srikanth Bellary authorized this on 25 August
 
 ## Motion
 
-- Pinned work, scroll wipes, horizontal reel. Custom cursor / magnetic only if expensive (no bounce).
-- The page must feel like a Gen AI studio showing off on free GitHub hosting — firm *and* maximum craft. Tasteful brochure = fail.
+- Hero WebGL is the prowess. Film reel may pin horizontally. Do **not** pin work as one-noun billboards.
+- Custom cursor only if quiet (no bounce). Sparse type is not craft. Tasteful empty lookbook = fail.

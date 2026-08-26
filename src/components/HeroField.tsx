@@ -123,10 +123,10 @@ void main() {
   float n = fbm(nUv);
   n += (y - horizon) * 0.42;
   float bands = abs(fract(n * 9.0) - 0.5);
-  float contour = smoothstep(0.055, 0.0, bands);
+  float contour = smoothstep(0.07, 0.0, bands);
   contour *= smoothstep(horizon + 0.01, horizon + 0.10, y);
   contour *= smoothstep(0.96, 0.58, y);
-  contour *= (0.11 + 0.04 * sin(uTime * 0.17 + n * 6.0));
+  contour *= (0.18 + 0.06 * sin(uTime * 0.17 + n * 6.0));
   col += paper * contour * uReveal;
 
   vec2 nodes[7];

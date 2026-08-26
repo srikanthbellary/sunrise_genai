@@ -64,23 +64,22 @@ Accents from the real mark, used as light — not carnival neon.
 
 ---
 
-## Type
+## Type (do not violate)
 
-- **UI / body**: Geist (self-hosted, SIL OFL) — one grotesque. Never Orbitron as the body font.
-- **One display line**: Instrument Serif italic (self-hosted, SIL OFL). Only one role. Never set paragraphs in a display or sci-fi mono.
-- Sentence case. Tight tracking on large Geist. No all-caps chapter chrome (`01 —`, `02 —`).
-- Header is **title-only**: the wordmark is the name, set in type. No giant logo-as-the-page. Logo files may exist for favicon only.
+Linear / Stripe density. Not a fashion lookbook. Not a poster of one noun.
 
----
+- **UI / body**: Geist (self-hosted, SIL OFL). 16–18px, line-height ~1.5. Never Orbitron as the body font.
+- **Display headings**: 40–56px on desktop (`clamp` up to `2.25–2.75rem`). Smaller on phone (~28px). Tight leading. Real hierarchy.
+- **Forbidden**: viewport-filling words, billboard nouns (“Operations” at 100vh), L-corner crop frames, chapter chrome (`01 —`).
+- Optional one Instrument Serif italic line at body size. Never set paragraphs in a display or sci-fi mono.
+- Header is **title-only** and modest. Wordmark as the name. No giant logo-as-the-page.
+- **Work** is a dense row/grid: short titles + usable copy. All three offers visible at once. No cinematic wipe through empty billboards.
 
 ## Motion
 
-Polar26 energy, Sunrise material:
-
-- Pinned sequences, clip-path wipes, a horizontal craft reel
-- Custom cursor and magnetic targets only when they feel expensive (no elastic bounce)
-- Quiet page grain is fine; particle fields are not
-- Desktop pins; mobile stacks or native horizontal snap — do not pin-jank on a phone
+- Hero WebGL is the prowess (pin + field). Horizontal film reel may pin.
+- Do not pin work as one-noun posters. No clip-path billboard wipes on service names.
+- Custom cursor only if it stays quiet. No bounce. No particle fields. Mobile film reel uses native snap.
 
 ---
 
