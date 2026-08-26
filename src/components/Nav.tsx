@@ -42,7 +42,7 @@ export default function Nav() {
     <nav ref={navRef} className="nav" data-stuck={stuck} data-invert={invert}>
       <a className="nav-brand" href="#top" onClick={(e) => jump(e, '#top')} aria-label="Sunrise Gen AI — top">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo-nav.webp" alt="" className="nav-mark" width={26} height={26} />
+        <img src="/sunrise-gen-ai-logo.png" alt="" className="nav-mark" width={26} height={26} />
         <span className="nav-name">Sunrise Gen AI</span>
       </a>
       <div className="nav-links">
