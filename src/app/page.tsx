@@ -48,6 +48,9 @@ export default function Home() {
               </svg>
               Wellington, Florida
             </p>
+            <a className="hero-cta" href="#contact">
+              Get in touch
+            </a>
           </div>
 
           <a className="hero-mail" href="mailto:sbellary@sunrisegenai.com">
@@ -60,34 +63,36 @@ export default function Home() {
 
         <section className="band band-work" id="work">
           <div className="wrap">
-            <p className="kicker">Work</p>
-            <h2>Three kinds of production work.</h2>
+            <p className="kicker">What we do</p>
+            <h2>Consulting for production GenAI.</h2>
             <p className="lead">
-              Short engagements that turn unclear inputs into systems people can run.
+              Production GenAI, grounded retrieval, and data platforms — systems
+              people can run.
             </p>
             <div className="offers">
               <article className="offer">
-                <h3>Operations</h3>
+                <h3>Agents</h3>
                 <p>
-                  Production systems for SRE and operations — incident intelligence,
+                  Production GenAI for operations — incident intelligence,
                   recommended actions, and agents on the tools you already run.
                 </p>
               </article>
               <article className="offer">
-                <h3>Knowledge</h3>
+                <h3>RAG</h3>
                 <p>
                   Grounded retrieval over tickets, docs, and runbooks. Answers that
                   stay honest when the source material is messy.
                 </p>
               </article>
               <article className="offer">
-                <h3>Data</h3>
+                <h3>Data platforms</h3>
                 <p>
                   Schema and mapping across multi-source enterprise data. Pipelines
                   that take unclear inputs to useful outputs.
                 </p>
               </article>
             </div>
+            <p className="quiet-stat">Up to 60% less time on schema and data-pipeline work.</p>
           </div>
         </section>
 
@@ -99,7 +104,7 @@ export default function Home() {
               Portable MCP agent memory. Self-hosted, MIT-licensed, and used in the
               work above.
             </p>
-            <p className="product-meta">MIT · Self-hosted · Persistent memory for agents</p>
+            <p className="product-meta">OSS · MIT · Self-hosted</p>
             <div className="product-links">
               <a href="https://github.com/srikanthbellary/openstinger" target="_blank" rel="noopener noreferrer">
                 GitHub
@@ -111,26 +116,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="band band-films">
-          <div className="wrap">
-            <p className="kicker">Craft</p>
-            <h2>A few films.</h2>
-            <ul className="films">
-              <li>
-                <span>Apocalyptic Roulette</span>
-                <em>Extinction events, one line</em>
-              </li>
-              <li>
-                <span>No Planet For Humans</span>
-                <em>Sentient AI, dystopia</em>
-              </li>
-              <li>
-                <span>Arcane Legacy</span>
-                <em>RunwayML Gen:48</em>
-              </li>
-            </ul>
-          </div>
-        </section>
+        <p className="media-line">
+          Sunrise also does image, video, and audio work using gen AI for content creation.
+        </p>
 
         <section className="band band-contact" id="contact">
           <div className="wrap contact">

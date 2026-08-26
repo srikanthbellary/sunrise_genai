@@ -15,6 +15,7 @@ Desktop fold: dark navy void, warm dawn. A **circuit-board sun** rising on a dig
 - Modest wordmark, top-left: `Sunrise Gen AI` (AI may use `--sun`; same family).
 - Human-sized headline, left column: **Production systems for operations and messy knowledge.**
 - Two short body lines, then Wellington, Florida.
+- CTA to contact.
 - Small nav, top-right: Work, Product, Contact.
 - Email `sbellary@sunrisegenai.com` small at the bottom of the fold.
 - A tiny rising-sun mark is allowed.
@@ -73,16 +74,21 @@ Below the fold: **type + this palette only**.
 
 ---
 
-## Page (one scroll)
+## Page content (one scroll, locked)
 
-One page. After the fold:
+This order only:
 
-1. **Work** — two or three short offers in English (not seven tiles).
-2. **Product** — OpenStinger only.
-3. **Craft** — films as a small text row, not a business unit.
-4. **Contact** — `sbellary@sunrisegenai.com`, `440-340-8383`, Wellington, Florida.
+1. **Hero** — wordmark, POV headline **Production systems for operations and messy knowledge.**, subtle Three.js sun, CTA to contact.
+2. **What we do** — two or three consulting offers in English (production GenAI / RAG / agents / data platforms). Not seven tiles. No fake case studies. A quiet “up to 60%” schema/pipeline line is allowed.
+3. **Product** — OpenStinger only (OSS).
+4. **Media** — one short line, not a section of work: *Sunrise also does image, video, and audio work using gen AI for content creation.* That is the entire media presence. No portfolio, demos, or thumbnails.
+5. **Contact** — Wellington, FL. `sbellary@sunrisegenai.com`. `440-340-8383`. No Gmail. No Hyderabad.
 
 Body line for the firm: we design production systems for operations and messy knowledge, and we ship the tools we use.
+
+### Films are not on this site
+
+Do not add a films, craft, reel, or gallery section. Do not list Apocalyptic Roulette, No Planet For Humans, Arcane Legacy, or any other title. No stills, no YouTube or Vimeo embeds.
 
 ---
 
@@ -103,6 +109,7 @@ Keep GitHub Pages static export:
 - Use video or the causeway clip.
 - List Ingre, Ingredient Scanner, LabelSaber, Swaram, Lensort, Job Book, or parked domains.
 - Add Hyderabad. No Gmail. No fake case studies.
+- Put films, craft rows, or media portfolios back on the page.
 - Use decorative ovals or rings that mean nothing.
 
 ---

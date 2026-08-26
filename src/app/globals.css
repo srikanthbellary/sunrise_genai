@@ -168,6 +168,20 @@ a {
   color: var(--sun);
 }
 
+.hero-cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--hot);
+  border-bottom: 1px solid var(--sun);
+  padding-bottom: 0.1rem;
+}
+
+.hero-cta:hover {
+  color: var(--sun);
+}
+
 .hero-mail {
   position: absolute;
   left: clamp(1.25rem, 5vw, 4.5rem);
@@ -233,14 +247,25 @@ a {
   border-top: 1px solid rgba(6, 182, 195, 0.22);
 }
 
-.band-films {
-  background: var(--field);
-  border-top: 1px solid rgba(250, 195, 69, 0.18);
-}
-
 .band-contact {
   background: var(--indigo);
   border-top: 1px solid var(--rule);
+}
+
+.quiet-stat {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.media-line {
+  margin: 0;
+  padding: 1.35rem clamp(1.25rem, 5vw, 4.5rem);
+  background: var(--field);
+  border-top: 1px solid rgba(6, 182, 195, 0.16);
+  font-size: 0.9375rem;
+  color: var(--muted);
+  max-width: none;
 }
 
 .offers {
@@ -295,32 +320,6 @@ a {
   color: var(--hot);
 }
 
-.films {
-  list-style: none;
-  display: grid;
-  gap: 1.25rem;
-  margin-top: 2rem;
-}
-
-.films li {
-  padding-top: 0.85rem;
-  border-top: 1px solid rgba(217, 102, 28, 0.35);
-}
-
-.films span {
-  display: block;
-  font-size: 1.0625rem;
-  font-weight: 500;
-}
-
-.films em {
-  display: block;
-  margin-top: 0.2rem;
-  font-style: normal;
-  font-size: 0.875rem;
-  color: var(--muted);
-}
-
 .contact-lines {
   display: flex;
   flex-direction: column;
@@ -348,11 +347,6 @@ a {
   .offers {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-  }
-
-  .films {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.75rem;
   }
 }
 
