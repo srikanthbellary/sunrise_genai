@@ -381,19 +381,22 @@ html.lenis body {
   gap: 1rem;
   padding: 0 var(--gutter);
   background: var(--banner-navy);
-  transition: background 0.55s var(--ease), border-color 0.55s var(--ease), backdrop-filter 0.55s var(--ease);
+  transition: background 0.55s var(--ease), border-color 0.55s var(--ease), backdrop-filter 0.55s var(--ease), -webkit-backdrop-filter 0.55s var(--ease);
   border-bottom: 1px solid transparent;
 }
 .nav[data-stuck='true'] {
-  background: rgba(0, 6, 26, 0.12);
-  backdrop-filter: none;
+  background: rgba(0, 6, 26, 0.48);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom-color: transparent;
 }
 .nav[data-invert='true'] {
   color: var(--ink);
 }
 .nav[data-stuck='true'][data-invert='true'] {
-  background: rgba(242, 237, 228, 0.16);
+  background: rgba(242, 237, 228, 0.42);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom-color: rgba(10, 12, 16, 0.06);
 }
 .nav-brand {
