@@ -1,231 +1,74 @@
-# 🔒 SUNRISE GEN AI DESIGN SYSTEM - LOCKED AGREEMENT
+# Sunrise Gen AI — Design System (Locked)
 
-**Status**: ✅ FINAL - LOCKED  
-**Date**: December 2024  
-**Version**: 1.0.0  
+**Status:** Locked  
+**Version:** 2.0.0  
 
-This document represents the **FINAL AGREED DESIGN SPECIFICATIONS** for the Sunrise Gen AI website. This design system has been locked into Cursor rules and should not be modified without explicit client approval.
-
----
-
-## 🎨 FINAL COLOR PALETTE
-
-### Exact Logo Colors (ONLY THESE 4 COLORS)
-```css
-:root {
-  --logo-orange: #FF6B35;    /* Circuit sun, headings, project titles */
-  --logo-cyan: #00F5FF;      /* Palm trees, navigation, content text */
-  --logo-yellow: #FFD23F;    /* Sun glow, accents */
-  --logo-background: #060814; /* Background - slightly darker final version */
-}
-```
-
-**⚠️ CRITICAL**: Only these 4 colors are permitted. No other colors may be used.
+This is the agreed homepage specification for this branch. Do not revert to the previous neon / film / Orbitron system.
 
 ---
 
-## 🖼️ LOGO SPECIFICATIONS
+## Stack
 
-### Final Logo Requirements
-- **File**: `sunrise_gen_ai_logo_enhanced.png`
-- **Hero Size**: `h-96` (384px height - **DOUBLED** from original)
-- **Navigation**: **NO LOGO** - removed redundant navigation logo
-- **Blending**: Logo must blend completely into background
-- **Effects**: **NO GLOW** - removed all filter effects
+- One static HTML page. CSS and inline SVG only.
+- Tiny vanilla JavaScript is allowed only to drive SVG stroke or dash-offset motion.
+- No Three.js, WebGL, React, Next.js app, GSAP, Lottie, video, raster hero images, or particle fields.
+- Self-host IBM Plex Sans (OFL) from `/fonts`. No Orbitron. No remote font CDNs.
 
-### Logo Implementation
-```css
-.logo-with-glow {
-  filter: none;
-  opacity: 0.9;
-}
-```
+The page must remain GitHub Pages-safe: relative asset paths, a static `out/` build, `.nojekyll`.
 
 ---
 
-## 🔤 TYPOGRAPHY - SQUARED FONTS ONLY
+## Palette
 
-### Primary Font: Orbitron
-**Technical, squared font matching "GEN AI" style in logo**
+Use these as a royal / tech field — not carnival neon:
 
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-
-body {
-  font-family: 'Orbitron', monospace;
-}
+--void: #000818;   /* dawn / void field */
+--sun:  #D9661C;
+--hot:  #FAC345;
+--teal: #06B6C3;
 ```
 
-### Font Classes
-```css
-.gen-ai-font {
-  font-family: 'Orbitron', monospace;
-  font-weight: 900;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
-
-.gen-ai-font-medium {
-  font-family: 'Orbitron', monospace;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-.gen-ai-font-light {
-  font-family: 'Orbitron', monospace;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-}
-```
-
-**🚫 NO ROUNDED FONTS** - Only squared, technical fonts are permitted.
+Warm paper (`#E8E2D6`) is permitted for body text on void. Do not introduce extra accent colors.
 
 ---
 
-## 🏗️ LAYOUT STRUCTURE
+## Typography
 
-### Navigation (FINAL)
-- **Position**: Fixed top
-- **Layout**: **CENTERED** navigation items (`justify-center`)
-- **NO redundant logo** in navigation
-- **Menu**: About, Mobile Apps, Multimedia, Consulting, Contact
-- **Background**: `bg-black/50 backdrop-blur-sm border-b border-orange-500/30`
-
-### Hero Section (FINAL)
-- **Logo**: `h-96` (doubled size)
-- **NO "SUNRISE GEN AI" heading** - logo already shows the name
-- **Subtitle only**: "Cutting-Edge AI Solutions for the Future"
-- **Buttons**: "Explore Our Apps" and "Watch Our Films"
+- Family: IBM Plex Sans (400 / 500 / 600), self-hosted woff2.
+- Wordmark / primary headline: 36–40px. Not one giant word. Not all-caps lockups.
+- Body: 16–18px.
+- Restraint over spectacle. No painted lettering.
 
 ---
 
-## 🎭 BACKGROUND DESIGN - CLEAN ONLY
+## Graphics
 
-### Background Specification
-- **CLEAN background ONLY** - NO patterns, NO animations, NO effects
-- **Single layer**: `var(--logo-background)` (#060814)
-- **Logo blending**: Seamless integration with background
-
-```css
-.logo-blend-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--logo-background);
-  z-index: -1;
-}
-```
-
-**🚫 NO CIRCUIT PATTERNS** - Client explicitly requested removal of all background patterns and animations.
+- Simple SVG flow diagrams and wireframe paths: thin lines, nodes, arrows.
+- Motion: slow dash-offset or path-draw, like a schematic breathing.
+- No 3D, orbits, HUD, games, photos, film stills, blob/oval decorations.
 
 ---
 
-## 🎯 BUSINESS CONTENT
+## Page order (hard lock)
 
-### Company Information
-- **Name**: Sunrise Gen AI LLC
-- **Location**: Florida, USA
-- **Domains**: sunrisegen.ai, sunrisegenai.com
-
-### Portfolio
-
-#### Mobile Apps
-1. **LabelSaber.com** - Intelligent Ingredient Analyzer (AI + Computer Vision OCR)
-2. **Swaram.ai** - AI Voice Companion
-3. **Lensort.com** - Photos & Documents Organizer
-
-#### AI Multimedia
-1. **Apocalyptic Roulette** - AI Short Film (Extinction Events)
-2. **No Planet For Humans** - AI Dystopian Film
-3. **Arcane Legacy** - 48-hour RunwayML Festival Entry
-
-#### Services
-- Mobile Apps Development
-- AI Multimedia Creation
-- Enterprise AI Consulting
+1. **Hero** — Wordmark “Sunrise Gen AI”. Point of view: “Production systems for operations and messy knowledge.” SVG flow in the hero. CTA to contact.
+2. **What we do** — Two or three consulting offers in English (production GenAI, RAG/agents, data platforms). Not seven tiles. No fake case studies. A quiet “up to 60% workload reduction on schema / data-pipeline work” line is allowed.
+3. **Product** — OpenStinger only (OSS). No Ingredient Scanner, Ingre, LabelSaber, Swaram, Lensort, Job Book, or parked domains.
+4. **Media** — One sentence, not a section: Sunrise also does image, video, and audio work using gen AI for content creation. No portfolio, demos, or thumbnails.
+5. **Contact** — Wellington, FL. sbellary@sunrisegenai.com. 440-340-8383. No Gmail. No Hyderabad.
 
 ---
 
-## 🚫 FORBIDDEN CHANGES
+## Forbidden
 
-### DO NOT:
-1. ❌ Add circuit patterns or background animations
-2. ❌ Change from Orbitron font to any rounded fonts
-3. ❌ Add redundant logos to navigation
-4. ❌ Add "SUNRISE GEN AI" heading text
-5. ❌ Change the agreed color palette
-6. ❌ Add glow effects to the logo
-7. ❌ Make logo smaller than h-96
-8. ❌ Add any colors outside the 4 approved colors
-
-### ALWAYS:
-1. ✅ Use only the 4 approved logo colors
-2. ✅ Keep Orbitron font for all text
-3. ✅ Maintain clean background without patterns
-4. ✅ Keep logo blended into background
-5. ✅ Center navigation without redundant logo
-6. ✅ Use h-96 for main logo size
+- Short films, reels, titles (Apocalyptic Roulette, No Planet For Humans, Arcane Legacy), stills, or YouTube.
+- Orbitron, neon agency rooms, student neon, black-void “tech bro” chrome.
+- Raster hero images, video backgrounds, Three.js / WebGL heroes.
+- Mentions of other companies’ sites or unrelated product brands in code or copy.
 
 ---
 
-## 📋 IMPLEMENTATION CHECKLIST
+## Quality
 
-When working on this project:
-
-- [ ] **Colors**: Reference only approved CSS variables
-- [ ] **Fonts**: Always use Orbitron font family
-- [ ] **Layout**: Maintain agreed structure
-- [ ] **Logo**: Use `logo-with-glow` class with no effects
-- [ ] **Background**: Keep single clean layer only
-
----
-
-## 🎯 QUALITY STANDARDS
-
-- **Professional**: Clean, minimal, sophisticated
-- **Consistent**: Logo colors throughout all elements
-- **Technical**: Squared fonts, circuit-board inspired cards
-- **Focused**: Content-driven without distracting elements
-- **Accessible**: Proper contrast and readability
-
----
-
-## 📁 PROJECT STRUCTURE
-
-```
-Sunrise_GenAI/                          # Project root
-├── .cursor/                             # Cursor rules
-│   └── rules/
-│       └── sunrise-genai-design-system.mdc  # Design system rule
-├── sunrise-genai-website/               # Next.js website
-│   ├── app/
-│   │   ├── globals.css                  # Design system CSS
-│   │   └── page.tsx                     # Main page
-│   └── public/
-│       └── logo.png                     # Logo file
-├── sunrise_gen_ai_logo_enhanced.png     # Original logo
-├── README.md                            # Project documentation
-├── project-structure.md                 # Architecture docs
-├── project-tracker.md                   # Development tracker
-└── DESIGN-SYSTEM-LOCKED.md             # This file
-```
-
----
-
-## 📞 CLIENT AGREEMENT
-
-**This design system represents the FINAL AGREEMENT between client and developer.**
-
-✅ **Client Approved**: All specifications locked  
-✅ **Cursor Rules**: Implemented for consistency  
-✅ **Documentation**: Complete and comprehensive  
-
-**Any deviations require explicit client approval.**
-
----
-
-*Document created: December 2024*  
-*Status: LOCKED AND FINAL* 
+Enterprise, royal, rich, neat, clean. Dawn/void field. Readable type. Sparse color.

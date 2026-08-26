@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sunrise Gen AI</title>
+  <meta name="description" content="Production systems for operations and messy knowledge. Enterprise AI consulting from Wellington, FL.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000818'/%3E%3Ccircle cx='16' cy='16' r='4' fill='none' stroke='%23D9661C' stroke-width='1.25'/%3E%3Cpath d='M4 16h6M22 16h6M16 4v6M16 22v6' fill='none' stroke='%2306B6C3' stroke-width='1'/%3E%3C/svg%3E">
+  <style>
+    @font-face {
+      font-family: "IBM Plex Sans";
+      src: url("fonts/IBMPlexSans-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "IBM Plex Sans";
+      src: url("fonts/IBMPlexSans-Medium.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "IBM Plex Sans";
+      src: url("fonts/IBMPlexSans-SemiBold.woff2") format("woff2");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --void: #000818;
+      --sun: #D9661C;
+      --hot: #FAC345;
+      --teal: #06B6C3;
+      --paper: #E8E2D6;
+      --muted: rgba(232, 226, 214, 0.64);
+      --line: rgba(6, 182, 195, 0.28);
+      --rule: rgba(217, 102, 28, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: var(--void);
+      color: var(--paper);
+      font-size: 17px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 0;
+    }
+
+    .nav-mark {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      color: var(--paper);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--hot);
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px 0 80px;
+      background:
+        radial-gradient(ellipse 90% 55% at 50% 115%, rgba(217, 102, 28, 0.2), transparent 58%),
+        radial-gradient(ellipse 45% 35% at 78% 100%, rgba(250, 195, 69, 0.08), transparent 52%),
+        var(--void);
+    }
+
+    .hero-copy {
+      max-width: 34rem;
+    }
+
+    .wordmark {
+      font-size: 38px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--paper);
+    }
+
+    .pov {
+      margin-top: 18px;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 28rem;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 32px;
+      padding: 10px 18px;
+      border: 1px solid var(--sun);
+      color: var(--paper);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .cta:hover,
+    .cta:focus-visible {
+      background: var(--sun);
+      color: var(--void);
+    }
+
+    .schematic {
+      margin-top: 64px;
+      width: 100%;
+    }
+
+    .schematic svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .flow {
+      fill: none;
+      stroke: var(--teal);
+      stroke-width: 1.15;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .flow-secondary {
+      stroke: rgba(217, 102, 28, 0.7);
+    }
+
+    .flow-draw {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw-path 5.5s ease 0.2s forwards;
+    }
+
+    .flow-pulse {
+      stroke-dasharray: 5 11;
+      animation: dash-flow 14s linear infinite;
+    }
+
+    .node {
+      fill: var(--void);
+      stroke: var(--hot);
+      stroke-width: 1.25;
+    }
+
+    .node-sun {
+      stroke: var(--sun);
+    }
+
+    .node-teal {
+      stroke: var(--teal);
+    }
+
+    .schematic-label {
+      fill: var(--muted);
+      font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+    }
+
+    @keyframes draw-path {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes dash-flow {
+      to { stroke-dashoffset: -240; }
+    }
+
+    main section {
+      padding: 88px 0;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sun);
+      margin-bottom: 28px;
+    }
+
+    .offers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 36px;
+    }
+
+    .offer h3 {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+
+    .offer p,
+    .note,
+    .product p,
+    .media-line,
+    .contact-block p,
+    .foot {
+      color: var(--muted);
+    }
+
+    .note {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule);
+      font-size: 16px;
+    }
+
+    .product h2 {
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .product p {
+      max-width: 36rem;
+    }
+
+    .product-links {
+      display: flex;
+      gap: 28px;
+      margin-top: 22px;
+      list-style: none;
+    }
+
+    .product-links a {
+      color: var(--teal);
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .product-links a:hover,
+    .product-links a:focus-visible {
+      color: var(--hot);
+    }
+
+    .media-line {
+      padding: 0 0 8px;
+      max-width: 40rem;
+      font-size: 16px;
+    }
+
+    #contact {
+      border-top: 1px solid var(--rule);
+    }
+
+    .contact-block h2 {
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .contact-block a {
+      color: var(--paper);
+      text-decoration: none;
+    }
+
+    .contact-block a:hover,
+    .contact-block a:focus-visible {
+      color: var(--hot);
+    }
+
+    .contact-block p + p {
+      margin-top: 6px;
+    }
+
+    footer {
+      padding: 0 0 40px;
+    }
+
+    .foot {
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .wrap {
+        width: min(1080px, calc(100% - 36px));
+      }
+
+      .wordmark {
+        font-size: 36px;
+      }
+
+      .offers {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 56px 0 64px;
+      }
+
+      .schematic {
+        margin-top: 48px;
+      }
+
+      main section {
+        padding: 64px 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      body {
+        font-size: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .flow-draw,
+      .flow-pulse {
+        animation: none;
+        stroke-dasharray: none;
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-mark" href="#top">Sunrise Gen AI</a>
+        <ul class="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#product">Product</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-copy" id="top">
+        <h1 class="wordmark">Sunrise Gen AI</h1>
+        <p class="pov">Production systems for operations and messy knowledge.</p>
+        <a class="cta" href="#contact">Contact</a>
+      </div>
+
+      <figure class="schematic" aria-hidden="true">
+        <svg viewBox="0 0 1080 220" role="img">
+          <title>Production flow from sources through index, retrieval, and reasoning to operations</title>
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 1.4 L9 5 L0 8.6" fill="none" stroke="#06B6C3" stroke-width="1.2" />
+            </marker>
+          </defs>
+
+          <path class="flow flow-draw" pathLength="1" d="M70 78 H250" marker-end="url(#arrow)" />
+          <path class="flow flow-draw" pathLength="1" d="M310 78 H490" marker-end="url(#arrow)" />
+          <path class="flow flow-draw" pathLength="1" d="M550 78 H730" marker-end="url(#arrow)" />
+          <path class="flow flow-draw" pathLength="1" d="M790 78 H970" marker-end="url(#arrow)" />
+
+          <path class="flow flow-secondary flow-draw" pathLength="1" d="M250 78 C250 148 790 148 790 78" />
+          <path class="flow flow-pulse" d="M70 78 H1010" />
+
+          <path class="flow flow-draw" pathLength="1" d="M70 38 V62" />
+          <path class="flow flow-draw" pathLength="1" d="M40 48 H70" />
+          <path class="flow flow-draw" pathLength="1" d="M100 48 H70" />
+
+          <circle class="node node-teal" cx="70" cy="78" r="5.5" />
+          <circle class="node node-sun" cx="280" cy="78" r="5.5" />
+          <circle class="node node-teal" cx="520" cy="78" r="5.5" />
+          <circle class="node" cx="760" cy="78" r="5.5" />
+          <circle class="node node-sun" cx="1010" cy="78" r="5.5" />
+          <circle class="node node-teal" cx="520" cy="148" r="4.5" />
+
+          <text class="schematic-label" x="70" y="200" text-anchor="middle">SOURCES</text>
+          <text class="schematic-label" x="280" y="200" text-anchor="middle">INDEX</text>
+          <text class="schematic-label" x="520" y="200" text-anchor="middle">RETRIEVE</text>
+          <text class="schematic-label" x="760" y="200" text-anchor="middle">REASON</text>
+          <text class="schematic-label" x="1010" y="200" text-anchor="middle">OPERATIONS</text>
+          <text class="schematic-label" x="520" y="172" text-anchor="middle">STORE</text>
+        </svg>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <section id="work">
+      <div class="wrap">
+        <p class="section-kicker">What we do</p>
+        <div class="offers">
+          <article class="offer">
+            <h3>Production GenAI</h3>
+            <p>We design and operate production systems: evaluation, guardrails, and the path from a working prototype to something operations will actually use.</p>
+          </article>
+          <article class="offer">
+            <h3>RAG and agents</h3>
+            <p>Retrieval and agents over tickets, documents, and runbooks — grounded answers, tool use, and the wiring into the systems you already run.</p>
+          </article>
+          <article class="offer">
+            <h3>Data platforms</h3>
+            <p>Schema mapping, pipelines, and platforms across messy multi-source data. Lakes, ETL/ELT, and the work that makes the rest possible.</p>
+          </article>
+        </div>
+        <p class="note">Up to 60% workload reduction on schema / data-pipeline work.</p>
+      </div>
+    </section>
+
+    <section id="product">
+      <div class="wrap product">
+        <p class="section-kicker">Product</p>
+        <h2>OpenStinger</h2>
+        <p>Open-source, portable MCP agent memory. Self-hosted. MIT licensed. Persistent context that travels with the workflow.</p>
+        <ul class="product-links">
+          <li><a href="https://github.com/srikanthbellary/openstinger" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://openstinger.com" rel="noopener noreferrer">openstinger.com</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <p class="media-line">Sunrise also does image, video, and audio work using gen AI for content creation.</p>
+    </div>
+
+    <section id="contact">
+      <div class="wrap contact-block">
+        <p class="section-kicker">Contact</p>
+        <h2>Wellington, FL</h2>
+        <p><a href="mailto:sbellary@sunrisegenai.com">sbellary@sunrisegenai.com</a></p>
+        <p><a href="tel:+14403408383">440-340-8383</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="foot">© 2026 Sunrise Gen AI LLC</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var pulses = document.querySelectorAll(".flow-pulse");
+      for (var i = 0; i < pulses.length; i++) {
+        var path = pulses[i];
+        var length = path.getTotalLength();
+        path.style.strokeDasharray = "6 " + Math.max(10, Math.round(length / 48));
+      }
+    })();
+  </script>
+</body>
+</html>
