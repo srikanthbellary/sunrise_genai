@@ -68,14 +68,14 @@ export default function Hero({ start, reduced }: { start: boolean; reduced: bool
       <div className="hero-inner">
         <div className="hero-meta">
           <div className="hero-meta-block">
-            <strong>In production</strong>
-            <span>Agents for SRE — Verizon</span>
-            <span>Attribute &amp; schema mapping — Circana</span>
-            <span>Mainframe to cloud — Thermo Fisher</span>
+            <strong>What we build</strong>
+            <span>Incident intelligence and agent operations</span>
+            <span>Grounded retrieval over tickets, docs, runbooks</span>
+            <span>Data platforms, mapping, and migrations</span>
           </div>
           <div className="hero-meta-rule" />
           <div className="hero-meta-block">
-            <strong>Shipping</strong>
+            <strong>What we ship</strong>
             <span>OpenStinger — portable MCP agent memory</span>
             <span>Ingre — scan food and beauty labels</span>
           </div>
@@ -91,9 +91,9 @@ export default function Hero({ start, reduced }: { start: boolean; reduced: bool
             {HERO.headline.map((line, i) => (
               <span className="line-mask" key={line}>
                 <span className="line-inner">
-                  {i === 2 ? (
+                  {i === HERO.headline.length - 1 ? (
                     <>
-                      messy <em>knowledge.</em>
+                      built to <em>run.</em>
                     </>
                   ) : (
                     line
@@ -110,7 +110,7 @@ export default function Hero({ start, reduced }: { start: boolean; reduced: bool
         </div>
 
         <div className="hero-foot">
-          <span className="mono">Enterprise AI &amp; data · Est. Wellington, FL</span>
+          <span className="mono">Sunrise Gen AI LLC · Wellington, FL</span>
           <span className="hero-scroll mono">
             <i />
             Scroll

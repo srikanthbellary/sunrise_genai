@@ -3,13 +3,13 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sunrisegenai.com'),
-  title: 'Sunrise Gen AI — Production systems for operations and messy knowledge',
+  title: 'Sunrise Gen AI — Enterprise GenAI, built to run',
   description:
-    'Sunrise Gen AI is an enterprise AI and data practice in Wellington, FL. Agentic operations, retrieval over messy knowledge, and GenAI data pipelines that hold up in production — plus OpenStinger and Ingre.',
+    'Sunrise Gen AI LLC is an enterprise GenAI and data practice in Wellington, FL. Agents inside operations, grounded retrieval, and data platforms in production — plus OpenStinger and Ingre.',
   keywords: [
-    'enterprise AI consulting',
+    'enterprise GenAI consulting',
     'agentic operations',
-    'SRE agents',
+    'incident intelligence',
     'RAG',
     'GraphRAG',
     'MCP',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Sunrise Gen AI — Grounding the Autonomous Era',
     description:
-      'Production systems for operations and messy knowledge. Enterprise AI and data consulting, OpenStinger portable MCP agent memory, and Ingre label scanning.',
+      'Enterprise GenAI, built to run. Agents, retrieval, and data platforms in production, plus OpenStinger portable MCP agent memory and Ingre label scanning.',
     type: 'website',
     locale: 'en_US',
     siteName: 'Sunrise Gen AI',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sunrise Gen AI — Grounding the Autonomous Era',
-    description: 'Production systems for operations and messy knowledge.',
+    description: 'Enterprise GenAI, built to run. Agents, retrieval, and data platforms in production.',
   },
   icons: {
     icon: '/logo-nav.webp',

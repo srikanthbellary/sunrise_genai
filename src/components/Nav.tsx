@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ScrollTrigger, scrollToId } from '@/lib/motion'
 
 const LINKS = [
-  { id: '#consulting', label: 'Consulting' },
+  { id: '#consulting', label: 'Capabilities' },
   { id: '#openstinger', label: 'OpenStinger' },
   { id: '#ingre', label: 'Ingre' },
   { id: '#contact', label: 'Contact' },

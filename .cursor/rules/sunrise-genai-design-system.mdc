@@ -27,19 +27,31 @@ lives in `src/app/globals.css`.
 
 ## Page order
 
-Fold → 01 Consulting (pinned engagement rail + capability matrix) → 02 OpenStinger →
+Fold → 01 What we do (pinned offers rail + capability matrix) → 02 OpenStinger →
 03 Ingre (light chapter) → 04 Media (one sentence) → 05 Contact.
+
+Hero headline is **"Enterprise GenAI, built to run."** with the subline *Agents,
+retrieval, and data platforms in production.* The old line "Production systems for
+operations and messy knowledge" is dead — do not restore it, and keep the phrase
+"messy knowledge" out of the hero.
 
 ## Content rules
 
+- This is **Sunrise Gen AI LLC selling to enterprises**, not a personal site. Write
+  capabilities as offers, never as a career history. No résumé timeline, no
+  years-of-experience count, no personal certifications, no "I led". A principal may be
+  named in the footer only.
+- Never present a past employer as a Sunrise engagement or case study — including
+  Verizon, Cognizant, Circana, Interas, Thermo Fisher, Persistent, CVS, Change
+  Healthcare, McDonald's. They are personal employers, not Sunrise clients. Do not
+  invent Sunrise clients either.
+- Outcome claims are limited to *up to 60% less time on schema and mapping work* and
+  *3× throughput on attribute mapping*, framed as what we deliver.
 - **Ingre must stay on the page** and is written as a pitch: "Scan food and beauty
-  labels. See harmful ingredients." Android and iOS. ingre.ai.
-- Never write, for Ingre: Play testing, Google testing, Mac Studio, Flutter,
-  "in development", or LabelSaber.
+  labels. See harmful ingredients." Android and iOS. ingre.ai. Never write, for Ingre:
+  Play testing, Google testing, Mac Studio, Flutter, "in development", or LabelSaber.
 - Never write: a Gmail address, Hyderabad, a film reel or named short films,
   Job Book, Swaram, Lensort, parked domains, PBL, or study forks.
-- No invented case studies, clients, or metrics. Consulting content is Verizon,
-  Circana (60% / 75% / 3×), Thermo Fisher, CVS Health, and the earlier-work band.
 - Contact is Wellington, FL · sbellary@sunrisegenai.com · 440-340-8383.
 
 ## Build

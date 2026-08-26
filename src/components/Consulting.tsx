@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { gsap, ScrollTrigger, revealLines, riseIn } from '@/lib/motion'
-import { CAPABILITIES, ENGAGEMENTS } from '@/lib/content'
+import { CAPABILITIES, OFFERS, PROOF } from '@/lib/content'
 
 export default function Consulting({ reduced }: { reduced: boolean }) {
   const rootRef = useRef<HTMLElement>(null)
@@ -27,7 +27,7 @@ export default function Consulting({ reduced }: { reduced: boolean }) {
       if (max <= 0) return
       const p = viewport.scrollLeft / max
       if (progressRef.current) progressRef.current.style.transform = `scaleX(${p})`
-      markActive(Math.min(ENGAGEMENTS.length - 1, Math.round(p * (ENGAGEMENTS.length - 1))))
+      markActive(Math.min(OFFERS.length - 1, Math.round(p * (OFFERS.length - 1))))
     }
     viewport.addEventListener('scroll', onScroll, { passive: true })
     return () => viewport.removeEventListener('scroll', onScroll)
@@ -63,7 +63,7 @@ export default function Consulting({ reduced }: { reduced: boolean }) {
             invalidateOnRefresh: true,
             onUpdate: (self) => {
               if (progressRef.current) gsap.set(progressRef.current, { scaleX: self.progress })
-              markActive(Math.min(ENGAGEMENTS.length - 1, Math.floor(self.progress * ENGAGEMENTS.length)))
+              markActive(Math.min(OFFERS.length - 1, Math.floor(self.progress * OFFERS.length)))
             },
           },
         })
@@ -91,30 +91,31 @@ export default function Consulting({ reduced }: { reduced: boolean }) {
         <div>
           <div className="section-tag js-rise">
             <i />
-            <span className="mono">01 — Consulting</span>
+            <span className="mono">01 — What we do</span>
           </div>
           <h2 className="section-title">
             <span className="line-mask">
-              <span className="line-inner">Fifteen years of</span>
+              <span className="line-inner">We build the AI</span>
             </span>
             <span className="line-mask">
-              <span className="line-inner">enterprise data,</span>
+              <span className="line-inner">that has to work</span>
             </span>
             <span className="line-mask">
               <span className="line-inner">
-                <span className="dim">pointed at agents.</span>
+                <span className="dim">on Monday.</span>
               </span>
             </span>
           </h2>
         </div>
         <div>
           <p className="lede js-rise">
-            We are hired when the AI has to survive contact with production: real telemetry, real tickets, real
-            regulated workflows, and data that never agreed on a schema. Below is where that work has actually run.
+            Sunrise Gen AI is an enterprise GenAI and data practice. We are engaged when the model has to survive
+            contact with production: live telemetry, real tickets, regulated workflows, and data that never agreed on a
+            schema. These are the offers.
           </p>
           <div className="js-rise" style={{ marginTop: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-            <span className="chip chip-sun">15+ years</span>
-            <span className="chip chip-teal">Google Cloud Professional Data Engineer</span>
+            <span className="chip chip-sun">MCP-native delivery</span>
+            <span className="chip chip-teal">Evaluation &amp; guardrails</span>
             <span className="chip">AWS · Azure · GCP</span>
           </div>
         </div>
@@ -122,34 +123,34 @@ export default function Consulting({ reduced }: { reduced: boolean }) {
 
       <div className="rail-stage" ref={stageRef}>
         <div className="rail-head">
-          <span className="mono">Selected engagements</span>
+          <span className="mono">What we deliver</span>
           <span className="mono rail-hint">Keep scrolling — the rail advances</span>
-          <span className="mono tabular">{String(ENGAGEMENTS.length).padStart(2, '0')} programs</span>
+          <span className="mono tabular">{String(OFFERS.length).padStart(2, '0')} offers</span>
         </div>
         <div className="rail-viewport">
           <div className="rail-track" ref={trackRef}>
-            {ENGAGEMENTS.map((e, i) => (
-              <article className="engagement" key={e.id} data-cursor="card">
+            {OFFERS.map((offer, i) => (
+              <article className="engagement" key={offer.id} data-cursor="card">
                 <header className="engagement-top">
                   <span className="mono-sm tabular">
-                    {String(i + 1).padStart(2, '0')} / {String(ENGAGEMENTS.length).padStart(2, '0')}
+                    {String(i + 1).padStart(2, '0')} / {String(OFFERS.length).padStart(2, '0')}
                   </span>
-                  <span className="mono-sm">{e.discipline}</span>
+                  <span className="mono-sm">{offer.discipline}</span>
                 </header>
 
-                <h3 className="engagement-client">{e.client}</h3>
-                <p className="engagement-program">{e.program}</p>
-                <p className="engagement-summary">{e.summary}</p>
+                <h3 className="engagement-client">{offer.title}</h3>
+                <p className="engagement-program">{offer.kicker}</p>
+                <p className="engagement-summary">{offer.summary}</p>
 
                 <ul className="engagement-points">
-                  {e.points.map((p) => (
+                  {offer.points.map((p) => (
                     <li key={p}>{p}</li>
                   ))}
                 </ul>
 
-                {e.metrics && (
-                  <div className="engagement-metrics">
-                    {e.metrics.map((m) => (
+                {offer.metrics && (
+                  <div className="engagement-metrics engagement-metrics-2">
+                    {offer.metrics.map((m) => (
                       <div key={m.value}>
                         <div className="metric-value">{m.value}</div>
                         <div className="metric-label">{m.label}</div>
@@ -165,9 +166,9 @@ export default function Consulting({ reduced }: { reduced: boolean }) {
           <i ref={progressRef} />
         </div>
         <div className="rail-foot" ref={footRef}>
-          {ENGAGEMENTS.map((e, i) => (
-            <span className="rail-foot-item mono" key={e.id} data-active={i === 0}>
-              <em style={{ fontStyle: 'normal' }}>{String(i + 1).padStart(2, '0')}</em> {e.client}
+          {OFFERS.map((offer, i) => (
+            <span className="rail-foot-item mono" key={offer.id} data-active={i === 0}>
+              <em style={{ fontStyle: 'normal' }}>{String(i + 1).padStart(2, '0')}</em> {offer.title}
             </span>
           ))}
         </div>
@@ -184,18 +185,12 @@ export default function Consulting({ reduced }: { reduced: boolean }) {
       </div>
 
       <div className="creds">
-        <div className="creds-item">
-          <span className="creds-value tabular">15+</span>
-          <span className="mono">Years in enterprise data</span>
-        </div>
-        <div className="creds-item">
-          <span className="creds-value tabular">04</span>
-          <span className="mono">Fortune-scale programs on this page</span>
-        </div>
-        <div className="creds-item">
-          <span className="creds-value">GCP</span>
-          <span className="mono">Professional Data Engineer</span>
-        </div>
+        {PROOF.map((p) => (
+          <div className="creds-item" key={p.value}>
+            <span className="creds-value tabular">{p.value}</span>
+            <span className="mono">{p.label}</span>
+          </div>
+        ))}
       </div>
     </section>
   )

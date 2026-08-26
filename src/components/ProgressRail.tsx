@@ -5,7 +5,7 @@ import { scrollToId } from '@/lib/motion'
 
 const SECTIONS = [
   { id: 'top', n: '00', label: 'Fold' },
-  { id: 'consulting', n: '01', label: 'Consulting' },
+  { id: 'consulting', n: '01', label: 'Capabilities' },
   { id: 'openstinger', n: '02', label: 'OpenStinger' },
   { id: 'ingre', n: '03', label: 'Ingre' },
   { id: 'media', n: '04', label: 'Media' },

@@ -48,25 +48,25 @@ export default function Contact({ reduced }: { reduced: boolean }) {
 
       <div className="contact-lead">
         <p className="lede js-rise">
-          Architecture through delivery, for teams that need the AI to work on Monday. Tell us what is breaking, what is
-          buried, or what nobody wants to map by hand.
+          Architecture through delivery, for enterprises that need the AI to work on Monday. Tell us what is breaking,
+          what is buried, or what nobody wants to map by hand.
         </p>
         <div className="contact-brief js-rise">
           <div className="contact-brief-row">
-            <span>Agents inside operations</span>
-            <span>Consulting</span>
+            <span>Agents inside your operations</span>
+            <span>Engagement</span>
           </div>
           <div className="contact-brief-row">
-            <span>Retrieval over messy knowledge</span>
-            <span>Consulting</span>
+            <span>Grounded retrieval over your own knowledge</span>
+            <span>Engagement</span>
           </div>
           <div className="contact-brief-row">
-            <span>GenAI data and schema pipelines</span>
-            <span>Consulting</span>
+            <span>Schema, mapping, and data platforms</span>
+            <span>Engagement</span>
           </div>
           <div className="contact-brief-row">
-            <span>Platform, MLOps, and mainframe migration</span>
-            <span>Consulting</span>
+            <span>Legacy-to-cloud migration and MLOps</span>
+            <span>Engagement</span>
           </div>
         </div>
       </div>
@@ -122,7 +122,9 @@ export default function Contact({ reduced }: { reduced: boolean }) {
       </div>
 
       <footer className="footer">
-        <span className="mono">© {new Date().getFullYear()} Sunrise Gen AI LLC</span>
+        <span className="mono">
+          © {new Date().getFullYear()} {CONTACT.company} · {CONTACT.principal}
+        </span>
         <span className="mono">Grounding the Autonomous Era</span>
         <span className="mono">
           <a href="https://github.com/srikanthbellary/openstinger" target="_blank" rel="noopener noreferrer">

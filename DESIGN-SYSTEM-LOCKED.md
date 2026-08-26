@@ -45,11 +45,12 @@ Display type is Cormorant at `letter-spacing: -0.012em` — never tight grotesqu
 ## 3. Page order (locked)
 
 1. **Fold** — WebGL dawn hero over `sunrise-causeway.mp4`. Wordmark, headline
-   *Production systems for operations and messy knowledge.*, tagline
-   *Grounding the Autonomous Era*, live "in production / shipping" meta panel.
-2. **01 Consulting** — scroll-pinned rail of real engagements (Verizon, Circana,
-   Thermo Fisher, CVS Health, earlier work), then the nine-cell capability matrix
-   and the credentials strip (15+ years, GCP Professional Data Engineer).
+   **Enterprise GenAI, built to run.**, subline *Agents, retrieval, and data platforms
+   in production.*, tagline *Grounding the Autonomous Era*, and a
+   "what we build / what we ship" meta panel.
+2. **01 What we do** — scroll-pinned rail of the five **offers** (agentic operations,
+   grounded retrieval, data platforms, migration and modernization, production LLM
+   systems), then the nine-cell capability matrix and the proof strip.
 3. **02 OpenStinger** — portable MCP agent memory, with the animated write/recall
    figure. Links to github.com/srikanthbellary/openstinger and openstinger.com.
 4. **03 Ingre** — the light chapter. **Ingre is a pitch and must stay on the page.**
@@ -61,17 +62,31 @@ Display type is Cormorant at `letter-spacing: -0.012em` — never tight grotesqu
 
 ## 4. Content rules
 
+**This is Sunrise Gen AI LLC selling to enterprises. It is not a personal site.**
+Capabilities are written as offers — what we deliver for a client — never as a career
+history. A principal may be named in the footer; the hero and the offers are the company.
+
 **Never write**, on any page:
 
+- Any past employer as a Sunrise engagement, biography, or case study — including
+  Verizon, Cognizant, Circana, Interas, Thermo Fisher, Persistent, CVS, Change
+  Healthcare, or McDonald's. They are personal employers, not Sunrise clients.
+- A résumé timeline, years-of-experience counts, personal certifications, or "I led".
+- Invented Sunrise clients, invented case studies, or logos we do not have.
+- The dead hero line "Production systems for operations and messy knowledge", or the
+  phrase "messy knowledge" in the hero.
 - For Ingre: "Play testing", "Google testing", "Mac Studio", "Flutter",
-  "in development", or the old name "LabelSaber". Ingre is presented as a product,
-  not a status report.
+  "in development", or the old name "LabelSaber". Ingre is a product pitch, not a
+  status report.
 - Gmail addresses. Hyderabad. A film reel or named short films.
 - Job Book, Swaram, Lensort, parked domains, PBL, or study forks.
-- Invented case studies, invented clients, or metrics beyond the ones on this page.
 
-**Always keep**: Ingre, OpenStinger, the five consulting engagements, the Circana
-figures (60% / 75% / 3×), "15+ years", and the Wellington contact block.
+**Outcome claims** are limited to the two firm ones, and they are framed as what we
+deliver, not where anyone worked: *up to 60% less time on schema and mapping work* and
+*3× throughput on attribute mapping*.
+
+**Always keep**: the five offers, the capability matrix, OpenStinger, Ingre, the one
+media sentence, and the Wellington contact block.
 
 ---
 
