@@ -63,22 +63,15 @@ This is the official website for **Sunrise Gen AI LLC**, a Florida-based company
 - **Body**: System fonts for performance
 - **Accent**: Orbitron (Futuristic feel)
 
-## 📱 Portfolio Showcase
+## Site content (locked)
 
-### Mobile Apps
-1. **LabelSaber.com** - AI Ingredient Analyzer
-2. **Swaram.ai** - AI Voice Companion
-3. **Lensort.com** - Photos & Documents Organizer
+One page, this order only: hero → what we do (2–3 consulting offers) → OpenStinger → one media line → contact.
 
-### AI Consulting - Enterprise AI Solutions
-1. **AI Data Pipelines** - AI/LLM enabled Data Pipelines with highly accurate schema mapping (Upto 60% workload reduction acheived)
-2. **AI Agents** - AI/LLM enabled Agents providing real-time suggestions for Site Reliability Engineering [SRE] Platforms (Reduce Mean Time to Resolution [MTTR])
-3. **AI Chatbots** - AI/LLM enabled Chatbots to query cloud logs and monitoring alerts (Providing valuable insights and reduce turn around times)
+Films are not on this site. Do not add a craft/films section, titles, stills, or embeds.
 
-### AI Multimedia
-1. **Apocalyptic Roulette** - AI Short Film (Extinction Events)
-2. **No Planet For Humans** - AI Short Film (AI Dystopia)
-3. **Arcane Legacy** - 48-hour AI Film (RunwayML Festival)
+Media is one sentence: Sunrise also does image, video, and audio work using gen AI for content creation.
+
+Product: OpenStinger only. Contact: Wellington, FL · sbellary@sunrisegenai.com · 440-340-8383.
 
 ## 🚀 Getting Started
 
