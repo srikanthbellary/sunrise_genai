@@ -10,22 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         void: {
-          DEFAULT: '#000818',
-          deep: '#000000',
+          DEFAULT: '#000816',
+          deep: '#00040d',
         },
         sun: '#D9661C',
         hot: '#FAC345',
         teal: '#06B6C3',
+        bone: '#F2EDE4',
+        ink: '#0A0C10',
       },
       fontFamily: {
-        orbitron: ['Orbitron', 'monospace'],
-      },
-      letterSpacing: {
-        'tighter': '-0.04em',
-        'tight': '-0.02em',
-        'wide': '0.1em',
-        'wider': '0.2em',
-        'widest': '0.3em',
+        display: ['Cormorant Garamond', 'Garamond', 'Georgia', 'serif'],
+        body: ['Source Serif 4', 'Georgia', 'serif'],
       },
     },
   },
