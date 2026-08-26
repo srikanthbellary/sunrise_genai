@@ -86,7 +86,7 @@
   --gutter: clamp(1.15rem, 4vw, 4.5rem);
   /* Reserve room on wide screens so the section rail never sits on top of copy. */
   --gutter-r: var(--gutter);
-  --nav-h: 4.25rem;
+  --nav-h: 6rem;
   /* Sampled from the approved lockup PNG corners so the mark tile disappears into the bar. */
   --banner-navy: #00061a;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -405,7 +405,7 @@ html.lenis body {
   display: block;
   width: clamp(160px, 18vw, 220px);
   height: auto;
-  max-height: calc(var(--nav-h) - 0.5rem);
+  max-height: calc(var(--nav-h) - 0.75rem);
   object-fit: contain;
   object-position: left center;
 }
