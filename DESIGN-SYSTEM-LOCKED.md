@@ -1,231 +1,94 @@
-# 🔒 SUNRISE GEN AI DESIGN SYSTEM - LOCKED AGREEMENT
+# SUNRISE GEN AI — DESIGN SYSTEM (LOCKED)
 
-**Status**: ✅ FINAL - LOCKED  
-**Date**: December 2024  
-**Version**: 1.0.0  
+**Status**: Current for the competition homepage
+**Supersedes**: the December 2024 Orbitron / neon / four-colour lock, which is void.
 
-This document represents the **FINAL AGREED DESIGN SPECIFICATIONS** for the Sunrise Gen AI website. This design system has been locked into Cursor rules and should not be modified without explicit client approval.
-
----
-
-## 🎨 FINAL COLOR PALETTE
-
-### Exact Logo Colors (ONLY THESE 4 COLORS)
-```css
-:root {
-  --logo-orange: #FF6B35;    /* Circuit sun, headings, project titles */
-  --logo-cyan: #00F5FF;      /* Palm trees, navigation, content text */
-  --logo-yellow: #FFD23F;    /* Sun glow, accents */
-  --logo-background: #060814; /* Background - slightly darker final version */
-}
-```
-
-**⚠️ CRITICAL**: Only these 4 colors are permitted. No other colors may be used.
+This file is authoritative. If an older instruction conflicts with it, this file wins.
 
 ---
 
-## 🖼️ LOGO SPECIFICATIONS
-
-### Final Logo Requirements
-- **File**: `sunrise_gen_ai_logo_enhanced.png`
-- **Hero Size**: `h-96` (384px height - **DOUBLED** from original)
-- **Navigation**: **NO LOGO** - removed redundant navigation logo
-- **Blending**: Logo must blend completely into background
-- **Effects**: **NO GLOW** - removed all filter effects
-
-### Logo Implementation
-```css
-.logo-with-glow {
-  filter: none;
-  opacity: 0.9;
-}
-```
-
----
-
-## 🔤 TYPOGRAPHY - SQUARED FONTS ONLY
-
-### Primary Font: Orbitron
-**Technical, squared font matching "GEN AI" style in logo**
+## 1. Palette
 
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-
-body {
-  font-family: 'Orbitron', monospace;
-}
+--void:       #000816;  /* page field */
+--void-deep:  #00040D;  /* deepest bands */
+--sun:        #D9661C;  /* primary accent */
+--hot:        #FAC345;  /* highlight, italic emphasis, metrics */
+--teal:       #06B6C3;  /* signal, taglines, recall paths */
+--bone:       #F2EDE4;  /* the light chapter (Ingre) */
+--ink:        #0A0C10;  /* type on bone */
 ```
 
-### Font Classes
-```css
-.gen-ai-font {
-  font-family: 'Orbitron', monospace;
-  font-weight: 900;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
-
-.gen-ai-font-medium {
-  font-family: 'Orbitron', monospace;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-.gen-ai-font-light {
-  font-family: 'Orbitron', monospace;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-}
-```
-
-**🚫 NO ROUNDED FONTS** - Only squared, technical fonts are permitted.
+Off-white text (`rgba(238,234,226,·)`) is part of the system. Neon cyan `#00F5FF`,
+orange `#FF6B35`, and yellow `#FFD23F` are **retired**.
 
 ---
 
-## 🏗️ LAYOUT STRUCTURE
+## 2. Typography — self-hosted, no runtime Google Fonts
 
-### Navigation (FINAL)
-- **Position**: Fixed top
-- **Layout**: **CENTERED** navigation items (`justify-center`)
-- **NO redundant logo** in navigation
-- **Menu**: About, Mobile Apps, Multimedia, Consulting, Contact
-- **Background**: `bg-black/50 backdrop-blur-sm border-b border-orange-500/30`
+| Role | Family | Files |
+| --- | --- | --- |
+| Display, wordmark, headings | **Cormorant Garamond** (variable 300–700, roman + italic) | `public/fonts/cormorant-garamond-*.woff2` |
+| Body, labels, UI | **Source Serif 4** (variable 200–900) | `public/fonts/source-serif-4-*.woff2` |
 
-### Hero Section (FINAL)
-- **Logo**: `h-96` (doubled size)
-- **NO "SUNRISE GEN AI" heading** - logo already shows the name
-- **Subtitle only**: "Cutting-Edge AI Solutions for the Future"
-- **Buttons**: "Explore Our Apps" and "Watch Our Films"
+Both are SIL OFL and committed to this repository. `@font-face` lives in
+`src/app/globals.css`; the latin files are preloaded in `src/app/layout.tsx`.
 
----
+**Forbidden**: Orbitron. Also forbidden as the page's voice: Geist, Inter, IBM Plex,
+Arial, `system-ui`, and any default SaaS grotesque. No `<link>` to fonts.googleapis.com.
 
-## 🎭 BACKGROUND DESIGN - CLEAN ONLY
-
-### Background Specification
-- **CLEAN background ONLY** - NO patterns, NO animations, NO effects
-- **Single layer**: `var(--logo-background)` (#060814)
-- **Logo blending**: Seamless integration with background
-
-```css
-.logo-blend-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--logo-background);
-  z-index: -1;
-}
-```
-
-**🚫 NO CIRCUIT PATTERNS** - Client explicitly requested removal of all background patterns and animations.
+Small labels are Source Serif 4, uppercase, 600 weight, `letter-spacing: 0.22em`.
+Display type is Cormorant at `letter-spacing: -0.012em` — never tight grotesque tracking.
 
 ---
 
-## 🎯 BUSINESS CONTENT
+## 3. Page order (locked)
 
-### Company Information
-- **Name**: Sunrise Gen AI LLC
-- **Location**: Florida, USA
-- **Domains**: sunrisegen.ai, sunrisegenai.com
-
-### Portfolio
-
-#### Mobile Apps
-1. **LabelSaber.com** - Intelligent Ingredient Analyzer (AI + Computer Vision OCR)
-2. **Swaram.ai** - AI Voice Companion
-3. **Lensort.com** - Photos & Documents Organizer
-
-#### AI Multimedia
-1. **Apocalyptic Roulette** - AI Short Film (Extinction Events)
-2. **No Planet For Humans** - AI Dystopian Film
-3. **Arcane Legacy** - 48-hour RunwayML Festival Entry
-
-#### Services
-- Mobile Apps Development
-- AI Multimedia Creation
-- Enterprise AI Consulting
+1. **Fold** — WebGL dawn hero over `sunrise-causeway.mp4`. Wordmark, headline
+   *Production systems for operations and messy knowledge.*, tagline
+   *Grounding the Autonomous Era*, live "in production / shipping" meta panel.
+2. **01 Consulting** — scroll-pinned rail of real engagements (Verizon, Circana,
+   Thermo Fisher, CVS Health, earlier work), then the nine-cell capability matrix
+   and the credentials strip (15+ years, GCP Professional Data Engineer).
+3. **02 OpenStinger** — portable MCP agent memory, with the animated write/recall
+   figure. Links to github.com/srikanthbellary/openstinger and openstinger.com.
+4. **03 Ingre** — the light chapter. **Ingre is a pitch and must stay on the page.**
+   *Scan food and beauty labels. See harmful ingredients.* Android and iOS. ingre.ai.
+5. **04 Media** — exactly one sentence about image, video, and audio with generative AI.
+6. **05 Contact** — Wellington, FL · sbellary@sunrisegenai.com · 440-340-8383.
 
 ---
 
-## 🚫 FORBIDDEN CHANGES
+## 4. Content rules
 
-### DO NOT:
-1. ❌ Add circuit patterns or background animations
-2. ❌ Change from Orbitron font to any rounded fonts
-3. ❌ Add redundant logos to navigation
-4. ❌ Add "SUNRISE GEN AI" heading text
-5. ❌ Change the agreed color palette
-6. ❌ Add glow effects to the logo
-7. ❌ Make logo smaller than h-96
-8. ❌ Add any colors outside the 4 approved colors
+**Never write**, on any page:
 
-### ALWAYS:
-1. ✅ Use only the 4 approved logo colors
-2. ✅ Keep Orbitron font for all text
-3. ✅ Maintain clean background without patterns
-4. ✅ Keep logo blended into background
-5. ✅ Center navigation without redundant logo
-6. ✅ Use h-96 for main logo size
+- For Ingre: "Play testing", "Google testing", "Mac Studio", "Flutter",
+  "in development", or the old name "LabelSaber". Ingre is presented as a product,
+  not a status report.
+- Gmail addresses. Hyderabad. A film reel or named short films.
+- Job Book, Swaram, Lensort, parked domains, PBL, or study forks.
+- Invented case studies, invented clients, or metrics beyond the ones on this page.
+
+**Always keep**: Ingre, OpenStinger, the five consulting engagements, the Circana
+figures (60% / 75% / 3×), "15+ years", and the Wellington contact block.
 
 ---
 
-## 📋 IMPLEMENTATION CHECKLIST
+## 5. Motion
 
-When working on this project:
+Lenis smooth scroll driven by the GSAP ticker; ScrollTrigger for pinning, wipes, and
+scrubs. Signature moments: the preloader collapsing to a slit that the hero aperture
+opens from, the pinned consulting rail, the band-dissolve as the hero exits, the light
+Ingre chapter rising into full bleed, and the label scan.
 
-- [ ] **Colors**: Reference only approved CSS variables
-- [ ] **Fonts**: Always use Orbitron font family
-- [ ] **Layout**: Maintain agreed structure
-- [ ] **Logo**: Use `logo-with-glow` class with no effects
-- [ ] **Background**: Keep single clean layer only
-
----
-
-## 🎯 QUALITY STANDARDS
-
-- **Professional**: Clean, minimal, sophisticated
-- **Consistent**: Logo colors throughout all elements
-- **Technical**: Squared fonts, circuit-board inspired cards
-- **Focused**: Content-driven without distracting elements
-- **Accessible**: Proper contrast and readability
+Everything degrades: `prefers-reduced-motion` skips the preloader, the custom cursor,
+and every scrub; WebGL failure falls back to the poster image; the pinned rail becomes
+a native snap-scroller under 900px.
 
 ---
 
-## 📁 PROJECT STRUCTURE
+## 6. Build
 
-```
-Sunrise_GenAI/                          # Project root
-├── .cursor/                             # Cursor rules
-│   └── rules/
-│       └── sunrise-genai-design-system.mdc  # Design system rule
-├── sunrise-genai-website/               # Next.js website
-│   ├── app/
-│   │   ├── globals.css                  # Design system CSS
-│   │   └── page.tsx                     # Main page
-│   └── public/
-│       └── logo.png                     # Logo file
-├── sunrise_gen_ai_logo_enhanced.png     # Original logo
-├── README.md                            # Project documentation
-├── project-structure.md                 # Architecture docs
-├── project-tracker.md                   # Development tracker
-└── DESIGN-SYSTEM-LOCKED.md             # This file
-```
-
----
-
-## 📞 CLIENT AGREEMENT
-
-**This design system represents the FINAL AGREEMENT between client and developer.**
-
-✅ **Client Approved**: All specifications locked  
-✅ **Cursor Rules**: Implemented for consistency  
-✅ **Documentation**: Complete and comprehensive  
-
-**Any deviations require explicit client approval.**
-
----
-
-*Document created: December 2024*  
-*Status: LOCKED AND FINAL* 
+Next.js App Router, `output: 'export'`, `images.unoptimized`, `trailingSlash`. The
+existing GitHub Pages workflow builds this branch unchanged. `npm run build` must pass.
