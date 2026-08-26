@@ -1548,6 +1548,38 @@ html.lenis body {
   color: rgba(10, 12, 16, 0.45);
   white-space: nowrap;
 }
+.ingre-figure-wrap {
+  margin-top: clamp(2.5rem, 6vh, 4.5rem);
+}
+.ingre-figure {
+  position: relative;
+  height: clamp(240px, 19vw, 310px);
+  border: 1px solid rgba(10, 12, 16, 0.14);
+  background: rgba(255, 255, 255, 0.34);
+  overflow: hidden;
+}
+.ingre-figure canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 780px) {
+  .ingre-figure {
+    height: 460px;
+  }
+}
+.canvas-corner-ink {
+  border-color: rgba(10, 12, 16, 0.22);
+}
+.ingre-figure-legend {
+  margin-bottom: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+  color: rgba(10, 12, 16, 0.42);
+}
+
 .scanner-note {
   margin-top: 0.9rem;
   font-family: var(--font-body);
@@ -1570,16 +1602,8 @@ html.lenis body {
   position: relative;
   z-index: 2;
 }
-.media-grid {
-  display: grid;
-  gap: 1.6rem;
-}
-@media (min-width: 900px) {
-  .media-grid {
-    grid-template-columns: 12rem minmax(0, 1fr);
-    gap: 2.5rem;
-    align-items: start;
-  }
+.media-statement {
+  margin-top: clamp(2.5rem, 6vh, 4.5rem);
 }
 .media-line {
   font-family: var(--font-display);
@@ -1593,6 +1617,12 @@ html.lenis body {
 .media-line b {
   font-weight: 500;
   color: #fff;
+}
+.matrix-meta {
+  margin-top: 1.1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--rule-soft);
+  color: var(--text-faint);
 }
 
 .contact {
