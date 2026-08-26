@@ -2,12 +2,21 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Sunrise Gen AI | Enterprise AI & Data Consulting',
-  description: 'Sunrise Gen AI LLC is an enterprise AI and data consultancy in Wellington, FL. Production systems for operations, knowledge, and multi-source data — plus open-source tools and a mobile product.',
-  keywords: ['Enterprise Consulting', 'AI', 'Data Platforms', 'RAG', 'GraphRAG', 'SRE', 'MCP', 'OpenStinger', 'Gen AI', 'MLOps'],
+  title: 'Sunrise Gen AI',
+  description:
+    'Sunrise Gen AI LLC designs production systems for operations and messy knowledge. Enterprise AI in Wellington, Florida — and the tools we use, including OpenStinger.',
+  keywords: [
+    'Sunrise Gen AI',
+    'Enterprise AI',
+    'operations',
+    'knowledge systems',
+    'OpenStinger',
+    'Wellington Florida',
+  ],
   openGraph: {
-    title: 'Sunrise Gen AI | Enterprise AI & Data Consulting',
-    description: 'Enterprise AI and data consulting. Production systems for operations, knowledge, and multi-source data.',
+    title: 'Sunrise Gen AI',
+    description:
+      'Production systems for operations and messy knowledge. Wellington, Florida.',
     type: 'website',
     locale: 'en_US',
   },
@@ -20,9 +29,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <head>
+        <link rel="icon" href="/logo-nav.webp" type="image/webp" />
+      </head>
+      <body>{children}</body>
     </html>
   )
 }

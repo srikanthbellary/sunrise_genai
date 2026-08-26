@@ -1,231 +1,106 @@
-# 🔒 SUNRISE GEN AI DESIGN SYSTEM - LOCKED AGREEMENT
+# Sunrise Gen AI Design System
 
-**Status**: ✅ FINAL - LOCKED  
-**Date**: December 2024  
-**Version**: 1.0.0  
+**Status**: LOCKED  
+**Date**: 25–26 August 2026  
+**Supersedes**: December 2024 lock (Orbitron-everywhere, neon `#00F5FF` / `#FF6B35`, all-caps tracking, logo-as-hero, “Cutting-Edge AI Solutions,” LabelSaber / Swaram / Lensort, video causeway hero)
 
-This document represents the **FINAL AGREED DESIGN SPECIFICATIONS** for the Sunrise Gen AI website. This design system has been locked into Cursor rules and should not be modified without explicit client approval.
+Srikanth Bellary authorized this replacement on 25 August 2026. The December lock *is* the college look. Do not revert to it.
 
 ---
 
-## 🎨 FINAL COLOR PALETTE
+## Host (do not change)
 
-### Exact Logo Colors (ONLY THESE 4 COLORS)
+- Next.js `output: 'export'`, `trailingSlash: true`, `images.unoptimized: true`
+- Existing GitHub Pages workflow → sunrisegenai.com
+- No Vercel. No backend. No paid CDN. No new huge video.
+- Self-host OFL/SIL fonts in `public/fonts`
+- GSAP + Lenis are the motion stack. Small client-only libraries are allowed only if `next build` static export still succeeds.
+
+---
+
+## Hero — original graphics, never video
+
+**There is no hero video.** Do not restore `sunrise-causeway.mp4`, a poster, or any clip as background or fallback.
+
+The hero is an original full-viewport WebGL field (one fullscreen quad, no three.js):
+
+- Atmospheric sunrise built from the mark colors (void, sun, hot, teal)
+- A living topographic / intelligence field (contour lines + sparse plus-marks), not particles
+- Architectural: light, type, space. Controlled. Expensive.
+- Intro is cinematic (horizon reveal, then type). First 10 seconds must shock from craft.
+
+**Forbidden in the hero (and the page):**
+
+- Video, poster-as-hero, stock Lottie
+- Particle playgrounds, spaceship, synthwave grid race, bouncy orbs, gamified HUD
+- Circuit-grid wallpaper, glow soup, bounce, student neon
+- three.js toy scenes
+
+`prefers-reduced-motion: reduce` → static first frame, no intro, no pin/scrub. If WebGL fails, a CSS sunrise gradient — still not a video.
+
+Phone: keep the sun weighted to the right (compositional heir of the old 85% crop). No `object-position` video crop.
+
+---
+
+## Color
+
+Accents from the real mark, used as light — not carnival neon.
+
 ```css
 :root {
-  --logo-orange: #FF6B35;    /* Circuit sun, headings, project titles */
-  --logo-cyan: #00F5FF;      /* Palm trees, navigation, content text */
-  --logo-yellow: #FFD23F;    /* Sun glow, accents */
-  --logo-background: #060814; /* Background - slightly darker final version */
+  --void: #000818;
+  --void-deep: #000000;
+  --paper: #E8E2D6;
+  --paper-dim: rgba(232, 226, 214, 0.55);
+  --sun: #D9661C;
+  --hot: #FAC345;
+  --teal: #06B6C3;
 }
 ```
 
-**⚠️ CRITICAL**: Only these 4 colors are permitted. No other colors may be used.
+- Body text is **paper on void**, not teal-on-navy.
+- Sun / hot / teal appear as light, hairlines, and links.
+- No `#00F5FF`, no `#FF6B35` neon lock.
 
 ---
 
-## 🖼️ LOGO SPECIFICATIONS
+## Type
 
-### Final Logo Requirements
-- **File**: `sunrise_gen_ai_logo_enhanced.png`
-- **Hero Size**: `h-96` (384px height - **DOUBLED** from original)
-- **Navigation**: **NO LOGO** - removed redundant navigation logo
-- **Blending**: Logo must blend completely into background
-- **Effects**: **NO GLOW** - removed all filter effects
-
-### Logo Implementation
-```css
-.logo-with-glow {
-  filter: none;
-  opacity: 0.9;
-}
-```
+- **UI / body**: Geist (self-hosted, SIL OFL) — one grotesque. Never Orbitron as the body font.
+- **One display line**: Instrument Serif italic (self-hosted, SIL OFL). Only one role. Never set paragraphs in a display or sci-fi mono.
+- Sentence case. Tight tracking on large Geist. No all-caps chapter chrome (`01 —`, `02 —`).
+- Header is **title-only**: the wordmark is the name, set in type. No giant logo-as-the-page. Logo files may exist for favicon only.
 
 ---
 
-## 🔤 TYPOGRAPHY - SQUARED FONTS ONLY
+## Motion
 
-### Primary Font: Orbitron
-**Technical, squared font matching "GEN AI" style in logo**
+Polar26 energy, Sunrise material:
 
-```css
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-
-body {
-  font-family: 'Orbitron', monospace;
-}
-```
-
-### Font Classes
-```css
-.gen-ai-font {
-  font-family: 'Orbitron', monospace;
-  font-weight: 900;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
-
-.gen-ai-font-medium {
-  font-family: 'Orbitron', monospace;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-.gen-ai-font-light {
-  font-family: 'Orbitron', monospace;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-}
-```
-
-**🚫 NO ROUNDED FONTS** - Only squared, technical fonts are permitted.
+- Pinned sequences, clip-path wipes, a horizontal craft reel
+- Custom cursor and magnetic targets only when they feel expensive (no elastic bounce)
+- Quiet page grain is fine; particle fields are not
+- Desktop pins; mobile stacks or native horizontal snap — do not pin-jank on a phone
 
 ---
 
-## 🏗️ LAYOUT STRUCTURE
+## Content
 
-### Navigation (FINAL)
-- **Position**: Fixed top
-- **Layout**: **CENTERED** navigation items (`justify-center`)
-- **NO redundant logo** in navigation
-- **Menu**: About, Mobile Apps, Multimedia, Consulting, Contact
-- **Background**: `bg-black/50 backdrop-blur-sm border-b border-orange-500/30`
-
-### Hero Section (FINAL)
-- **Logo**: `h-96` (doubled size)
-- **NO "SUNRISE GEN AI" heading** - logo already shows the name
-- **Subtitle only**: "Cutting-Edge AI Solutions for the Future"
-- **Buttons**: "Explore Our Apps" and "Watch Our Films"
+- **Company**: Sunrise Gen AI LLC, Wellington, FL only. No Hyderabad.
+- **Contact**: `sbellary@sunrisegenai.com`, `440-340-8383`. No `sunrisegenai@gmail.com` on the page.
+- **Point of view** (one, not a manifesto): we design production systems for operations and messy knowledge, and we ship the tools we use.
+- **Consulting**: two or three offers in plain English. No seven interchangeable tiles. No agentic-ops / RAG / pipelines / multi-cloud / mainframe / LLM / ARB laundry list.
+- **Product on the homepage**: OpenStinger only (OSS — GitHub + openstinger.com). Ingredient Scanner / Ingre / LabelSaber / Swaram / Lensort / Job Book stay off this page.
+- **Films** (Apocalyptic Roulette, No Planet For Humans, Arcane Legacy): horizontal craft reel — proof of taste, not a fourth business unit.
+- **60%** schema / data-pipeline line may remain as a quiet sentence, not a giant badge.
+- No fake case studies, invented client logos, or parked domains.
 
 ---
 
-## 🎭 BACKGROUND DESIGN - CLEAN ONLY
+## Quality bar
 
-### Background Specification
-- **CLEAN background ONLY** - NO patterns, NO animations, NO effects
-- **Single layer**: `var(--logo-background)` (#060814)
-- **Logo blending**: Seamless integration with background
-
-```css
-.logo-blend-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--logo-background);
-  z-index: -1;
-}
-```
-
-**🚫 NO CIRCUIT PATTERNS** - Client explicitly requested removal of all background patterns and animations.
+A VP should take a meeting **and** a designer should feel the craft. The site is the demo of technical and creative power on static GitHub Pages. Tasteful brochure = fail. Student neon = fail. Game demo = fail.
 
 ---
 
-## 🎯 BUSINESS CONTENT
-
-### Company Information
-- **Name**: Sunrise Gen AI LLC
-- **Location**: Florida, USA
-- **Domains**: sunrisegen.ai, sunrisegenai.com
-
-### Portfolio
-
-#### Mobile Apps
-1. **LabelSaber.com** - Intelligent Ingredient Analyzer (AI + Computer Vision OCR)
-2. **Swaram.ai** - AI Voice Companion
-3. **Lensort.com** - Photos & Documents Organizer
-
-#### AI Multimedia
-1. **Apocalyptic Roulette** - AI Short Film (Extinction Events)
-2. **No Planet For Humans** - AI Dystopian Film
-3. **Arcane Legacy** - 48-hour RunwayML Festival Entry
-
-#### Services
-- Mobile Apps Development
-- AI Multimedia Creation
-- Enterprise AI Consulting
-
----
-
-## 🚫 FORBIDDEN CHANGES
-
-### DO NOT:
-1. ❌ Add circuit patterns or background animations
-2. ❌ Change from Orbitron font to any rounded fonts
-3. ❌ Add redundant logos to navigation
-4. ❌ Add "SUNRISE GEN AI" heading text
-5. ❌ Change the agreed color palette
-6. ❌ Add glow effects to the logo
-7. ❌ Make logo smaller than h-96
-8. ❌ Add any colors outside the 4 approved colors
-
-### ALWAYS:
-1. ✅ Use only the 4 approved logo colors
-2. ✅ Keep Orbitron font for all text
-3. ✅ Maintain clean background without patterns
-4. ✅ Keep logo blended into background
-5. ✅ Center navigation without redundant logo
-6. ✅ Use h-96 for main logo size
-
----
-
-## 📋 IMPLEMENTATION CHECKLIST
-
-When working on this project:
-
-- [ ] **Colors**: Reference only approved CSS variables
-- [ ] **Fonts**: Always use Orbitron font family
-- [ ] **Layout**: Maintain agreed structure
-- [ ] **Logo**: Use `logo-with-glow` class with no effects
-- [ ] **Background**: Keep single clean layer only
-
----
-
-## 🎯 QUALITY STANDARDS
-
-- **Professional**: Clean, minimal, sophisticated
-- **Consistent**: Logo colors throughout all elements
-- **Technical**: Squared fonts, circuit-board inspired cards
-- **Focused**: Content-driven without distracting elements
-- **Accessible**: Proper contrast and readability
-
----
-
-## 📁 PROJECT STRUCTURE
-
-```
-Sunrise_GenAI/                          # Project root
-├── .cursor/                             # Cursor rules
-│   └── rules/
-│       └── sunrise-genai-design-system.mdc  # Design system rule
-├── sunrise-genai-website/               # Next.js website
-│   ├── app/
-│   │   ├── globals.css                  # Design system CSS
-│   │   └── page.tsx                     # Main page
-│   └── public/
-│       └── logo.png                     # Logo file
-├── sunrise_gen_ai_logo_enhanced.png     # Original logo
-├── README.md                            # Project documentation
-├── project-structure.md                 # Architecture docs
-├── project-tracker.md                   # Development tracker
-└── DESIGN-SYSTEM-LOCKED.md             # This file
-```
-
----
-
-## 📞 CLIENT AGREEMENT
-
-**This design system represents the FINAL AGREEMENT between client and developer.**
-
-✅ **Client Approved**: All specifications locked  
-✅ **Cursor Rules**: Implemented for consistency  
-✅ **Documentation**: Complete and comprehensive  
-
-**Any deviations require explicit client approval.**
-
----
-
-*Document created: December 2024*  
-*Status: LOCKED AND FINAL* 
+*Locked 26 August 2026. Deviations require Srikanth Bellary.*
