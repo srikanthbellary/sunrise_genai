@@ -25,23 +25,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Add .nojekyll
-        run: touch out/.nojekyll
+      - name: Assemble static site
+        run: |
+          mkdir -p out/fonts
+          cp index.html out/
+          cp fonts/*.woff2 fonts/OFL.txt out/fonts/
+          touch out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
