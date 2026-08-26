@@ -974,6 +974,9 @@ html.lenis body {
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
 }
+.engagement-metrics-1 {
+  grid-template-columns: 1fr;
+}
 .metric-value {
   font-family: var(--font-display);
   font-size: clamp(1.7rem, 2.9vw, 2.5rem);
@@ -1026,6 +1029,58 @@ html.lenis body {
 }
 
 /* Capability matrix ------------------------------------------ */
+.offer-figures {
+  margin-top: clamp(2.5rem, 6vh, 4.5rem);
+  display: grid;
+  gap: 1.1rem;
+}
+@media (min-width: 900px) {
+  .offer-figures {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+.offer-figure-legend {
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+  color: var(--text-faint);
+}
+.offer-figure {
+  position: relative;
+  border: 1px solid var(--rule-soft);
+  background: rgba(0, 4, 13, 0.5);
+  overflow: hidden;
+}
+.offer-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.offer-packet-loop {
+  offset-path: path('M164 76 H212 H348 H396 H532 V156 H96 V76 H164');
+  offset-rotate: 0deg;
+  animation: offer-packet-travel 7.2s linear infinite;
+}
+.offer-packet-edge {
+  offset-path: path('M280 98 L452 102');
+  offset-rotate: 0deg;
+  animation: offer-packet-travel 3.4s linear infinite;
+}
+@keyframes offer-packet-travel {
+  to {
+    offset-distance: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .offer-packet {
+    animation: none;
+    display: none;
+  }
+}
+
 .matrix {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));

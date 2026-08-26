@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { gsap, ScrollTrigger, revealLines, riseIn } from '@/lib/motion'
 import { CAPABILITIES, OFFERS, PROOF } from '@/lib/content'
+import { GraphArchFigure, HarnessFigure } from './OfferFigures'
 
 export default function Consulting({ reduced }: { reduced: boolean }) {
   const rootRef = useRef<HTMLElement>(null)
@@ -40,6 +41,7 @@ export default function Consulting({ reduced }: { reduced: boolean }) {
     const ctx = gsap.context(() => {
       revealLines(scope, '.consulting-head .line-inner', scope)
       riseIn(scope, '.consulting-head .js-rise', scope, 0.07)
+      riseIn(scope, '.offer-figure-wrap', scope.querySelector('.offer-figures') as Element, 0.08)
       riseIn(scope, '.matrix-cell', scope.querySelector('.matrix') as Element, 0.045)
       riseIn(scope, '.creds-item', scope.querySelector('.creds') as Element, 0.08)
 
@@ -162,7 +164,15 @@ export default function Consulting({ reduced }: { reduced: boolean }) {
                 </ul>
 
                 {offer.metrics && (
-                  <div className="engagement-metrics engagement-metrics-2">
+                  <div
+                    className={
+                      offer.metrics.length === 2
+                        ? 'engagement-metrics engagement-metrics-2'
+                        : offer.metrics.length === 1
+                          ? 'engagement-metrics engagement-metrics-1'
+                          : 'engagement-metrics'
+                    }
+                  >
                     {offer.metrics.map((m) => (
                       <div key={m.value}>
                         <div className="metric-value">{m.value}</div>
@@ -184,6 +194,35 @@ export default function Consulting({ reduced }: { reduced: boolean }) {
               <em style={{ fontStyle: 'normal' }}>{String(i + 1).padStart(2, '0')}</em> {offer.title}
             </span>
           ))}
+        </div>
+      </div>
+
+      <div className="offer-figures">
+        <div className="offer-figure-wrap js-rise">
+          <div className="offer-figure-legend">
+            <span className="mono">Fig. 01 — gather · act · verify</span>
+            <span className="mono">Harness · loop engineering</span>
+          </div>
+          <div className="offer-figure" data-cursor="figure">
+            <HarnessFigure reduced={reduced} />
+            <span className="canvas-corner tl" />
+            <span className="canvas-corner tr" />
+            <span className="canvas-corner bl" />
+            <span className="canvas-corner br" />
+          </div>
+        </div>
+        <div className="offer-figure-wrap js-rise">
+          <div className="offer-figure-legend">
+            <span className="mono">Fig. 01b — Graph Architecture</span>
+            <span className="mono">Nodes · edges · blast radius</span>
+          </div>
+          <div className="offer-figure" data-cursor="figure">
+            <GraphArchFigure reduced={reduced} />
+            <span className="canvas-corner tl" />
+            <span className="canvas-corner tr" />
+            <span className="canvas-corner bl" />
+            <span className="canvas-corner br" />
+          </div>
         </div>
       </div>
 
