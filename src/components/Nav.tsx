@@ -42,7 +42,7 @@ export default function Nav() {
     <nav ref={navRef} className="nav" data-stuck={stuck} data-invert={invert}>
       <a className="nav-brand" href="#top" onClick={(e) => jump(e, '#top')} aria-label="Sunrise Gen AI — top">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/sunrise-gen-ai-icon.png" alt="Sunrise Gen AI" className="nav-lockup" />
+        <img src="/sunrise-gen-ai-logo.png" alt="Sunrise Gen AI" className="nav-lockup" />
       </a>
       <div className="nav-links">
         {LINKS.map((l) => (
