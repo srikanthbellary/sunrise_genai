@@ -12,7 +12,7 @@ export const TICKER = [
   'MCP-native delivery',
   'Evaluation and guardrails',
   'AWS · Azure · Google Cloud',
-  'Wellington, FL',
+  'West Palm Beach, FL',
 ]
 
 export type OfferFigure = 'harness' | 'graph'
@@ -192,7 +192,7 @@ export const PROOF = [
 export const CONTACT = {
   company: 'Sunrise Gen AI LLC',
   principal: 'Srikanth Bellary, Principal',
-  city: 'Wellington, FL',
+  city: 'West Palm Beach, FL',
   email: 'sbellary@sunrisegenai.com',
   phone: '440-340-8383',
   phoneHref: 'tel:+14403408383',

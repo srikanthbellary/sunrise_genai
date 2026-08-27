@@ -112,7 +112,7 @@ export default function Hero({ start, reduced }: { start: boolean; reduced: bool
         </div>
 
         <div className="hero-foot">
-          <span className="mono">Sunrise Gen AI LLC · Wellington, FL</span>
+          <span className="mono">Sunrise Gen AI LLC · West Palm Beach, FL</span>
           <span className="hero-scroll mono">
             <i />
             Scroll
