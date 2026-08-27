@@ -1,9 +1,13 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { FormEvent, useEffect, useRef, useState } from 'react'
 import { gsap, revealLines, riseIn } from '@/lib/motion'
-import Magnetic from './Magnetic'
 import { CONTACT } from '@/lib/content'
+
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
+
+const FAIL_COPY = 'The form could not be sent. Please try again later.'
+const OK_COPY = 'Received. We will follow up shortly.'
 
 export default function Contact({ reduced }: { reduced: boolean }) {
   const rootRef = useRef<HTMLElement>(null)
@@ -87,14 +91,6 @@ export default function Contact({ reduced }: { reduced: boolean }) {
         </div>
         <div className="contact-field js-rise">
           <span className="mono" style={{ color: 'var(--text-faint)' }}>
-            Email
-          </span>
-          <a className="contact-value" href={`mailto:${CONTACT.email}`}>
-            {CONTACT.email}
-          </a>
-        </div>
-        <div className="contact-field js-rise">
-          <span className="mono" style={{ color: 'var(--text-faint)' }}>
             Phone
           </span>
           <a className="contact-value tabular" href={CONTACT.phoneHref}>
@@ -103,17 +99,7 @@ export default function Contact({ reduced }: { reduced: boolean }) {
         </div>
       </div>
 
-      <div className="js-rise" style={{ marginTop: 'clamp(2.5rem, 6vh, 4rem)' }}>
-        <Magnetic
-          href={`mailto:${CONTACT.email}?subject=Working%20with%20Sunrise%20Gen%20AI`}
-          className="cta cta-sun cta-lg"
-        >
-          <span>Start a conversation</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-            <path d="M5 12h14M13 6l6 6-6 6" />
-          </svg>
-        </Magnetic>
-      </div>
+      <ContactForm />
 
       <div className="mega-marquee" aria-hidden="true">
         <div className="mega-track" ref={marqueeRef}>
@@ -148,5 +134,128 @@ export default function Contact({ reduced }: { reduced: boolean }) {
         </span>
       </footer>
     </section>
+  )
+}
+
+function ContactForm() {
+  const [status, setStatus] = useState<FormStatus>('idle')
+  const [note, setNote] = useState('')
+
+  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const form = event.currentTarget
+    const data = new FormData(form)
+
+    if (String(data.get('botcheck') || '') || String(data.get('website') || '')) {
+      setStatus('success')
+      setNote(OK_COPY)
+      form.reset()
+      return
+    }
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY
+    if (!accessKey) {
+      setStatus('error')
+      setNote(FAIL_COPY)
+      return
+    }
+
+    setStatus('submitting')
+    setNote('')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: 'Sunrise Gen AI — site inquiry',
+          from_name: `${data.get('first_name') || ''} ${data.get('last_name') || ''}`.trim(),
+          first_name: data.get('first_name'),
+          last_name: data.get('last_name'),
+          job_title: data.get('job_title'),
+          company: data.get('company'),
+          phone: data.get('phone'),
+          message: data.get('message'),
+          botcheck: false,
+        }),
+      })
+      const payload = (await response.json()) as { success?: boolean }
+      if (!response.ok || !payload.success) {
+        setStatus('error')
+        setNote(FAIL_COPY)
+        return
+      }
+      setStatus('success')
+      setNote(OK_COPY)
+      form.reset()
+    } catch {
+      setStatus('error')
+      setNote(FAIL_COPY)
+    }
+  }
+
+  return (
+    <form id="contact-form" className="contact-form js-rise" onSubmit={onSubmit}>
+      <div className="contact-form-grid">
+        <Field id="first_name" name="first_name" autoComplete="given-name" label="First name" />
+        <Field id="last_name" name="last_name" autoComplete="family-name" label="Last name" />
+        <Field id="job_title" name="job_title" autoComplete="organization-title" label="Job title / role" />
+        <Field id="company" name="company" autoComplete="organization" label="Company" />
+        <Field id="phone" name="phone" type="tel" autoComplete="tel" label="Phone" />
+        <label className="contact-form-field contact-form-field--wide" htmlFor="message">
+          <span className="mono">Comment or question</span>
+          <textarea id="message" name="message" required rows={5} />
+        </label>
+      </div>
+
+      <div className="contact-honeypot" aria-hidden="true">
+        <label htmlFor="botcheck">
+          Leave blank
+          <input id="botcheck" name="botcheck" type="checkbox" tabIndex={-1} autoComplete="off" />
+        </label>
+        <label htmlFor="website">
+          Website
+          <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
+
+      {note ? (
+        <p className="contact-form-status" data-tone={status === 'success' ? 'ok' : 'err'} role="status">
+          {note}
+        </p>
+      ) : null}
+
+      <button className="cta cta-sun cta-lg" type="submit" disabled={status === 'submitting'}>
+        <span>{status === 'submitting' ? 'Sending' : 'Send'}</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </button>
+    </form>
+  )
+}
+
+function Field({
+  id,
+  name,
+  label,
+  type = 'text',
+  autoComplete,
+}: {
+  id: string
+  name: string
+  label: string
+  type?: string
+  autoComplete?: string
+}) {
+  return (
+    <label className="contact-form-field" htmlFor={id}>
+      <span className="mono">{label}</span>
+      <input id={id} name={name} type={type} required autoComplete={autoComplete} />
+    </label>
   )
 }

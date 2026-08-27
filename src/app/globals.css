@@ -1339,6 +1339,17 @@ html.lenis body {
   padding: 1.15rem 2rem;
   font-size: 0.6875rem;
 }
+button.cta {
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  font: inherit;
+  color: inherit;
+}
+button.cta:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
 .cta svg {
   width: 14px;
   height: 14px;
@@ -1714,7 +1725,7 @@ html.lenis body {
 }
 @media (min-width: 860px) {
   .contact-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
 }
@@ -1786,6 +1797,85 @@ a.contact-value:hover::after {
   text-transform: uppercase;
   color: var(--text-faint);
   white-space: nowrap;
+}
+
+.contact-form {
+  margin-top: clamp(2.5rem, 6vh, 4.5rem);
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 2rem;
+  max-width: 46rem;
+}
+.contact-form-grid {
+  display: grid;
+  gap: 1.35rem 1.75rem;
+}
+@media (min-width: 720px) {
+  .contact-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.contact-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  color: var(--text-faint);
+}
+.contact-form-field--wide {
+  grid-column: 1 / -1;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 380;
+  line-height: 1.45;
+  padding: 0.45rem 0 0.65rem;
+  outline: none;
+  appearance: none;
+  box-shadow: none;
+}
+.contact-form textarea {
+  min-height: 8.5rem;
+  resize: vertical;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom-color: var(--hot);
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-faint);
+}
+.contact-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.contact-form-status {
+  margin: 1.35rem 0 0;
+  padding-left: 0.95rem;
+  border-left: 1px solid var(--sun);
+  color: var(--text-dim);
+  font-size: 0.975rem;
+  line-height: 1.5;
+}
+.contact-form-status[data-tone='ok'] {
+  border-left-color: var(--teal);
+  color: var(--text);
+}
+.contact-form-status[data-tone='err'] {
+  border-left-color: var(--sun);
+}
+.contact-form .cta {
+  margin-top: 1.75rem;
 }
 
 .mega-marquee {

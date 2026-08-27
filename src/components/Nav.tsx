@@ -51,7 +51,7 @@ export default function Nav() {
           </a>
         ))}
       </div>
-      <a href="#contact" className="nav-cta" onClick={(e) => jump(e, '#contact')}>
+      <a href="#contact-form" className="nav-cta" onClick={(e) => jump(e, '#contact-form')}>
         <span className="nav-cta-long">Start a conversation</span>
         <span className="nav-cta-short">Contact</span>
       </a>
