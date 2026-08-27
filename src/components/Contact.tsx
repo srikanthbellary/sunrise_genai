@@ -89,14 +89,6 @@ export default function Contact({ reduced }: { reduced: boolean }) {
           </span>
           <span className="contact-value">{CONTACT.city}</span>
         </div>
-        <div className="contact-field js-rise">
-          <span className="mono" style={{ color: 'var(--text-faint)' }}>
-            Phone
-          </span>
-          <a className="contact-value tabular" href={CONTACT.phoneHref}>
-            {CONTACT.phone}
-          </a>
-        </div>
       </div>
 
       <ContactForm />
