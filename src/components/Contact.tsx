@@ -42,7 +42,10 @@ export default function Contact({ reduced }: { reduced: boolean }) {
           <span className="line-inner">Bring us the</span>
         </span>
         <span className="line-mask">
-          <span className="line-inner">hard one.</span>
+          <span className="line-inner">toughest problems.</span>
+        </span>
+        <span className="line-mask">
+          <span className="line-inner">We&apos;ll solve them.</span>
         </span>
       </h2>
 
