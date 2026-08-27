@@ -193,7 +193,4 @@ export const CONTACT = {
   company: 'Sunrise Gen AI LLC',
   principal: 'Srikanth Bellary, Principal',
   city: 'West Palm Beach, FL',
-  email: 'sbellary@sunrisegenai.com',
-  phone: '440-340-8383',
-  phoneHref: 'tel:+14403408383',
 }
