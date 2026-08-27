@@ -7,7 +7,7 @@ const LINKS = [
   { id: '#consulting', label: 'Capabilities' },
   { id: '#openstinger', label: 'OpenStinger' },
   { id: '#ingre', label: 'Ingre' },
-  { id: '#contact', label: 'Contact' },
+  { id: '#contact-form', label: 'Contact' },
 ]
 
 export default function Nav() {
