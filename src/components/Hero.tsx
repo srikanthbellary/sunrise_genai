@@ -69,9 +69,11 @@ export default function Hero({ start, reduced }: { start: boolean; reduced: bool
         <div className="hero-meta">
           <div className="hero-meta-block">
             <strong>What we build</strong>
-            <span>Incident intelligence and agent operations</span>
-            <span>Grounded retrieval over tickets, docs, runbooks</span>
-            <span>Data platforms, mapping, and migrations</span>
+            <span>Autonomous agents</span>
+            <span>Agents and multi-agent systems</span>
+            <span>RAG and LLM architecture</span>
+            <span>Data processing with AI</span>
+            <span>Platforms and delivery</span>
           </div>
           <div className="hero-meta-rule" />
           <div className="hero-meta-block">

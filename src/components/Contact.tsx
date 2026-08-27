@@ -53,19 +53,23 @@ export default function Contact({ reduced }: { reduced: boolean }) {
         </p>
         <div className="contact-brief js-rise">
           <div className="contact-brief-row">
-            <span>Agents inside your operations</span>
+            <span>Autonomous agents</span>
             <span>Engagement</span>
           </div>
           <div className="contact-brief-row">
-            <span>Grounded retrieval over your own knowledge</span>
+            <span>Agents and multi-agent systems</span>
             <span>Engagement</span>
           </div>
           <div className="contact-brief-row">
-            <span>Schema, mapping, and data platforms</span>
+            <span>RAG and LLM architecture</span>
             <span>Engagement</span>
           </div>
           <div className="contact-brief-row">
-            <span>Legacy-to-cloud migration and MLOps</span>
+            <span>Data processing with AI</span>
+            <span>Engagement</span>
+          </div>
+          <div className="contact-brief-row">
+            <span>Platforms and delivery</span>
             <span>Engagement</span>
           </div>
         </div>

@@ -48,9 +48,9 @@ Display type is Cormorant at `letter-spacing: -0.012em` — never tight grotesqu
    **Enterprise GenAI, built to run.**, subline *Agents, retrieval, and data platforms
    in production.*, tagline *Grounding the Autonomous Era*, and a
    "what we build / what we ship" meta panel.
-2. **01 What we do** — scroll-pinned rail of the five **offers** (agentic operations,
-   grounded retrieval, data platforms, migration and modernization, production LLM
-   systems), then the nine-cell capability matrix and the proof strip.
+2. **01 What we do** — scroll-pinned rail of the five **offers** (autonomous agents,
+   agents and multi-agent systems, RAG and LLM architecture, data processing with AI,
+   platforms and delivery), then the nine-cell capability matrix and the proof strip.
 3. **02 OpenStinger** — portable MCP agent memory, with the animated write/recall
    figure. Links to github.com/srikanthbellary/openstinger and openstinger.com.
 4. **03 Ingre** — the light chapter. **Ingre is a pitch and must stay on the page.**
