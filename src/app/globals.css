@@ -406,11 +406,12 @@ html.lenis body {
 }
 .nav-lockup {
   display: block;
-  width: clamp(160px, 18vw, 220px);
-  height: auto;
-  max-height: calc(var(--nav-h) - 0.75rem);
+  width: 48px;
+  height: 48px;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
-  object-position: left center;
+  object-position: center;
+  flex-shrink: 0;
 }
 .nav-name {
   font-family: var(--font-body);
@@ -489,9 +490,6 @@ html.lenis body {
   .nav-links,
   .nav-name {
     display: none;
-  }
-  .nav-lockup {
-    width: 160px;
   }
   .nav {
     grid-template-columns: auto 1fr;
