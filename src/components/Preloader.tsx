@@ -58,7 +58,7 @@ export default function Preloader({ onDone, skip }: { onDone: () => void; skip: 
         000
       </div>
       <div className="preloader-fade mono" style={{ paddingBottom: '0.6rem' }}>
-        Wellington, FL
+        West Palm Beach, FL
       </div>
       <div className="preloader-bar preloader-fade">
         <i ref={barRef} />

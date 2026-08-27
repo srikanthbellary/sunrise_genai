@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://sunrisegenai.com'),
   title: 'Sunrise Gen AI — Enterprise GenAI, built to run',
   description:
-    'Sunrise Gen AI LLC is an enterprise GenAI and data practice in Wellington, FL. Agents inside operations, grounded retrieval, and data platforms in production — plus OpenStinger and Ingre.',
+    'Sunrise Gen AI LLC is an enterprise GenAI and data practice in West Palm Beach, FL. Agents inside operations, grounded retrieval, and data platforms in production — plus OpenStinger and Ingre.',
   keywords: [
     'enterprise GenAI consulting',
     'agentic operations',

@@ -60,7 +60,9 @@ Display type is Cormorant at `letter-spacing: -0.012em` — never tight grotesqu
 5. **04 Media** — a full chapter, not a one-liner: content generation with image, text,
    and video models, for marketing materials, campaigns, and web content. No film
    titles, no reel, no portfolio of shorts.
-6. **05 Contact** — Wellington, FL · sbellary@sunrisegenai.com · 440-340-8383.
+6. **05 Contact** — West Palm Beach, FL · sbellary@sunrisegenai.com · 440-340-8383.
+   Public location lock (27 Aug 2026): project West Palm Beach, FL. Do not write
+   Wellington. Do not put a street address on the public page.
 
 ---
 
@@ -94,7 +96,7 @@ bordered stations, small caps labels, corner ticks, travelling packets. No stock
 no illustration packs, no photography of people.
 
 **Always keep**: the five offers, the capability matrix, OpenStinger, Ingre with both of
-its graphics, the media chapter, and the Wellington contact block.
+its graphics, the media chapter, and the West Palm Beach contact block.
 
 ---
 
