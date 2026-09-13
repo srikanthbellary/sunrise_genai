@@ -10,6 +10,8 @@ export default function SiteFooter() {
       <span className="mono">
         <a href="/blog/">Blog</a>
         {' · '}
+        <a href="/privacy/">Privacy</a>
+        {' · '}
         <a href="https://github.com/srikanthbellary/openstinger" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>

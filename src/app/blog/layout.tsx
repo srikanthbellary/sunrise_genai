@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import BlogShell from '@/components/BlogShell'
+import { BLOG_INDEX_DESCRIPTION, BLOG_INDEX_TITLE, OG_IMAGE } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Essays — Sunrise Gen AI',
-  description:
-    'Production essays on agents, harnesses, inspectable memory, and context control from Sunrise Gen AI.',
+  title: BLOG_INDEX_TITLE,
+  description: BLOG_INDEX_DESCRIPTION,
   alternates: {
     canonical: '/blog/',
     types: {
@@ -12,11 +12,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Essays — Sunrise Gen AI',
-    description:
-      'Production essays on agents, harnesses, inspectable memory, and context control from Sunrise Gen AI.',
+    title: BLOG_INDEX_TITLE,
+    description: BLOG_INDEX_DESCRIPTION,
     type: 'website',
     url: '/blog/',
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: BLOG_INDEX_TITLE,
+    description: BLOG_INDEX_DESCRIPTION,
+    images: [OG_IMAGE.url],
   },
 }
 
