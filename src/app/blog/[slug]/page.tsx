@@ -47,7 +47,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
       <article className="blog-article">
         <p className="blog-back">
           <Link href="/blog/" className="mono">
-            All notes
+            All essays
           </Link>
         </p>
         <div className="section-tag">
@@ -75,7 +75,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
           Architecture through delivery — agents, retrieval, and data platforms in production.{' '}
           <a href="/#contact-form">Start a conversation</a>.
         </p>
-        <nav className="blog-pager" aria-label="More notes">
+        <nav className="blog-pager" aria-label="More essays">
           {newer ? (
             <Link href={`/blog/${newer.slug}/`} className="blog-pager-link">
               <span className="mono">Newer</span>

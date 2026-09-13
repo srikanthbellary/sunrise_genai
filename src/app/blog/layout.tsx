@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import BlogShell from '@/components/BlogShell'
 
 export const metadata: Metadata = {
-  title: 'Notes — Sunrise Gen AI',
+  title: 'Essays — Sunrise Gen AI',
   description:
-    'Production notes on agents, harnesses, inspectable memory, and context control from Sunrise Gen AI.',
+    'Production essays on agents, harnesses, inspectable memory, and context control from Sunrise Gen AI.',
   alternates: {
     canonical: '/blog/',
     types: {
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Notes — Sunrise Gen AI',
+    title: 'Essays — Sunrise Gen AI',
     description:
-      'Production notes on agents, harnesses, inspectable memory, and context control from Sunrise Gen AI.',
+      'Production essays on agents, harnesses, inspectable memory, and context control from Sunrise Gen AI.',
     type: 'website',
     url: '/blog/',
   },

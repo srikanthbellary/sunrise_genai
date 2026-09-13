@@ -9,15 +9,15 @@ export default function BlogIndexPage() {
       <header className="blog-hero">
         <div className="section-tag">
           <i />
-          <span className="mono">Notes</span>
+          <span className="mono">Essays</span>
         </div>
         <h1 className="blog-title">
-          Production notes.
+          Production essays.
           <em> Agents that finish the job.</em>
         </h1>
         <p className="lede blog-lede">
-          Short writing from Sunrise Gen AI on harnesses, inspectable memory, and the stops that keep a loop honest.
-          For the work itself, start at{' '}
+          Deep notes from Sunrise Gen AI on harnesses, inspectable memory, and the stops that keep a loop honest.
+          We build production GenAI for operations, knowledge, and data. For the work itself, start at{' '}
           <a href="https://sunrisegenai.com">sunrisegenai.com</a>.
         </p>
         <p className="blog-feed">
