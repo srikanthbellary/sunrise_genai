@@ -3,6 +3,7 @@ title: Slim context packs beat written rules
 description: Long policy in the prompt is not control. Slim packs plus hard stops — allowlists, budgets, stop sequences, refuse-when-unsourced — are control. Evaluation is product surface.
 date: '2026-09-12'
 slug: slim-context-packs
+image: /og.png
 tags:
   - context
   - evaluation
