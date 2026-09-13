@@ -12,7 +12,7 @@ export const TICKER = [
   'MCP-native delivery',
   'Evaluation and guardrails',
   'AWS · Azure · Google Cloud',
-  'West Palm Beach, FL',
+  'Florida, United States',
 ]
 
 export type OfferFigure = 'harness' | 'graph'
@@ -192,5 +192,5 @@ export const PROOF = [
 export const CONTACT = {
   company: 'Sunrise Gen AI LLC',
   principal: 'Srikanth Bellary, Principal',
-  city: 'West Palm Beach, FL',
+  city: 'Florida, United States',
 }

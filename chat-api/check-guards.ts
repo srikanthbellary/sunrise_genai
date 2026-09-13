@@ -72,7 +72,7 @@ if (!prompt.includes("We only answer questions about what Sunrise Gen AI builds.
   failed += 1;
   console.error("system prompt was not loaded");
 }
-if (!prompt.includes("West Palm Beach, FL")) {
+if (!prompt.includes("Florida, United States")) {
   failed += 1;
   console.error("context prompt was not concatenated");
 }
@@ -80,9 +80,18 @@ if (prompt.includes("NOVITA") || /sk-[a-zA-Z0-9]{10,}/.test(prompt)) {
   failed += 1;
   console.error("prompt files must not contain keys");
 }
-if (prompt.includes("Wellington") || /srikanthbellary01@gmail|440-340-8383/.test(prompt)) {
+if (
+  prompt.includes("West" + " Palm") ||
+  prompt.includes("Welling" + "ton") ||
+  prompt.includes("33" + "414") ||
+  /\b\d{5}(?:-\d{4})?\b/.test(prompt) ||
+  /\d+\s+[A-Za-z0-9.'\s]{0,40}\b(Street|St\.|Avenue|Ave\.|Road|Rd\.|Drive|Dr\.|Boulevard|Blvd\.|Lane|Ln\.)\b/i.test(
+    prompt,
+  ) ||
+  /srikanthbellary01@gmail|440-340-8383/.test(prompt)
+) {
   failed += 1;
-  console.error("prompt files contain locked personal facts");
+  console.error("prompt files contain a forbidden city, street, ZIP, or locked personal facts");
 }
 
 delete process.env.NOVITA_API_KEY;
