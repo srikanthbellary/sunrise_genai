@@ -28,10 +28,18 @@ export default function PrivacyPage() {
 
           <div className="blog-prose">
             <p>
-              This page describes how Sunrise Gen AI LLC handles information sent through the contact form on this
-              site. The studio is in West Palm Beach, FL. To reach us, use the{' '}
+              This page describes how Sunrise Gen AI LLC handles information sent through the contact form and the
+              optional chat on this site. The studio is in West Palm Beach, FL. To reach us, use the{' '}
               <Link href="/#contact-form">site contact form</Link>. We do not publish a street address, a mailbox, or a
               phone number.
+            </p>
+
+            <h2>Chat with an agent</h2>
+            <p>
+              When the chat is connected, a question you type — and the short turn history still in that panel — goes to
+              a hosted function so a language model can draft a reply about what Sunrise Gen AI builds. Questions you
+              send are used to write a reply. This site does not keep a chat archive. We do not sell what you send. The
+              function uses your network address only to pace traffic.
             </p>
 
             <h2>What the form collects</h2>

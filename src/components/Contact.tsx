@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useRef, useState } from 'react'
 import { gsap, revealLines, riseIn } from '@/lib/motion'
 import { CONTACT } from '@/lib/content'
+import { Chat } from '@/components/Chat'
 import SiteFooter from '@/components/SiteFooter'
 
 type FormStatus = 'idle' | 'submitting' | 'success' | 'error'
@@ -92,7 +93,10 @@ export default function Contact({ reduced }: { reduced: boolean }) {
         </div>
       </div>
 
-      <ContactForm />
+      <div className="contact-desk">
+        <ContactForm />
+        <Chat />
+      </div>
 
       <div className="mega-marquee" aria-hidden="true">
         <div className="mega-track" ref={marqueeRef}>
