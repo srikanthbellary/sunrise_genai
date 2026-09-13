@@ -1973,6 +1973,11 @@ a.contact-value:hover::after {
   color: var(--text);
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--sun) 55%, transparent);
 }
+@media (max-width: 959px) {
+  .chat-panel {
+    height: min(20.5rem, calc(100svh - 9rem));
+  }
+}
 .chat-head {
   display: flex;
   justify-content: space-between;
