@@ -24,7 +24,7 @@ function parseFrontmatter(raw) {
       data.tags = []
       continue
     }
-    data[currentKey] = kv[2].trim()
+    data[currentKey] = kv[2].trim().replace(/^['"]|['"]$/g, '')
   }
   return data
 }

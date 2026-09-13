@@ -1,7 +1,7 @@
 ---
 title: Give the agent a filesystem it can inspect
 description: Opaque session blobs make agent memory a black box. Prefer files a human can open — notes, diffs, recall paths — when the run goes wrong.
-date: 2026-09-08
+date: '2026-09-08'
 slug: inspectable-agent-memory
 tags:
   - agents

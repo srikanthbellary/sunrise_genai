@@ -1,7 +1,7 @@
 ---
 title: An agent is a model plus a harness
 description: A model generates tokens. An agent finishes work. The difference is the loop, the tools, and a test gate in front of done.
-date: 2026-09-01
+date: '2026-09-01'
 slug: agent-is-a-harness
 tags:
   - agents

@@ -29,12 +29,23 @@ function readMarkdownFiles(): string[] {
   return fs.readdirSync(BLOG_DIR).filter((name) => name.endsWith('.md'))
 }
 
+function toIsoDate(value: unknown): string {
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return value.toISOString().slice(0, 10)
+  }
+  const raw = String(value || '').trim()
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw
+  const parsed = new Date(raw)
+  if (!Number.isNaN(parsed.getTime())) return parsed.toISOString().slice(0, 10)
+  return raw
+}
+
 function parsePost(filename: string): BlogPost {
   const raw = fs.readFileSync(path.join(BLOG_DIR, filename), 'utf8')
   const { data, content } = matter(raw)
   const title = String(data.title || '').trim()
   const description = String(data.description || '').trim()
-  const date = String(data.date || '').trim()
+  const date = toIsoDate(data.date)
   const slug = String(data.slug || filename.replace(/\.md$/, '')).trim()
   const tags = Array.isArray(data.tags) ? data.tags.map((tag) => String(tag)) : []
 

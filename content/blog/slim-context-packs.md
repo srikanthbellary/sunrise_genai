@@ -1,7 +1,7 @@
 ---
 title: Slim context packs beat written rules
 description: Long policy in the prompt is not control. Hard stops — allowlists, budgets, stop sequences, a refuse-when-unsourced path — are control.
-date: 2026-09-12
+date: '2026-09-12'
 slug: slim-context-packs
 tags:
   - context
