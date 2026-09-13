@@ -41,6 +41,7 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
+          NEXT_PUBLIC_CHAT_API_URL: ${{ vars.NEXT_PUBLIC_CHAT_API_URL }}
 
       - name: Add .nojekyll
         run: touch out/.nojekyll

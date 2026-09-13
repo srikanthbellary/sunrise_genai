@@ -33,7 +33,7 @@ export const BLOG_INDEX_DESCRIPTION =
 
 export const PRIVACY_TITLE = 'Privacy — Sunrise Gen AI'
 export const PRIVACY_DESCRIPTION =
-  'How Sunrise Gen AI LLC handles inquiries sent through the site contact form. Studio in West Palm Beach, FL — reach us on the form, not a public mailbox.'
+  'How Sunrise Gen AI LLC handles inquiries sent through the site contact form and optional chat. Studio in West Palm Beach, FL — reach us on the form, not a public mailbox.'
 
 export const NOT_FOUND_TITLE = 'Page not found — Sunrise Gen AI'
 export const NOT_FOUND_DESCRIPTION = HEADER_LINE
