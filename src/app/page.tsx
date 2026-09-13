@@ -13,6 +13,7 @@ import OpenStinger from '@/components/OpenStinger'
 import Ingre from '@/components/Ingre'
 import MediaBand from '@/components/MediaBand'
 import Contact from '@/components/Contact'
+import { Chat } from '@/components/Chat'
 
 export default function Page() {
   const reduced = useReducedMotion()
@@ -62,6 +63,7 @@ export default function Page() {
         <MediaBand reduced={reduced} />
         <Contact reduced={reduced} />
       </main>
+      <Chat />
     </>
   )
 }
