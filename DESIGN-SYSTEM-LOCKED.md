@@ -60,11 +60,10 @@ Display type is Cormorant at `letter-spacing: -0.012em` — never tight grotesqu
 5. **04 Media** — a full chapter, not a one-liner: content generation with image, text,
    and video models, for marketing materials, campaigns, and web content. No film
    titles, no reel, no portfolio of shorts.
-6. **05 Contact** — West Palm Beach, FL · form.
-   Public location lock (27 Aug 2026): project West Palm Beach, FL. Do not write
-   Wellington. Do not put a street address on the public page. Do not print the
-   mailbox or a public phone on the site, in docs that ship with the page, or in
-   the client bundle.
+6. **05 Contact** — Florida, United States · form.
+   Public location lock: Florida, United States. Do not name a city, street, or
+   ZIP. Do not print the mailbox or a public phone on the site, in docs that
+   ship with the page, or in the client bundle.
 
 ---
 
@@ -98,7 +97,7 @@ bordered stations, small caps labels, corner ticks, travelling packets. No stock
 no illustration packs, no photography of people.
 
 **Always keep**: the five offers, the capability matrix, OpenStinger, Ingre with both of
-its graphics, the media chapter, and the West Palm Beach contact block.
+its graphics, the media chapter, and the Florida, United States contact block.
 
 ---
 

@@ -25,7 +25,7 @@ export const OG_IMAGE: SocialImage = {
 
 export const HOME_TITLE = 'Sunrise Gen AI — Enterprise GenAI, built to run'
 export const HOME_DESCRIPTION =
-  'Sunrise Gen AI LLC is an enterprise GenAI and data practice in West Palm Beach, FL. Agents inside operations, grounded retrieval, and data platforms in production — plus OpenStinger and Ingre.'
+  'Sunrise Gen AI LLC is an enterprise GenAI and data practice in Florida, United States. Agents inside operations, grounded retrieval, and data platforms in production, plus OpenStinger and Ingre.'
 
 export const BLOG_INDEX_TITLE = 'Essays — Sunrise Gen AI'
 export const BLOG_INDEX_DESCRIPTION =
@@ -33,7 +33,7 @@ export const BLOG_INDEX_DESCRIPTION =
 
 export const PRIVACY_TITLE = 'Privacy — Sunrise Gen AI'
 export const PRIVACY_DESCRIPTION =
-  'How Sunrise Gen AI LLC handles inquiries sent through the site contact form and optional chat. Studio in West Palm Beach, FL — reach us on the form, not a public mailbox.'
+  'How Sunrise Gen AI LLC handles inquiries sent through the site contact form and optional chat. Studio in Florida, United States. Reach us on the form, not a public mailbox.'
 
 export const NOT_FOUND_TITLE = 'Page not found — Sunrise Gen AI'
 export const NOT_FOUND_DESCRIPTION = HEADER_LINE
