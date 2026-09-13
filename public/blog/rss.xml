@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Sunrise Gen AI — Notes</title>
+    <title>Sunrise Gen AI — Essays</title>
     <link>https://sunrisegenai.com/blog/</link>
-    <description>Production notes on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
+    <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
       <title>Slim context packs beat written rules</title>
       <link>https://sunrisegenai.com/blog/slim-context-packs/</link>
       <guid>https://sunrisegenai.com/blog/slim-context-packs/</guid>
       <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
-      <description>Long policy in the prompt is not control. Hard stops — allowlists, budgets, stop sequences, a refuse-when-unsourced path — are control.</description>
+      <description>Long policy in the prompt is not control. Slim packs plus hard stops — allowlists, budgets, stop sequences, refuse-when-unsourced — are control. Evaluation is product surface.</description>
     </item>
     <item>
       <title>Give the agent a filesystem it can inspect</title>
       <link>https://sunrisegenai.com/blog/inspectable-agent-memory/</link>
       <guid>https://sunrisegenai.com/blog/inspectable-agent-memory/</guid>
       <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
-      <description>Opaque session blobs make agent memory a black box. Prefer files a human can open — notes, diffs, recall paths — when the run goes wrong.</description>
+      <description>Opaque vectors and session blobs make memory a black box. Hierarchical files, portable over MCP, are how a person opens the last write before the next action fires.</description>
     </item>
     <item>
       <title>An agent is a model plus a harness</title>
       <link>https://sunrisegenai.com/blog/agent-is-a-harness/</link>
       <guid>https://sunrisegenai.com/blog/agent-is-a-harness/</guid>
       <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
-      <description>A model generates tokens. An agent finishes work. The difference is the loop, the tools, and a test gate in front of done.</description>
+      <description>A model generates tokens. An agent finishes work. The difference is the loop, the tools, the permissions, and a test gate in front of done — the harness is the product.</description>
     </item>
   </channel>
 </rss>
