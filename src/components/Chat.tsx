@@ -105,7 +105,7 @@ export function Chat() {
   }
 
   return (
-    <div className="chat-root">
+    <div className="chat-root" data-lenis-prevent>
       {open ? (
         <section
           className="chat-panel"

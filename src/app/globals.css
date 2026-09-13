@@ -1907,7 +1907,7 @@ a.contact-value:hover::after {
   position: fixed;
   right: max(1rem, var(--gutter));
   bottom: 1.1rem;
-  z-index: 50;
+  z-index: 80;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
