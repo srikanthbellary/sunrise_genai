@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { formatPostDate, getAllPosts, getPost, postUrl } from '@/lib/blog'
+import { OG_IMAGE } from '@/lib/site'
 
 type Params = { slug: string }
 
@@ -19,16 +20,18 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
-      title: post.title,
+      title: `${post.title} — Sunrise Gen AI`,
       description: post.description,
       type: 'article',
       url,
       publishedTime: post.date,
+      images: [OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: `${post.title} — Sunrise Gen AI`,
       description: post.description,
+      images: [OG_IMAGE.url],
     },
   }
 }

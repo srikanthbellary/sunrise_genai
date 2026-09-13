@@ -174,16 +174,52 @@ function ContactForm() {
   }
 
   return (
-    <form id="contact-form" className="contact-form js-rise" onSubmit={onSubmit}>
+    <form
+      id="contact-form"
+      className="contact-form js-rise"
+      onSubmit={onSubmit}
+      aria-busy={status === 'submitting'}
+    >
       <div className="contact-form-grid">
-        <Field id="first_name" name="first_name" autoComplete="given-name" label="First name" />
-        <Field id="last_name" name="last_name" autoComplete="family-name" label="Last name" />
-        <Field id="job_title" name="job_title" autoComplete="organization-title" label="Job title / role" />
-        <Field id="company" name="company" autoComplete="organization" label="Company" />
-        <Field id="phone" name="phone" type="tel" autoComplete="tel" label="Phone" />
+        <Field
+          id="first_name"
+          name="first_name"
+          autoComplete="given-name"
+          label="First name"
+          disabled={status === 'submitting'}
+        />
+        <Field
+          id="last_name"
+          name="last_name"
+          autoComplete="family-name"
+          label="Last name"
+          disabled={status === 'submitting'}
+        />
+        <Field
+          id="job_title"
+          name="job_title"
+          autoComplete="organization-title"
+          label="Job title / role"
+          disabled={status === 'submitting'}
+        />
+        <Field
+          id="company"
+          name="company"
+          autoComplete="organization"
+          label="Company"
+          disabled={status === 'submitting'}
+        />
+        <Field
+          id="phone"
+          name="phone"
+          type="tel"
+          autoComplete="tel"
+          label="Phone"
+          disabled={status === 'submitting'}
+        />
         <label className="contact-form-field contact-form-field--wide" htmlFor="message">
           <span className="mono">Comment or question</span>
-          <textarea id="message" name="message" required rows={5} />
+          <textarea id="message" name="message" required rows={5} disabled={status === 'submitting'} />
         </label>
       </div>
 
@@ -198,9 +234,14 @@ function ContactForm() {
         </label>
       </div>
 
-      {note ? (
-        <p className="contact-form-status" data-tone={status === 'success' ? 'ok' : 'err'} role="status">
-          {note}
+      {status === 'submitting' || note ? (
+        <p
+          className="contact-form-status"
+          data-tone={status === 'success' ? 'ok' : status === 'error' ? 'err' : 'wait'}
+          role="status"
+          aria-live="polite"
+        >
+          {status === 'submitting' ? 'Sending your inquiry.' : note}
         </p>
       ) : null}
 
@@ -210,6 +251,10 @@ function ContactForm() {
           <path d="M5 12h14M13 6l6 6-6 6" />
         </svg>
       </button>
+
+      <p className="contact-form-legal">
+        Inquiries are handled as described on the <a href="/privacy/">privacy</a> page.
+      </p>
     </form>
   )
 }
@@ -220,17 +265,19 @@ function Field({
   label,
   type = 'text',
   autoComplete,
+  disabled,
 }: {
   id: string
   name: string
   label: string
   type?: string
   autoComplete?: string
+  disabled?: boolean
 }) {
   return (
     <label className="contact-form-field" htmlFor={id}>
       <span className="mono">{label}</span>
-      <input id={id} name={name} type={type} required autoComplete={autoComplete} />
+      <input id={id} name={name} type={type} required autoComplete={autoComplete} disabled={disabled} />
     </label>
   )
 }
