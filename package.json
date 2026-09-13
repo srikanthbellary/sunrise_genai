@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/check-social-cards.cjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:social": "node scripts/check-social-cards.cjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

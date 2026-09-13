@@ -1,25 +1,17 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import BlogShell from '@/components/BlogShell'
-import { HEADER_LINE, OG_IMAGE, PRIVACY_DESCRIPTION, PRIVACY_TITLE } from '@/lib/site'
+import { HEADER_LINE, PRIVACY_DESCRIPTION, PRIVACY_TITLE, socialCard } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: PRIVACY_TITLE,
   description: PRIVACY_DESCRIPTION,
   alternates: { canonical: '/privacy/' },
-  openGraph: {
+  ...socialCard({
     title: PRIVACY_TITLE,
     description: PRIVACY_DESCRIPTION,
-    type: 'website',
     url: '/privacy/',
-    images: [OG_IMAGE],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: PRIVACY_TITLE,
-    description: PRIVACY_DESCRIPTION,
-    images: [OG_IMAGE.url],
-  },
+  }),
 }
 
 export default function PrivacyPage() {

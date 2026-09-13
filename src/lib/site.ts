@@ -1,13 +1,27 @@
+import type { Metadata } from 'next'
+
 export const SITE_URL = 'https://sunrisegenai.com'
 export const SITE_NAME = 'Sunrise Gen AI'
 export const HEADER_LINE = 'We build production GenAI for operations, knowledge, and data.'
+export const TWITTER_SITE = '@SunriseGenAI'
 
-export const OG_IMAGE = {
+export type SocialImage = {
+  url: string
+  secureUrl: string
+  width: number
+  height: number
+  type: 'image/png'
+  alt: string
+}
+
+export const OG_IMAGE: SocialImage = {
   url: '/og.png',
+  secureUrl: `${SITE_URL}/og.png`,
   width: 1200,
   height: 630,
+  type: 'image/png',
   alt: 'Sunrise Gen AI lockup — circuit sun over the wordmark',
-} as const
+}
 
 export const HOME_TITLE = 'Sunrise Gen AI — Enterprise GenAI, built to run'
 export const HOME_DESCRIPTION =
@@ -20,3 +34,71 @@ export const BLOG_INDEX_DESCRIPTION =
 export const PRIVACY_TITLE = 'Privacy — Sunrise Gen AI'
 export const PRIVACY_DESCRIPTION =
   'How Sunrise Gen AI LLC handles inquiries sent through the site contact form. Studio in West Palm Beach, FL — reach us on the form, not a public mailbox.'
+
+export const NOT_FOUND_TITLE = 'Page not found — Sunrise Gen AI'
+export const NOT_FOUND_DESCRIPTION = HEADER_LINE
+
+export function absoluteUrl(path: string): string {
+  if (/^https?:\/\//i.test(path)) return path
+  const normalized = path.startsWith('/') ? path : `/${path}`
+  return `${SITE_URL}${normalized}`
+}
+
+export function socialImage(url: string = OG_IMAGE.url, alt: string = OG_IMAGE.alt): SocialImage {
+  const path = url.startsWith('http') ? new URL(url).pathname : url
+  return {
+    url: path,
+    secureUrl: absoluteUrl(path),
+    width: OG_IMAGE.width,
+    height: OG_IMAGE.height,
+    type: 'image/png',
+    alt,
+  }
+}
+
+type SocialCardInput = {
+  title: string
+  description: string
+  url: string
+  type?: 'website' | 'article'
+  publishedTime?: string
+  image?: SocialImage
+}
+
+export function socialCard({
+  title,
+  description,
+  url,
+  type = 'website',
+  publishedTime,
+  image = OG_IMAGE,
+}: SocialCardInput): Pick<Metadata, 'openGraph' | 'twitter'> {
+  return {
+    openGraph: {
+      title,
+      description,
+      type,
+      locale: 'en_US',
+      siteName: SITE_NAME,
+      url,
+      ...(publishedTime ? { publishedTime } : {}),
+      images: [
+        {
+          url: image.url,
+          secureUrl: image.secureUrl,
+          width: image.width,
+          height: image.height,
+          type: image.type,
+          alt: image.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: TWITTER_SITE,
+      title,
+      description,
+      images: [{ url: image.url, alt: image.alt }],
+    },
+  }
+}

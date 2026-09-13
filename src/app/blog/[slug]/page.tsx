@@ -1,44 +1,55 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { formatPostDate, getAllPosts, getPost, postUrl } from '@/lib/blog'
-import { OG_IMAGE } from '@/lib/site'
+import BlogAliasRedirect from '@/components/BlogAliasRedirect'
+import { formatPostDate, getAllPosts, getPost, isAliasSlug, postAliases, postUrl } from '@/lib/blog'
+import { socialCard, socialImage } from '@/lib/site'
 
 type Params = { slug: string }
 
 export function generateStaticParams(): Params[] {
-  return getAllPosts().map((post) => ({ slug: post.slug }))
+  return getAllPosts().flatMap((post) => [
+    { slug: post.slug },
+    ...postAliases(post).map((slug) => ({ slug })),
+  ])
 }
 
 export function generateMetadata({ params }: { params: Params }): Metadata {
   const post = getPost(params.slug)
   if (!post) return {}
 
-  const url = `/blog/${post.slug}/`
+  const canonical = `/blog/${post.slug}/`
+  const title = `${post.title} — Sunrise Gen AI`
+  const image = socialImage(post.image, post.imageAlt)
+
   return {
-    title: `${post.title} — Sunrise Gen AI`,
+    title,
     description: post.description,
-    alternates: { canonical: url },
-    openGraph: {
-      title: `${post.title} — Sunrise Gen AI`,
+    alternates: { canonical },
+    ...socialCard({
+      title,
       description: post.description,
+      url: canonical,
       type: 'article',
-      url,
       publishedTime: post.date,
-      images: [OG_IMAGE],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${post.title} — Sunrise Gen AI`,
-      description: post.description,
-      images: [OG_IMAGE.url],
-    },
+      image,
+    }),
   }
 }
 
 export default function BlogPostPage({ params }: { params: Params }) {
   const post = getPost(params.slug)
   if (!post) notFound()
+
+  if (isAliasSlug(params.slug)) {
+    const href = `/blog/${post.slug}/`
+    return (
+      <>
+        <meta httpEquiv="refresh" content={`0;url=${href}`} />
+        <BlogAliasRedirect href={href} title={post.title} />
+      </>
+    )
+  }
 
   const posts = getAllPosts()
   const index = posts.findIndex((item) => item.slug === post.slug)
@@ -105,6 +116,7 @@ export default function BlogPostPage({ params }: { params: Params }) {
             headline: post.title,
             description: post.description,
             datePublished: post.date,
+            image: socialImage(post.image, post.imageAlt).secureUrl,
             url: postUrl(post.slug),
             author: {
               '@type': 'Organization',

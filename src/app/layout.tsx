@@ -1,6 +1,11 @@
 import type { Metadata, Viewport } from 'next'
-import { HOME_DESCRIPTION, HOME_TITLE, OG_IMAGE, SITE_NAME, SITE_URL } from '@/lib/site'
+import { HOME_DESCRIPTION, HOME_TITLE, SITE_URL, socialCard } from '@/lib/site'
 import './globals.css'
+
+const HOME_OG_DESCRIPTION =
+  'Enterprise GenAI, built to run. Agents, retrieval, and data platforms in production, plus OpenStinger portable MCP agent memory and Ingre label scanning.'
+const HOME_TWITTER_DESCRIPTION =
+  'Enterprise GenAI, built to run. Agents, retrieval, and data platforms in production.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -20,21 +25,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Sunrise Gen AI LLC' }],
   alternates: { canonical: '/' },
-  openGraph: {
+  ...socialCard({
     title: HOME_TITLE,
-    description:
-      'Enterprise GenAI, built to run. Agents, retrieval, and data platforms in production, plus OpenStinger portable MCP agent memory and Ingre label scanning.',
-    type: 'website',
-    locale: 'en_US',
-    siteName: SITE_NAME,
+    description: HOME_OG_DESCRIPTION,
     url: '/',
-    images: [OG_IMAGE],
-  },
+  }),
   twitter: {
-    card: 'summary_large_image',
-    title: HOME_TITLE,
-    description: 'Enterprise GenAI, built to run. Agents, retrieval, and data platforms in production.',
-    images: [OG_IMAGE.url],
+    ...socialCard({
+      title: HOME_TITLE,
+      description: HOME_TWITTER_DESCRIPTION,
+      url: '/',
+    }).twitter,
   },
   icons: {
     icon: [

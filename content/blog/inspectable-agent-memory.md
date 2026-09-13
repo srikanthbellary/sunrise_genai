@@ -3,6 +3,9 @@ title: Give the agent a filesystem it can inspect
 description: Opaque vectors and session blobs make memory a black box. Hierarchical files, portable over MCP, are how a person opens the last write before the next action fires.
 date: '2026-09-08'
 slug: inspectable-agent-memory
+image: /og.png
+aliases:
+  - give-the-agent-a-filesystem
 tags:
   - agents
   - memory
