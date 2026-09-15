@@ -826,9 +826,11 @@ html.lenis body {
 }
 @media (max-width: 780px) {
   .dyson-foot {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
-  .dyson-foot .hero-scroll {
+  .dyson-foot .hero-scroll,
+  .dyson-fig {
     display: none;
   }
 }
