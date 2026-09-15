@@ -290,9 +290,9 @@ const FLARE_FRAG =
   void main() {
     vec2 p = vUv;
     float h = exp(-abs(p.x) * 5.5);
-    float v = exp(-abs(p.y) * 60.0);
-    float core = exp(-length(p * vec2(1.0, 10.0)) * 6.0);
-    float a = h * v * 1.4 + core * 0.6;
+    float v = exp(-abs(p.y) * 34.0);
+    float core = exp(-length(p * vec2(1.0, 7.0)) * 6.0);
+    float a = h * v * 2.2 + core * 0.8;
     vec3 col = mix(HOT, vec3(1.0, 0.96, 0.85), core) * a * uRise;
     gl_FragColor = vec4(col, 1.0);
   }
@@ -1060,7 +1060,7 @@ export class PalaceScene {
     sun.frustumCulled = false
     this.scene.add(sun)
 
-    const flareGeo = this.track(new THREE.PlaneGeometry(380, 26))
+    const flareGeo = this.track(new THREE.PlaneGeometry(380, 40))
     const flareMat = this.track(
       new THREE.ShaderMaterial({
         vertexShader: QUAD_VERT,
@@ -1119,7 +1119,8 @@ export class PalaceScene {
 
     const horizon = this.tmpCam.y
     u.uHorizon.value = horizon
-    this.sun.position.set(0, horizon - 20 + 28 * rise, 380)
+    // Ends about 40% below the horizon line: the wordmark's half disc with the flare through it.
+    this.sun.position.set(0, horizon - 20 + 23.5 * rise, 380)
     u.uSunPos.value.copy(this.sun.position)
     this.flare.position.set(0, horizon + 0.25, 379)
     this.flare.scale.set(0.35 + 0.65 * rise, 0.6 + 0.4 * rise, 1)
