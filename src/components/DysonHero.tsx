@@ -27,13 +27,15 @@ export default function DysonHero() {
     }
     const section = sectionRef.current
     if (!section) return
+    // Review aid: ?p=0.5 pins the scrub so a frame can be inspected without scrolling.
+    const pinned = parseFloat(new URLSearchParams(window.location.search).get('p') ?? '')
     let raf = 0
     const tick = () => {
       raf = requestAnimationFrame(tick)
       const rect = section.getBoundingClientRect()
       const vh = window.innerHeight || 1
       const travel = Math.max(1, rect.height - vh)
-      const p = Math.min(1, Math.max(0, -rect.top / travel))
+      const p = Number.isFinite(pinned) ? Math.min(1, Math.max(0, pinned)) : Math.min(1, Math.max(0, -rect.top / travel))
       progressRef.current = p
       const type = typeRef.current
       if (type) {

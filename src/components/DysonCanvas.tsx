@@ -25,8 +25,10 @@ const IN_TILT = THREE.MathUtils.degToRad(16)
 const IN_ARC = THREE.MathUtils.degToRad(80)
 
 // Gallery cross-section, in segment-local units. +x is outward (away from the sun), +y up, +z forward.
+// The canopy reaches far inward so it fills the top-left of frame when the look is yawed toward the sun.
 const WALL_X = 2.2
-const EDGE_X = -1.2
+const CEIL_IN = -6.6
+const DECK_IN = -2.6
 const CEIL_Y = 2.0
 const FLOOR_Y = -1.6
 
@@ -129,6 +131,35 @@ function glowTexture(inner: string, mid: string, midStop: number): THREE.CanvasT
   return tex
 }
 
+/** One thin horizontal flare, the lockup's line seen in the world. */
+function streakTexture(): THREE.CanvasTexture {
+  const w = 512
+  const h = 64
+  const canvas = document.createElement('canvas')
+  canvas.width = w
+  canvas.height = h
+  const ctx = canvas.getContext('2d')!
+  const gx = ctx.createLinearGradient(0, 0, w, 0)
+  gx.addColorStop(0, 'rgba(217,102,28,0)')
+  gx.addColorStop(0.3, 'rgba(217,102,28,0.45)')
+  gx.addColorStop(0.5, 'rgba(255,236,190,1)')
+  gx.addColorStop(0.7, 'rgba(217,102,28,0.45)')
+  gx.addColorStop(1, 'rgba(217,102,28,0)')
+  ctx.fillStyle = gx
+  ctx.fillRect(0, 0, w, h)
+  const gy = ctx.createLinearGradient(0, 0, 0, h)
+  gy.addColorStop(0, 'rgba(0,0,0,1)')
+  gy.addColorStop(0.42, 'rgba(0,0,0,0)')
+  gy.addColorStop(0.58, 'rgba(0,0,0,0)')
+  gy.addColorStop(1, 'rgba(0,0,0,1)')
+  ctx.globalCompositeOperation = 'destination-out'
+  ctx.fillStyle = gy
+  ctx.fillRect(0, 0, w, h)
+  const tex = new THREE.CanvasTexture(canvas)
+  tex.colorSpace = THREE.SRGBColorSpace
+  return tex
+}
+
 /** World matrix for the gallery frame at ring azimuth theta: x outward, y up, z forward. */
 function ringMatrix(theta: number, out: THREE.Matrix4): THREE.Matrix4 {
   const c = Math.cos(theta)
@@ -167,7 +198,7 @@ const SUN_FRAG = /* glsl */ `
     vec3 col = mix(core, limb, f);
     float grain = hash(floor(vN * 40.0 + uTime * 0.15)) * 0.06;
     col *= 1.0 - grain * f;
-    gl_FragColor = vec4(col * 1.35, 1.0);
+    gl_FragColor = vec4(col * 1.2, 1.0);
   }
 `
 
@@ -213,12 +244,16 @@ export default function DysonCanvas({ progressRef, reduced }: Props) {
     scene.add(camera)
 
     // --- Light -----------------------------------------------------------------------------
-    const sunLight = new THREE.PointLight(0xffc98a, 2.8, 0, 0)
+    const sunLight = new THREE.PointLight(0xffc98a, 2.3, 0, 0)
     scene.add(sunLight)
     scene.add(new THREE.AmbientLight(0x16294a, 1.1))
     const fill = new THREE.DirectionalLight(0x2b4d80, 0.55)
     fill.position.set(0, 1, 0)
     scene.add(fill)
+    // Bounce off the sunlit deck so the canopy underside is not a black plane.
+    const bounce = new THREE.DirectionalLight(0x3a4a66, 0.75)
+    bounce.position.set(0, -1, 0)
+    scene.add(bounce)
 
     // --- Materials -------------------------------------------------------------------------
     const circuit = circuitTexture()
@@ -230,14 +265,16 @@ export default function DysonCanvas({ progressRef, reduced }: Props) {
       roughness: 0.5,
       emissive: COL.sun,
       emissiveMap: circuit,
-      emissiveIntensity: 0.55,
+      emissiveIntensity: 0.45,
     })
     const hexMat = new THREE.MeshStandardMaterial({
-      color: 0x141a26,
-      metalness: 0.7,
-      roughness: 0.36,
-      emissive: 0x0b1524,
-      emissiveIntensity: 0.6,
+      color: 0x3a4456,
+      map: circuit,
+      metalness: 0.72,
+      roughness: 0.38,
+      emissive: COL.sun,
+      emissiveMap: circuit,
+      emissiveIntensity: 0.32,
     })
     const moduleMat = new THREE.MeshStandardMaterial({
       color: 0x9aa4b8,
@@ -278,38 +315,41 @@ export default function DysonCanvas({ progressRef, reduced }: Props) {
       const theta = k * D_THETA
       ringMatrix(theta, frame)
 
-      // Four chords.
-      for (const x of [WALL_X, EDGE_X]) for (const y of [CEIL_Y, FLOOR_Y]) push(steelList, x, y, 0, 0.16, 0.16, SEG_LEN + 0.02)
+      // Canopy chords running along the ring.
+      for (const x of [WALL_X, -0.4, -2.6, -4.6, CEIL_IN]) push(steelList, x, CEIL_Y - 0.08, 0, 0.16, 0.16, SEG_LEN + 0.02)
+      for (const x of [WALL_X, DECK_IN]) push(steelList, x, FLOOR_Y + 0.08, 0, 0.16, 0.16, SEG_LEN + 0.02)
       // Outer wall posts and one diagonal.
       for (const z of [-1, 1]) push(steelList, WALL_X, 0.2, z, 0.12, 3.6, 0.12)
       push(steelList, WALL_X, 0.2, 0, 0.08, 4.15, 0.08, k % 2 ? 0.5 : -0.5)
       // Deck plate.
-      push(plateList, (WALL_X + EDGE_X) / 2, FLOOR_Y - 0.06, 0, WALL_X - EDGE_X, 0.08, SEG_LEN)
+      push(plateList, (WALL_X + DECK_IN) / 2, FLOOR_Y - 0.06, 0, WALL_X - DECK_IN, 0.08, SEG_LEN)
       // Outer wall plate, with gaps where the framework is unfinished.
       if (k % 3 !== 2) push(plateList, WALL_X + 0.08, 0.2, 0, 0.06, 3.7, SEG_LEN)
-      // Transverse rib every second segment.
-      if (k % 2 === 0) {
-        push(steelList, EDGE_X, 0.2, 0, 0.12, 3.6, 0.12)
-        push(steelList, (WALL_X + EDGE_X) / 2, CEIL_Y, 0, WALL_X - EDGE_X, 0.12, 0.12)
-        push(steelList, (WALL_X + EDGE_X) / 2, FLOOR_Y, 0, WALL_X - EDGE_X, 0.12, 0.12)
-        push(hotList, EDGE_X - 0.1, -1.3, 0, 0.07, 0.07, 0.07)
+      // Transverse canopy rib every segment; deck beam and a full post every fourth.
+      push(steelList, (WALL_X + CEIL_IN) / 2, CEIL_Y - 0.14, 0, WALL_X - CEIL_IN, 0.14, 0.14)
+      push(steelList, CEIL_IN + 0.1, CEIL_Y - 0.7, 0, 0.1, 1.3, 0.1)
+      if (k % 2 === 0) push(steelList, (WALL_X + DECK_IN) / 2, FLOOR_Y + 0.02, 0, WALL_X - DECK_IN, 0.12, 0.12)
+      if (k % 4 === 0) {
+        push(steelList, DECK_IN, 0.2, 0, 0.12, 3.6, 0.12)
+        push(hotList, DECK_IN - 0.1, -1.3, 0, 0.08, 0.08, 0.08)
       }
-      // Teal running lights on the inward top chord.
-      for (const z of [-1, 1]) push(tealList, EDGE_X - 0.1, CEIL_Y - 0.12, z, 0.09, 0.09, 0.09)
+      // Teal running lights along the canopy's inward edge; a hot marker at the deck edge.
+      for (const z of [-1, 1]) push(tealList, CEIL_IN - 0.08, CEIL_Y - 0.1, z, 0.1, 0.1, 0.1)
+      push(hotList, DECK_IN - 0.1, FLOOR_Y + 0.1, 1, 0.07, 0.07, 0.07)
 
-      // Ceiling hex tiling, with docking slots left open on odd segments.
+      // Canopy hex tiling, with docking slots left open on odd segments.
       for (let r = 0; r < 4; r++) {
         const z = -SEG_LEN / 2 + 0.475 + r * 0.95
         const odd = (k * 4 + r) % 2 === 1
-        const cols = odd ? [-0.1, 1.0] : [-0.65, 0.45, 1.55]
+        const cols = odd ? [-5.55, -4.45, -3.35, -2.25, -1.15, -0.05, 1.05] : [-6.1, -5.0, -3.9, -2.8, -1.7, -0.6, 0.5, 1.6]
         for (let c = 0; c < cols.length; c++) {
           const x = cols[c]
-          const isSlot = k % 2 === 1 && r === 1 && c === 1
+          const isSlot = k % 2 === 1 && r === 1 && odd && c === 2
           if (isSlot) {
             slots.push({ theta, local: new THREE.Vector3(x, CEIL_Y + 0.05, z), arc: k * SEG_LEN + z })
             continue
           }
-          push(hexList, x, CEIL_Y + 0.05, z, 1, 1, 1, 0, (k + r) % 2 ? Math.PI / 6 : 0)
+          push(hexList, x, CEIL_Y + 0.05, z, 1, 1, 1)
         }
       }
     }
@@ -382,17 +422,29 @@ export default function DysonCanvas({ progressRef, reduced }: Props) {
       if (phi > Math.PI) phi -= Math.PI * 2
       if (Math.abs(phi) > IN_ARC) continue
       const built = Math.abs(phi) < IN_ARC - 0.25
+      // Collectors stand upright and face the star; we see their dark backs and etched hairlines.
       dummy.position.set(R_IN * Math.cos(phi), 0, R_IN * Math.sin(phi))
       dummy.rotation.set(0, -phi, 0)
-      dummy.scale.set(built ? 4.2 : 1.6, 0.26, segIn + 0.02)
+      dummy.scale.set(0.3, built ? 3.2 : 1.3, segIn + 0.02)
       dummy.updateMatrix()
       innerList.push(dummy.matrix.clone())
-      dummy.position.set((R_IN - 2.2) * Math.cos(phi), 0.3, (R_IN - 2.2) * Math.sin(phi))
-      dummy.scale.set(0.16, 0.5, segIn + 0.02)
-      dummy.updateMatrix()
-      innerRailList.push(dummy.matrix.clone())
+      for (const y of [1.75, -1.75]) {
+        dummy.position.set((R_IN + 0.2) * Math.cos(phi), y, (R_IN + 0.2) * Math.sin(phi))
+        dummy.scale.set(0.18, 0.18, segIn + 0.02)
+        dummy.updateMatrix()
+        innerRailList.push(dummy.matrix.clone())
+      }
     }
-    const innerMesh = new THREE.InstancedMesh(box, plateMat, innerList.length)
+    const innerMat = new THREE.MeshStandardMaterial({
+      color: 0x5d6779,
+      map: circuit,
+      metalness: 0.6,
+      roughness: 0.5,
+      emissive: COL.hot,
+      emissiveMap: circuit,
+      emissiveIntensity: 1.0,
+    })
+    const innerMesh = new THREE.InstancedMesh(box, innerMat, innerList.length)
     innerList.forEach((m, i) => innerMesh.setMatrixAt(i, m))
     innerMesh.instanceMatrix.needsUpdate = true
     innerMesh.frustumCulled = false
@@ -433,18 +485,19 @@ export default function DysonCanvas({ progressRef, reduced }: Props) {
     const sun = new THREE.Mesh(new THREE.SphereGeometry(SUN_R, 64, 40), sunMat)
     scene.add(sun)
 
-    const haloTex = glowTexture('rgba(250,195,69,0.95)', 'rgba(217,102,28,0.28)', 0.32)
-    const coronaTex = glowTexture('rgba(250,195,69,0.55)', 'rgba(217,102,28,0.12)', 0.4)
+    const haloTex = glowTexture('rgba(255,236,190,1)', 'rgba(250,195,69,0.38)', 0.3)
+    const coronaTex = glowTexture('rgba(250,195,69,0.55)', 'rgba(217,102,28,0.18)', 0.42)
+    const streakTex = streakTexture()
     const spriteMat = (map: THREE.Texture, opacity: number) =>
       new THREE.SpriteMaterial({ map, transparent: true, opacity, blending: THREE.AdditiveBlending, depthWrite: false, fog: false })
-    const halo = new THREE.Sprite(spriteMat(haloTex, 0.9))
-    halo.scale.set(SUN_R * 3.2, SUN_R * 3.2, 1)
+    const halo = new THREE.Sprite(spriteMat(haloTex, 1))
+    halo.scale.set(SUN_R * 2.7, SUN_R * 2.7, 1)
     scene.add(halo)
-    const corona = new THREE.Sprite(spriteMat(coronaTex, 0.55))
-    corona.scale.set(SUN_R * 7.5, SUN_R * 7.5, 1)
+    const corona = new THREE.Sprite(spriteMat(coronaTex, 0.8))
+    corona.scale.set(SUN_R * 9, SUN_R * 9, 1)
     scene.add(corona)
-    const flare = new THREE.Sprite(spriteMat(coronaTex, 0.5))
-    flare.scale.set(SUN_R * 22, SUN_R * 0.42, 1)
+    const flare = new THREE.Sprite(spriteMat(streakTex, 0.85))
+    flare.scale.set(SUN_R * 28, SUN_R * 0.7, 1)
     scene.add(flare)
 
     // --- Stars -------------------------------------------------------------------------------
@@ -525,8 +578,8 @@ export default function DysonCanvas({ progressRef, reduced }: Props) {
           slotWorld.copy(slots[i].local).applyMatrix4(frame)
           qSlot.setFromRotationMatrix(frame)
           // Start out in the void on the sun side, below and slightly ahead of the slot.
-          startPos.set(slots[i].local.x - 7.5, slots[i].local.y - 5.5, slots[i].local.z + 3).applyMatrix4(frame)
-          ctrlPos.set(slots[i].local.x - 3.2, slots[i].local.y - 3.2, slots[i].local.z + 0.6).applyMatrix4(frame)
+          startPos.set(slots[i].local.x - 5.5, slots[i].local.y - 6, slots[i].local.z + 3.5).applyMatrix4(frame)
+          ctrlPos.set(slots[i].local.x - 2.4, slots[i].local.y - 2.8, slots[i].local.z + 0.8).applyMatrix4(frame)
           const t = d * d * (3 - 2 * d)
           cubic(startPos, ctrlPos, slotWorld, t, m.group.position)
           qStart.setFromEuler(eStart).premultiply(qSlot)
@@ -654,8 +707,8 @@ export default function DysonCanvas({ progressRef, reduced }: Props) {
         const mesh = obj as THREE.Mesh
         if (mesh.geometry) mesh.geometry.dispose()
       })
-      ;[steelMat, plateMat, hexMat, moduleMat, tealMat, hotMat, sunMat, swarmMat, starMat].forEach((m) => m.dispose())
-      ;[circuit, haloTex, coronaTex].forEach((t) => t.dispose())
+      ;[steelMat, plateMat, hexMat, moduleMat, innerMat, tealMat, hotMat, sunMat, swarmMat, starMat].forEach((m) => m.dispose())
+      ;[circuit, haloTex, coronaTex, streakTex].forEach((t) => t.dispose())
       renderer.dispose()
     }
   }, [progressRef, reduced])
