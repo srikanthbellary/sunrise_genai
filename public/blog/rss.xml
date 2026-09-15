@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Coding agents need numeric gates, not vibes</title>
+      <link>https://sunrisegenai.com/blog/numeric-quality-gates/</link>
+      <guid>https://sunrisegenai.com/blog/numeric-quality-gates/</guid>
+      <pubDate>Tue, 15 Sep 2026 00:00:00 GMT</pubDate>
+      <description>Verify for coding agents is a stack of measurable contracts in the harness. Pick the gates that fit the job. Fail closed. Retry or escalate. Never ship on confidence theater.</description>
+    </item>
+    <item>
       <title>Slim context packs beat written rules</title>
       <link>https://sunrisegenai.com/blog/slim-context-packs/</link>
       <guid>https://sunrisegenai.com/blog/slim-context-packs/</guid>
