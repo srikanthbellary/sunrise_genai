@@ -1,0 +1,10 @@
+{
+  "base": "/media/hero-scrub/frames",
+  "pattern": "f_{index}.webp",
+  "pad": 4,
+  "count": 31,
+  "width": 1280,
+  "height": 720,
+  "sourceDuration": 15.000000,
+  "source": "atlas-dyson-plate.mp4"
+}
