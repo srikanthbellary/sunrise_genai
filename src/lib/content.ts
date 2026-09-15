@@ -5,6 +5,62 @@ export const HERO = {
   lede: 'Autonomous agents, retrieval, and data platforms in production.',
 }
 
+export type PalaceChapter = {
+  n: string
+  name: string
+  side: 'left' | 'right'
+  title?: string[]
+  body?: string[]
+  cta?: { label: string; href: string }
+}
+
+/**
+ * Chapters of the scroll-driven palace hero. Chapter I carries the locked hero copy
+ * from HERO; the rest are short offer lines lifted from OFFERS and the two firm
+ * outcome claims. Copy alternates sides so the architecture stays in view.
+ */
+export const PALACE_CHAPTERS: PalaceChapter[] = [
+  { n: 'I', name: 'The Hall', side: 'left' },
+  {
+    n: 'II',
+    name: 'The Court',
+    side: 'right',
+    title: ['Agents that', 'finish the job.'],
+    body: [
+      'Workflow-specific harnesses in front of your model gateway.',
+      'Gather, act, verify, with a test gate before done.',
+    ],
+  },
+  {
+    n: 'III',
+    name: 'The Gate',
+    side: 'left',
+    title: ['Answers with', 'a citation.'],
+    body: [
+      'Grounded retrieval over the knowledge your teams actually wrote.',
+      'A refusal when the source does not support the answer.',
+    ],
+  },
+  {
+    n: 'IV',
+    name: 'The Terrace',
+    side: 'right',
+    title: ['Pipelines that propose,', 'score, and explain.'],
+    body: [
+      'Schema and attribute mapping with confidence scoring and a review queue.',
+      'Up to 60% less time on that work, and 3× throughput on attribute mapping.',
+    ],
+  },
+  {
+    n: 'V',
+    name: 'Sunrise',
+    side: 'left',
+    title: ['Grounding the', 'Autonomous Era'],
+    body: ['Agents inside operations, grounded retrieval, and data platforms in production.', 'Tell us what has to run.'],
+    cta: { label: 'Start a conversation', href: '#contact-form' },
+  },
+]
+
 export const TICKER = [
   'Agentic operations',
   'Grounded retrieval',

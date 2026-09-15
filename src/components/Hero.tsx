@@ -5,7 +5,7 @@ import HeroCanvas from './HeroCanvas'
 import { gsap } from 'gsap'
 import { HERO } from '@/lib/content'
 
-function Clock() {
+export function Clock() {
   const [time, setTime] = useState<string | null>(null)
   useEffect(() => {
     const tick = () =>

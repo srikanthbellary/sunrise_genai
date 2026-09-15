@@ -707,6 +707,285 @@ html.lenis body {
   }
 }
 
+/* ============================================================
+   PALACE HERO — scroll-driven 3D flythrough (preview: /preview/hero-3d/)
+   A tall section with a sticky stage; the scroll scrubs the camera
+   through the palace while five chapters of copy sidestep the view.
+   ============================================================ */
+
+.palace {
+  position: relative;
+  height: 620svh;
+  isolation: isolate;
+  background: var(--void);
+}
+.palace[data-reduced='true'] {
+  height: 100svh;
+  min-height: 620px;
+}
+.palace-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
+}
+.palace-canvas,
+.palace-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+.palace-fallback {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+.palace-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 4, 13, 0.7) 0%,
+    rgba(0, 4, 13, 0.1) 22%,
+    rgba(0, 4, 13, 0) 44%,
+    rgba(0, 6, 22, 0.5) 78%,
+    rgba(0, 8, 22, 0.9) 100%
+  );
+}
+.palace-inner {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  padding: calc(var(--nav-h) + 0.5rem) var(--gutter) 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+}
+.palace-meta {
+  grid-row: 1;
+  grid-column: 1;
+  justify-self: end;
+  text-align: right;
+  display: grid;
+  gap: 0.9rem;
+  max-width: 24rem;
+  color: var(--text-faint);
+}
+.palace-meta-block {
+  display: grid;
+  gap: 0.3rem;
+}
+.palace-meta-block strong {
+  font-family: var(--font-body);
+  font-size: 0.5625rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--hot);
+  margin-bottom: 0.15rem;
+}
+.palace-meta-block span {
+  font-size: 0.75rem;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  color: rgba(238, 234, 226, 0.6);
+}
+.palace-meta-rule {
+  height: 1px;
+  background: var(--rule-soft);
+  width: 100%;
+}
+@media (max-width: 1000px) {
+  .palace-meta {
+    display: none;
+  }
+}
+
+/* Chapters share one grid cell and take turns. */
+.palace-chapter {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: end;
+  justify-self: start;
+  position: relative;
+  padding-bottom: clamp(1.5rem, 4vh, 3rem);
+  max-width: min(100%, 64rem);
+  will-change: transform, opacity;
+}
+.palace-chapter::before {
+  content: '';
+  position: absolute;
+  inset: -24% -30% -8% -32%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 40% 62%, rgba(0, 6, 20, 0.62) 0%, rgba(0, 6, 20, 0.3) 46%, rgba(0, 6, 20, 0) 76%);
+}
+.palace-chapter[data-side='right'] {
+  justify-self: end;
+  text-align: right;
+  max-width: min(100%, 42rem);
+}
+.palace-chapter[data-side='right']::before {
+  inset: -24% -32% -8% -30%;
+  background: radial-gradient(ellipse at 60% 62%, rgba(0, 6, 20, 0.62) 0%, rgba(0, 6, 20, 0.3) 46%, rgba(0, 6, 20, 0) 76%);
+}
+.palace-chapter[data-side='right'] .hero-eyebrow {
+  flex-direction: row-reverse;
+}
+.palace-chapter[data-side='right'] .hero-eyebrow i {
+  background: linear-gradient(270deg, var(--sun), transparent);
+}
+.palace-chapter[data-side='right'] .palace-rule,
+.palace-chapter[data-side='right'] .palace-body {
+  margin-left: auto;
+}
+@media (min-width: 1100px) {
+  /* Keep right-hand chapters clear of the fixed section rail. */
+  .palace-chapter[data-side='right'] {
+    padding-right: 5.5rem;
+  }
+}
+.palace-chapter .hero-eyebrow {
+  margin-bottom: clamp(0.9rem, 2vh, 1.5rem);
+}
+.palace-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.8vw, 4.9rem);
+  line-height: 1.02;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  color: #fff;
+}
+.palace-title .line-inner {
+  white-space: nowrap;
+}
+.palace-rule {
+  display: block;
+  width: 64px;
+  height: 14px;
+  margin: clamp(0.9rem, 2vh, 1.4rem) 0;
+  fill: none;
+  stroke: var(--hot);
+  stroke-width: 1;
+  opacity: 0.85;
+}
+.palace-body {
+  display: grid;
+  gap: 0.15rem;
+  max-width: min(100%, 30rem);
+  color: rgba(238, 234, 226, 0.8);
+  font-size: clamp(0.95rem, 1.05vw, 1.0625rem);
+  line-height: 1.5;
+}
+.palace-cta {
+  display: inline-block;
+  margin-top: clamp(1rem, 2.4vh, 1.6rem);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(250, 195, 69, 0.7);
+  color: var(--hot);
+  padding: 0.75rem 1.35rem;
+  border-radius: 999px;
+  transition: background 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+.palace-cta:hover {
+  background: var(--sun);
+  border-color: var(--sun);
+  color: #fff;
+}
+
+.palace-foot {
+  grid-row: 3;
+  grid-column: 1;
+}
+.palace-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  color: var(--text-faint);
+}
+.palace-index b {
+  font-weight: 600;
+  font-variant-numeric: lining-nums;
+  transition: color 0.4s var(--ease);
+}
+.palace-index b[data-active='true'] {
+  color: var(--hot);
+}
+.palace-index-name {
+  color: var(--text-dim);
+  margin-left: 0.4rem;
+}
+.palace-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-right: 1.2rem;
+}
+.palace-scroll i {
+  display: block;
+  width: 46px;
+  height: 1px;
+  background: var(--rule);
+  position: relative;
+  overflow: hidden;
+}
+.palace-scroll i::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--hot);
+  transform-origin: 0 50%;
+  animation: sweep 2.6s var(--ease) infinite;
+}
+
+.palace[data-reduced='true'] .palace-chapter:not([data-n='0']),
+.palace[data-reduced='true'] .palace-index {
+  display: none;
+}
+
+@media (max-width: 780px) {
+  .palace-chapter,
+  .palace-chapter[data-side='right'] {
+    justify-self: start;
+    text-align: left;
+    max-width: none;
+    padding-right: 0;
+  }
+  .palace-chapter[data-side='right']::before {
+    inset: -24% -30% -8% -32%;
+    background: radial-gradient(ellipse at 40% 62%, rgba(0, 6, 20, 0.62) 0%, rgba(0, 6, 20, 0.3) 46%, rgba(0, 6, 20, 0) 76%);
+  }
+  .palace-chapter[data-side='right'] .hero-eyebrow {
+    flex-direction: row;
+  }
+  .palace-chapter[data-side='right'] .hero-eyebrow i {
+    background: linear-gradient(90deg, var(--sun), transparent);
+  }
+  .palace-chapter[data-side='right'] .palace-rule,
+  .palace-chapter[data-side='right'] .palace-body {
+    margin-left: 0;
+  }
+  .palace-title .line-inner {
+    white-space: normal;
+  }
+  .palace-foot {
+    grid-template-columns: 1fr auto;
+  }
+  .palace-index {
+    display: none;
+  }
+}
+
 /* Ticker ------------------------------------------------------ */
 .ticker {
   position: relative;
