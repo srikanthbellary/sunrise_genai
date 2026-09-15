@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sunrise Gen AI — hero mood contact sheet · Dyson rings · 2026-09-15</title>
+<style>
+  @font-face {
+    font-family: "Cormorant Garamond";
+    src: url("../../public/fonts/cormorant-garamond-latin.woff2") format("woff2");
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Cormorant Garamond";
+    src: url("../../public/fonts/cormorant-garamond-italic-latin.woff2") format("woff2");
+    font-weight: 300 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Source Serif 4";
+    src: url("../../public/fonts/source-serif-4-latin.woff2") format("woff2");
+    font-weight: 200 900;
+    font-display: swap;
+  }
+
+  :root {
+    --void: #000816;
+    --void-deep: #00040D;
+    --sun: #D9661C;
+    --hot: #FAC345;
+    --text: rgba(238, 234, 226, 0.92);
+    --muted: rgba(238, 234, 226, 0.58);
+    --line: rgba(250, 195, 69, 0.22);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--void); color: var(--text); }
+  body {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 1480px; margin: 0 auto; padding: 56px 40px 96px; }
+
+  .label {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--hot);
+  }
+  h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400; letter-spacing: -0.012em;
+    font-size: clamp(40px, 5vw, 64px); line-height: 1.02; margin: 12px 0 8px;
+  }
+  h1 em { font-style: italic; color: var(--hot); }
+  .lede { color: var(--muted); max-width: 72ch; margin: 0 0 40px; }
+
+  .rule { height: 1px; background: linear-gradient(90deg, var(--line), transparent); margin: 40px 0; }
+
+  .palette { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 12px 0 0; }
+  .swatch { border: 1px solid var(--line); padding: 10px; }
+  .swatch .chip { height: 56px; border: 1px solid rgba(255,255,255,0.06); }
+  .swatch .name { margin-top: 8px; font-size: 13px; color: var(--muted); }
+  .swatch .hex { font-size: 13px; color: var(--text); }
+
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+  figure { margin: 0; border: 1px solid var(--line); background: var(--void-deep); position: relative; }
+  figure img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  figure .tick { position: absolute; width: 10px; height: 10px; border-color: var(--hot); border-style: solid; opacity: .9; }
+  figure .tick.tl { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+  figure .tick.tr { top: -1px; right: -1px; border-width: 1px 1px 0 0; }
+  figure .tick.bl { bottom: -1px; left: -1px; border-width: 0 0 1px 1px; }
+  figure .tick.br { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+  figcaption { padding: 14px 16px 16px; }
+  figcaption .shot { display: flex; gap: 14px; align-items: baseline; }
+  figcaption .num { font-family: "Cormorant Garamond", Georgia, serif; font-size: 28px; color: var(--hot); line-height: 1; }
+  figcaption .title { font-family: "Cormorant Garamond", Georgia, serif; font-size: 24px; line-height: 1.1; }
+  figcaption p { margin: 8px 0 0; font-size: 15px; color: var(--muted); }
+  figcaption code { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 12px; color: var(--text); opacity: .8; }
+
+  .wide { grid-column: 1 / -1; }
+
+  /* headline overlay test on the end frame */
+  .overlay { position: relative; border: 1px solid var(--line); overflow: hidden; }
+  .overlay img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  .overlay .copy { position: absolute; left: 6%; top: 18%; max-width: 56%; }
+  .overlay .wordmark {
+    font-family: "Cormorant Garamond", Georgia, serif; font-size: 13px; letter-spacing: 0.32em;
+    text-transform: uppercase; color: var(--hot); font-weight: 600; margin-bottom: 22px;
+  }
+  .overlay h2 {
+    font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; letter-spacing: -0.012em;
+    font-size: clamp(34px, 4.6vw, 76px); line-height: 1.0; margin: 0 0 18px;
+  }
+  .overlay h2 em { font-style: italic; color: var(--hot); }
+  .overlay .sub { font-size: clamp(15px, 1.25vw, 20px); color: var(--text); opacity: .86; max-width: 34ch; margin: 0; }
+  .overlay .safe { position: absolute; left: 4%; top: 8%; width: 56%; height: 46%; border: 1px dashed rgba(250,195,69,.35); pointer-events: none; }
+  .overlay .safe span { position: absolute; right: 8px; bottom: 6px; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: rgba(250,195,69,.7); }
+
+  .notes { columns: 2; column-gap: 40px; color: var(--muted); font-size: 15.5px; }
+  @media (max-width: 900px) { .notes { columns: 1; } }
+  .notes h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 22px; color: var(--text); margin: 0 0 6px; break-after: avoid; }
+  .notes p { margin: 0 0 16px; }
+  .notes strong { color: var(--text); font-weight: 600; }
+  footer { margin-top: 56px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="label">Hero mood · design concept · 2026-09-15 · not wired to the site</div>
+  <h1>Through the outer ring, <em>toward the sun.</em></h1>
+  <p class="lede">
+    Camera cruises the interior of an outer Dyson ring while an inner ring self-assembles around
+    the sun ahead. Panels dock, trusses lock, and the flight settles on a sunrise over the ring's
+    mechanical horizon with one horizontal flare — the brand lockup, seen in the world.
+    This sheet fixes the world, shots and light so a later 3D or video build lands in the same place.
+  </p>
+
+  <div class="label">Palette</div>
+  <div class="palette">
+    <div class="swatch"><div class="chip" style="background:#00061A"></div><div class="hex">#00061A</div><div class="name">navy void (scene)</div></div>
+    <div class="swatch"><div class="chip" style="background:#000816"></div><div class="hex">#000816</div><div class="name">--void (page)</div></div>
+    <div class="swatch"><div class="chip" style="background:#00040D"></div><div class="hex">#00040D</div><div class="name">--void-deep</div></div>
+    <div class="swatch"><div class="chip" style="background:#FAC345"></div><div class="hex">#FAC345</div><div class="name">--hot · sun core, flare</div></div>
+    <div class="swatch"><div class="chip" style="background:#D9661C"></div><div class="hex">#D9661C</div><div class="name">--sun · corona, falloff</div></div>
+    <div class="swatch"><div class="chip" style="background:linear-gradient(135deg,#1a1f2a,#0a0d14)"></div><div class="hex">gunmetal</div><div class="name">structure · reads navy-black or gold-rimmed</div></div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="label">Shot list</div>
+  <div class="grid" style="margin-top:14px">
+    <figure>
+      <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+      <img src="01-outer-ring-flythrough.jpg" alt="Inside the outer Dyson ring, trusses streaming past, sun and inner ring ahead" />
+      <figcaption>
+        <div class="shot"><span class="num">01</span><span class="title">Flying through the outer ring</span></div>
+        <p>Inside the structural corridor. Girders carry motion blur; the sun and the silhouetted inner ring sit in the aperture ahead. Opening beat — travel, not landing.</p>
+        <p><code>01-outer-ring-flythrough.jpg</code></p>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+      <img src="02-wide-two-rings-sun.jpg" alt="Wide establishing shot: outer ring foreground, inner swarm ring assembling around the sun" />
+      <figcaption>
+        <div class="shot"><span class="num">02</span><span class="title">Two rings and the sun</span></div>
+        <p>Establishing wide from just above the outer ring's plane. Inner ring two-thirds built; a swarm of panels streams into the gaps. Horizontal flare through the sun.</p>
+        <p><code>02-wide-two-rings-sun.jpg</code></p>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+      <img src="03-self-assembly-docking.jpg" alt="Hexagonal collector panel docking into an open truss bay, latches closing" />
+      <figcaption>
+        <div class="shot"><span class="num">03</span><span class="title">Self-assembly — docking</span></div>
+        <p>A circuit-etched panel drifts the last metre into its bay; latches rotate closed, pins align, a strut slides home. Two more panels queue behind. Frozen thruster vapour.</p>
+        <p><code>03-self-assembly-docking.jpg</code></p>
+      </figcaption>
+    </figure>
+
+    <figure>
+      <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+      <img src="03b-self-assembly-manipulators.jpg" alt="Manipulator arms seating a hexagonal panel on a truss node" />
+      <figcaption>
+        <div class="shot"><span class="num">03b</span><span class="title">Self-assembly — manipulators</span></div>
+        <p>Overhead of a truss node; two articulated arms seat a panel, ring curvature and amber beacons in bokeh behind. Alternate mechanical detail.</p>
+        <p><code>03b-self-assembly-manipulators.jpg</code></p>
+      </figcaption>
+    </figure>
+
+    <figure class="wide">
+      <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+      <img src="04-sunrise-end-frame-flare.jpg" alt="Sun cresting the inner ring's mechanical horizon with a horizontal flare" />
+      <figcaption>
+        <div class="shot"><span class="num">04</span><span class="title">Sunrise — end frame and hold</span></div>
+        <p>Skimming the inner ring's plating; the sun crests the mechanical horizon with one razor-thin horizontal flare. Sunlit plating reveals the gold circuit hairline. Upper-left two-thirds is clear navy for the headline. Poster and reduced-motion still.</p>
+        <p><code>04-sunrise-end-frame-flare.jpg</code></p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="label">Headline overlay test · locked hero copy on the end frame</div>
+  <div class="overlay" style="margin-top:14px">
+    <img src="04-sunrise-end-frame-flare.jpg" alt="" />
+    <div class="safe"><span>headline safe zone</span></div>
+    <div class="copy">
+      <div class="wordmark">Sunrise Gen AI</div>
+      <h2>Enterprise GenAI, <em>built to run.</em></h2>
+      <p class="sub">Agents, retrieval, and data platforms in production.</p>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="label">Lighting and invariants</div>
+  <div class="notes" style="margin-top:14px">
+    <h3>One key light</h3>
+    <p>The sun lights everything. No fill, no cool ambient, no studio rim. Shadow sides fall to navy, not grey. Form is described by hard gold rim light on bevels and edges — silhouettes with lit edges.</p>
+    <h3>The flare</h3>
+    <p>A single thin horizontal anamorphic streak at the sun's horizon line — the same hairline as the logo. No starbursts, ghost rings or rainbow fringing. It is the only lens artefact in frame.</p>
+    <h3>Practicals</h3>
+    <p>Beacons and ports are warm amber only. The system teal and every retired neon are absent from this world.</p>
+    <h3>Circuit language</h3>
+    <p>The logo's gold trace pattern appears only as an etched surface on panel faces and sunlit plating. It never glows on its own and is never a HUD, wireframe or floor.</p>
+    <h3>Camera path (must stay)</h3>
+    <p>Inside the outer ring → clear the aperture → wide reveal of sun and inner ring → pass a self-assembly beat close enough to see latches → settle and hold on shot 04. Roughly 8–12 s if linear. The headline sits over the <strong>end</strong> frame, not over the flight.</p>
+    <h3>Mechanical honesty</h3>
+    <p>Panels dock, latches close, struts lock. No dissolves, no particle magic, no energy ribbons.</p>
+    <h3>Bans carried over</h3>
+    <p>No palace, gates, courtyards, lanterns, palms, glass UI slabs, teal energy ribbons, wireframe tech-sun gadget, floor grid. No people, no text or UI inside the scene.</p>
+  </div>
+
+  <footer>Concept stills at 1280×720. <code>alt/04-alt-flat-logo-echo.jpg</code> is the first pass at the end frame, kept for reference only. See <code>README.md</code> for provenance.</footer>
+</main>
+</body>
+</html>
