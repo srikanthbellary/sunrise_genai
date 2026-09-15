@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site'
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: '*', allow: '/' },
+      { userAgent: '*', allow: '/', disallow: '/preview/' },
       { userAgent: 'Twitterbot', allow: '/' },
       { userAgent: 'LinkedInBot', allow: '/' },
       { userAgent: 'facebookexternalhit', allow: '/' },
