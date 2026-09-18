@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Ship know-how as skills, not as another prompt</title>
+      <link>https://sunrisegenai.com/blog/reusable-skills/</link>
+      <guid>https://sunrisegenai.com/blog/reusable-skills/</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
+      <description>A reusable skill is a named contract the harness can load. Role, constraints, tools, and a recipe that survives the next project. Slop skills are prompts in a costume. Production skills are how the loop stops relearning the same job.</description>
+    </item>
+    <item>
       <title>Coding agents need numeric gates, not vibes</title>
       <link>https://sunrisegenai.com/blog/numeric-quality-gates/</link>
       <guid>https://sunrisegenai.com/blog/numeric-quality-gates/</guid>
