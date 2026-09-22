@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Cache hit rate is a harness quality metric</title>
+      <link>https://sunrisegenai.com/blog/harness-cache-hits/</link>
+      <guid>https://sunrisegenai.com/blog/harness-cache-hits/</guid>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
+      <description>Prompt stability, tool-trace shape, and cache reuse are how you score a harness. An engineered layout earns hits. A vibe layout burns the floor.</description>
+    </item>
+    <item>
       <title>Ship know-how as skills, not as another prompt</title>
       <link>https://sunrisegenai.com/blog/reusable-skills/</link>
       <guid>https://sunrisegenai.com/blog/reusable-skills/</guid>
