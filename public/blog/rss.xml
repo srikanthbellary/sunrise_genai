@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>The agent file is the contract</title>
+      <link>https://sunrisegenai.com/blog/agents-as-markdown/</link>
+      <guid>https://sunrisegenai.com/blog/agents-as-markdown/</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
+      <description>Most production agents are Markdown contracts, not framework code. Role, instructions, constraints, tool refs. Describing the agent is the product surface. Description without a harness is still a costume.</description>
+    </item>
+    <item>
       <title>Cache hit rate is a harness quality metric</title>
       <link>https://sunrisegenai.com/blog/harness-cache-hits/</link>
       <guid>https://sunrisegenai.com/blog/harness-cache-hits/</guid>
