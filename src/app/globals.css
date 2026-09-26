@@ -518,16 +518,25 @@ html.lenis body {
   isolation: isolate;
 }
 .hero-canvas,
-.hero-fallback {
+.hero-fallback,
+.hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
 }
+.hero-video,
 .hero-fallback {
   object-fit: cover;
   object-position: 50% 45%;
+}
+@media (orientation: portrait) {
+  .hero-video {
+    object-position: 78% 45%;
+  }
+}
+.hero-fallback {
   filter: saturate(1.05) contrast(1.06);
 }
 .hero-scrim {
@@ -589,14 +598,15 @@ html.lenis body {
 .hero-type {
   grid-row: 2;
   align-self: end;
-  padding-bottom: clamp(1.5rem, 4vh, 3rem);
-  max-width: min(100%, 64rem);
+  /* Sit in the lower third so baked-in showreel type stays visible. */
+  padding-bottom: clamp(0.35rem, 1vh, 0.85rem);
+  max-width: min(100%, 52rem);
 }
 .hero-eyebrow {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  margin-bottom: clamp(1rem, 2.4vh, 1.9rem);
+  margin-bottom: clamp(0.55rem, 1.4vh, 1rem);
   color: var(--hot);
 }
 .hero-eyebrow i {
@@ -607,10 +617,10 @@ html.lenis body {
 }
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.7rem, 8vw, 8.4rem);
-  line-height: 0.98;
+  font-size: clamp(1.85rem, 4.6vw, 5rem);
+  line-height: 1.02;
   font-weight: 500;
-  letter-spacing: -0.012em;
+  letter-spacing: -0.01em;
   color: #fff;
 }
 .hero-title .line-inner {
@@ -622,7 +632,7 @@ html.lenis body {
   color: var(--hot);
 }
 .hero-sub {
-  margin-top: clamp(1rem, 2.6vh, 2rem);
+  margin-top: clamp(0.65rem, 1.6vh, 1.25rem);
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -698,6 +708,13 @@ html.lenis body {
 @media (max-width: 780px) {
   .hero-type {
     max-width: none;
+    padding-bottom: 0.25rem;
+  }
+  .hero-title {
+    font-size: clamp(1.55rem, 6.2vw, 2.15rem);
+  }
+  .hero-title .line-inner {
+    white-space: normal;
   }
   .hero-foot {
     grid-template-columns: 1fr auto;
