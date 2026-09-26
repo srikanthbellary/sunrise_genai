@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import BlogShell from '@/components/BlogShell'
+import { CONTACT } from '@/lib/content'
 import { HEADER_LINE, PRIVACY_DESCRIPTION, PRIVACY_TITLE, socialCard } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -29,9 +30,10 @@ export default function PrivacyPage() {
           <div className="blog-prose">
             <p>
               This page describes how Sunrise Gen AI LLC handles information sent through the contact form and the
-              optional chat on this site. The studio is in Florida, United States. To reach us, use the{' '}
-              <Link href="/#contact-form">site contact form</Link>. We do not publish a street address, a mailbox, or a
-              phone number.
+              optional chat on this site. The studio is in Florida, United States. To reach us, write to{' '}
+              <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> or use the{' '}
+              <Link href="/#contact-form">site contact form</Link>. We do not publish a street address or a phone
+              number.
             </p>
 
             <h2>Chat with an agent</h2>
@@ -76,8 +78,9 @@ export default function PrivacyPage() {
 
             <h2>Contact</h2>
             <p>
-              Use the <Link href="/#contact-form">contact form</Link> on this site. Sunrise Gen AI LLC · Florida,
-              United States.
+              Write to <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>, or use the{' '}
+              <Link href="/#contact-form">contact form</Link> on this site. Sunrise Gen AI LLC · Florida, United
+              States.
             </p>
           </div>
         </article>

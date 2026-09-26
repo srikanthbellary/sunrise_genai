@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
-import { HOME_DESCRIPTION, HOME_TITLE, SITE_URL, socialCard } from '@/lib/site'
+import { PUBLIC_CONTACT_EMAIL } from '@/lib/public-email'
+import { HOME_DESCRIPTION, HOME_TITLE, SITE_URL, organizationJsonLd, socialCard } from '@/lib/site'
 import './globals.css'
 
 const HOME_OG_DESCRIPTION =
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <meta property="og:email" content={PUBLIC_CONTACT_EMAIL} />
         <link
           rel="preload"
           href="/fonts/cormorant-garamond-latin.woff2"
@@ -70,7 +72,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd()).replace(/</g, '\\u003c'),
+          }}
+        />
+        {children}
+      </body>
     </html>
   )
 }

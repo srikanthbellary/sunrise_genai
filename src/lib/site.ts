@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { PUBLIC_CONTACT_EMAIL } from '@/lib/public-email'
 
 export const SITE_URL = 'https://sunrisegenai.com'
 export const SITE_NAME = 'Sunrise Gen AI'
@@ -33,7 +34,28 @@ export const BLOG_INDEX_DESCRIPTION =
 
 export const PRIVACY_TITLE = 'Privacy — Sunrise Gen AI'
 export const PRIVACY_DESCRIPTION =
-  'How Sunrise Gen AI LLC handles inquiries sent through the site contact form and optional chat. Studio in Florida, United States. Reach us on the form, not a public mailbox.'
+  `How Sunrise Gen AI LLC handles inquiries sent through the site contact form and optional chat. Studio in Florida, United States. Reach us at ${PUBLIC_CONTACT_EMAIL} or on the form.`
+
+export function organizationJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Sunrise Gen AI LLC',
+    url: SITE_URL,
+    email: PUBLIC_CONTACT_EMAIL,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: PUBLIC_CONTACT_EMAIL,
+      url: `${SITE_URL}/#contact`,
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressRegion: 'Florida',
+      addressCountry: 'US',
+    },
+  }
+}
 
 export const NOT_FOUND_TITLE = 'Page not found — Sunrise Gen AI'
 export const NOT_FOUND_DESCRIPTION = HEADER_LINE

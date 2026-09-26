@@ -8,6 +8,8 @@ export default function SiteFooter() {
       </span>
       <span className="mono">Grounding the Autonomous Era</span>
       <span className="mono">
+        <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+        {' · '}
         <a href="/blog/">Blog</a>
         {' · '}
         <a href="/privacy/">Privacy</a>

@@ -171,6 +171,7 @@ The website is deployed on **GitHub Pages** for:
 
 **Sunrise Gen AI LLC**
 - Website: [sunrisegen.ai](https://sunrisegen.ai) | [sunrisegenai.com](https://sunrisegenai.com)
+- Email: [support@sunrisegenai.com](mailto:support@sunrisegenai.com)
 - Location: Florida, USA
 
 ---
