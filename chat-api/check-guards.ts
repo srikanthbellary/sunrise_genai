@@ -76,6 +76,14 @@ if (!prompt.includes("Florida, United States")) {
   failed += 1;
   console.error("context prompt was not concatenated");
 }
+if (!prompt.includes("support@sunrisegenai.com")) {
+  failed += 1;
+  console.error("prompt files are missing the public support mailbox");
+}
+if (/sbellary@/i.test(prompt)) {
+  failed += 1;
+  console.error("prompt files contain a personal mailbox");
+}
 if (prompt.includes("NOVITA") || /sk-[a-zA-Z0-9]{10,}/.test(prompt)) {
   failed += 1;
   console.error("prompt files must not contain keys");

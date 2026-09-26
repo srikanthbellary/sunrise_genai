@@ -1,3 +1,5 @@
+import { PUBLIC_CONTACT_EMAIL } from '@/lib/public-email'
+
 export const HERO = {
   wordmark: 'Sunrise Gen AI',
   headline: ['Enterprise GenAI,', 'built to run.'],
@@ -193,4 +195,5 @@ export const CONTACT = {
   company: 'Sunrise Gen AI LLC',
   principal: 'Srikanth Bellary, Principal',
   city: 'Florida, United States',
+  email: PUBLIC_CONTACT_EMAIL,
 }

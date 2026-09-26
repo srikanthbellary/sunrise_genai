@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import BlogAliasRedirect from '@/components/BlogAliasRedirect'
 import { formatPostDate, getAllPosts, getPost, isAliasSlug, postAliases, postUrl } from '@/lib/blog'
-import { socialCard, socialImage } from '@/lib/site'
+import { PUBLIC_CONTACT_EMAIL } from '@/lib/public-email'
+import { SITE_URL, socialCard, socialImage } from '@/lib/site'
 
 type Params = { slug: string }
 
@@ -121,7 +122,8 @@ export default function BlogPostPage({ params }: { params: Params }) {
             author: {
               '@type': 'Organization',
               name: 'Sunrise Gen AI LLC',
-              url: 'https://sunrisegenai.com',
+              url: SITE_URL,
+              email: PUBLIC_CONTACT_EMAIL,
             },
           }),
         }}

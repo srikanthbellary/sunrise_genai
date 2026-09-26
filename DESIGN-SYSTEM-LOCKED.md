@@ -60,10 +60,11 @@ Display type is Cormorant at `letter-spacing: -0.012em` — never tight grotesqu
 5. **04 Media** — a full chapter, not a one-liner: content generation with image, text,
    and video models, for marketing materials, campaigns, and web content. No film
    titles, no reel, no portfolio of shorts.
-6. **05 Contact** — Florida, United States · form.
+6. **05 Contact** — Florida, United States · form · support@sunrisegenai.com.
    Public location lock: Florida, United States. Do not name a city, street, or
-   ZIP. Do not print the mailbox or a public phone on the site, in docs that
-   ship with the page, or in the client bundle.
+   ZIP. The only public mailbox is support@sunrisegenai.com. Do not print any
+   other mailbox, or a public phone, on the site, in docs that ship with the
+   page, or in the client bundle.
 
 ---
 

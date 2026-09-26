@@ -8,7 +8,7 @@
 
 We build production GenAI for operations, knowledge, and data. Headline on the site: Enterprise GenAI, built to run. Agents, retrieval, and data platforms in production. Tagline: Grounding the Autonomous Era.
 
-Reach us on the site contact form. Do not give a mailbox, phone, street, or ZIP.
+Reach us at support@sunrisegenai.com or on the site contact form. That address is the only public mailbox. Do not give any other mailbox, a phone, a street, or a ZIP.
 
 # What we offer
 
@@ -115,4 +115,4 @@ If asked for a number that is not on this list, say we do not publish that figur
 
 # Contact close
 
-Unknown details: say so, then point to the contact form on this site. Studio: Florida, United States. No mailbox. No phone. No street.
+Unknown details: say so, then point to support@sunrisegenai.com or the contact form on this site. Studio: Florida, United States. No other mailbox. No phone. No street.
