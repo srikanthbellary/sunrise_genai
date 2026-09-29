@@ -9,7 +9,7 @@
       <title>The agent file is the contract</title>
       <link>https://sunrisegenai.com/blog/agents-as-markdown/</link>
       <guid>https://sunrisegenai.com/blog/agents-as-markdown/</guid>
-      <pubDate>Fri, 25 Sep 2026 00:00:00 GMT</pubDate>
+      <pubDate>Tue, 29 Sep 2026 00:00:00 GMT</pubDate>
       <description>Most production agents are Markdown contracts, not framework code. Role, instructions, constraints, tool refs. Describing the agent is the product surface. Description without a harness is still a costume.</description>
     </item>
     <item>

@@ -1,7 +1,7 @@
 ---
 title: The agent file is the contract
 description: Most production agents are Markdown contracts, not framework code. Role, instructions, constraints, tool refs. Describing the agent is the product surface. Description without a harness is still a costume.
-date: '2026-09-25'
+date: '2026-09-29'
 slug: agents-as-markdown
 image: /og.png
 tags:
