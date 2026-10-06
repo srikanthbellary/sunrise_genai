@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Security is a release gate, not a last look</title>
+      <link>https://sunrisegenai.com/blog/pre-ship-security-gate/</link>
+      <guid>https://sunrisegenai.com/blog/pre-ship-security-gate/</guid>
+      <pubDate>Tue, 06 Oct 2026 00:00:00 GMT</pubDate>
+      <description>When agents write most of the code, pre-ship security cannot be a vibe check the night before launch. Secrets, authorization, data rules, abuse limits, supply chain, and logs become numbered gates the harness runs on every release.</description>
+    </item>
+    <item>
       <title>Brand is a skill file, not a vibe</title>
       <link>https://sunrisegenai.com/blog/design-skill-branding/</link>
       <guid>https://sunrisegenai.com/blog/design-skill-branding/</guid>
