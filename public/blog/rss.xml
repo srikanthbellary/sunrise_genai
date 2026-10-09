@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Two speeds of a token: prefill, decode, and the latency you actually ship</title>
+      <link>https://sunrisegenai.com/blog/prefill-vs-decode/</link>
+      <guid>https://sunrisegenai.com/blog/prefill-vs-decode/</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Prefill is a compute burst that sets time to first token. Decode is a memory-bandwidth walk that sets inter-token latency. Shipping GenAI means budgeting both, plus the cache and the batcher behind them.</description>
+    </item>
+    <item>
       <title>Security is a release gate, not a last look</title>
       <link>https://sunrisegenai.com/blog/pre-ship-security-gate/</link>
       <guid>https://sunrisegenai.com/blog/pre-ship-security-gate/</guid>
