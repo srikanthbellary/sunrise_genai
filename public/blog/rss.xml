@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>The checker is not the maker</title>
+      <link>https://sunrisegenai.com/blog/evidence-before-merge/</link>
+      <guid>https://sunrisegenai.com/blog/evidence-before-merge/</guid>
+      <pubDate>Tue, 13 Oct 2026 00:00:00 GMT</pubDate>
+      <description>As models and harnesses commoditize, intent, verification, and evidence gate how fast agents get adopted in a business. Separate who does the work from who governs it. Store the change ledger. No evidence, no merge.</description>
+    </item>
+    <item>
       <title>Two speeds of a token: prefill, decode, and the latency you actually ship</title>
       <link>https://sunrisegenai.com/blog/prefill-vs-decode/</link>
       <guid>https://sunrisegenai.com/blog/prefill-vs-decode/</guid>
