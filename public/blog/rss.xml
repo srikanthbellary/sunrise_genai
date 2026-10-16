@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Memory is five layers, not a bigger window</title>
+      <link>https://sunrisegenai.com/blog/five-layer-agent-memory/</link>
+      <guid>https://sunrisegenai.com/blog/five-layer-agent-memory/</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Models got smarter. Long-horizon agents still re-brief from zero. The production fix is a memory stack (working, episodic, semantic, procedural, forgetting), not another context-window upgrade.</description>
+    </item>
+    <item>
       <title>The checker is not the maker</title>
       <link>https://sunrisegenai.com/blog/evidence-before-merge/</link>
       <guid>https://sunrisegenai.com/blog/evidence-before-merge/</guid>
