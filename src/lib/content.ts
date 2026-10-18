@@ -196,4 +196,7 @@ export const CONTACT = {
   principal: 'Srikanth Bellary, Principal',
   city: 'Florida, United States',
   email: PUBLIC_CONTACT_EMAIL,
+  phone: '+1 857-382-3733',
+  phoneHref: 'tel:+18573823733',
+  mailing: 'PO Box 211056, Royal Palm Beach, FL 33421',
 }

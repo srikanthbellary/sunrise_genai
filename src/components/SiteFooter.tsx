@@ -10,6 +10,8 @@ export default function SiteFooter() {
       <span className="mono">
         <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
         {' · '}
+        <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>
+        {' · '}
         <a href="/blog/">Blog</a>
         {' · '}
         <a href="/privacy/">Privacy</a>

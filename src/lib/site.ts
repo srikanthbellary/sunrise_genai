@@ -43,15 +43,20 @@ export function organizationJsonLd() {
     name: 'Sunrise Gen AI LLC',
     url: SITE_URL,
     email: PUBLIC_CONTACT_EMAIL,
+    telephone: '+1-857-382-3733',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',
       email: PUBLIC_CONTACT_EMAIL,
+      telephone: '+1-857-382-3733',
       url: `${SITE_URL}/#contact`,
     },
     address: {
       '@type': 'PostalAddress',
-      addressRegion: 'Florida',
+      postOfficeBoxNumber: '211056',
+      addressLocality: 'Royal Palm Beach',
+      addressRegion: 'FL',
+      postalCode: '33421',
       addressCountry: 'US',
     },
   }
