@@ -32,8 +32,8 @@ export default function PrivacyPage() {
               This page describes how Sunrise Gen AI LLC handles information sent through the contact form and the
               optional chat on this site. The studio is in Florida, United States. To reach us, write to{' '}
               <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> or use the{' '}
-              <Link href="/#contact-form">site contact form</Link>. We do not publish a street address or a phone
-              number.
+              <Link href="/#contact-form">site contact form</Link>. You can also call{' '}
+              <a href={CONTACT.phoneHref}>{CONTACT.phone}</a> or write to {CONTACT.company}, {CONTACT.mailing}.
             </p>
 
             <h2>Chat with an agent</h2>
@@ -79,8 +79,9 @@ export default function PrivacyPage() {
             <h2>Contact</h2>
             <p>
               Write to <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>, or use the{' '}
-              <Link href="/#contact-form">contact form</Link> on this site. Sunrise Gen AI LLC · Florida, United
-              States.
+              <Link href="/#contact-form">contact form</Link> on this site. Phone:{' '}
+              <a href={CONTACT.phoneHref}>{CONTACT.phone}</a>. Mail: {CONTACT.company}, {CONTACT.mailing}. Sunrise Gen
+              AI LLC · Florida, United States.
             </p>
           </div>
         </article>

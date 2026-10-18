@@ -98,6 +98,22 @@ export default function Contact({ reduced }: { reduced: boolean }) {
             {CONTACT.email}
           </a>
         </div>
+        <div className="contact-field js-rise">
+          <span className="mono" style={{ color: 'var(--text-faint)' }}>
+            Phone
+          </span>
+          <a className="contact-value" href={CONTACT.phoneHref}>
+            {CONTACT.phone}
+          </a>
+        </div>
+        <div className="contact-field js-rise">
+          <span className="mono" style={{ color: 'var(--text-faint)' }}>
+            Mail
+          </span>
+          <span className="contact-value">
+            {CONTACT.company}, {CONTACT.mailing}
+          </span>
+        </div>
       </div>
 
       <ContactForm />

@@ -80,6 +80,10 @@ if (!prompt.includes("support@sunrisegenai.com")) {
   failed += 1;
   console.error("prompt files are missing the public support mailbox");
 }
+if (!prompt.includes("+1 857-382-3733") || !prompt.includes("PO Box 211056, Royal Palm Beach, FL 33421")) {
+  failed += 1;
+  console.error("prompt files are missing the public phone or mailing address");
+}
 if (/sbellary@/i.test(prompt)) {
   failed += 1;
   console.error("prompt files contain a personal mailbox");
@@ -92,11 +96,11 @@ if (
   prompt.includes("West" + " Palm") ||
   prompt.includes("Welling" + "ton") ||
   prompt.includes("33" + "414") ||
-  /\b\d{5}(?:-\d{4})?\b/.test(prompt) ||
+  /\b\d{5}(?:-\d{4})?\b/.test(prompt.replaceAll("FL 33421", "")) ||
   /\d+\s+[A-Za-z0-9.'\s]{0,40}\b(Street|St\.|Avenue|Ave\.|Road|Rd\.|Drive|Dr\.|Boulevard|Blvd\.|Lane|Ln\.)\b/i.test(
     prompt,
   ) ||
-  /srikanthbellary01@gmail|440-340-8383/.test(prompt)
+  /srikanthbellary01@gmail|440-340-8383|561-556-1691/.test(prompt)
 ) {
   failed += 1;
   console.error("prompt files contain a forbidden city, street, ZIP, or locked personal facts");
