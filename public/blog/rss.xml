@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Measure, fan out, fix once: a speed pass for agent-built apps</title>
+      <link>https://sunrisegenai.com/blog/agent-speed-pass/</link>
+      <guid>https://sunrisegenai.com/blog/agent-speed-pass/</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Making an agent-built web app fast is an engineering process, not a prompt. Baseline a production build, fan out four read-only audits, fix everything in one pass inside guardrails, then measure again the same way.</description>
+    </item>
+    <item>
       <title>Memory is five layers, not a bigger window</title>
       <link>https://sunrisegenai.com/blog/five-layer-agent-memory/</link>
       <guid>https://sunrisegenai.com/blog/five-layer-agent-memory/</guid>
