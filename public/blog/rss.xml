@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Pick the harness for the bill, not the score</title>
+      <link>https://sunrisegenai.com/blog/harness-token-bill/</link>
+      <guid>https://sunrisegenai.com/blog/harness-token-bill/</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Run the same open-weight models through three coding harnesses and the pass rate barely moves, but the tokens spent per solved task can double. Here is how we choose a harness, cap a run, and make an agent test after its last edit.</description>
+    </item>
+    <item>
       <title>Measure, fan out, fix once: a speed pass for agent-built apps</title>
       <link>https://sunrisegenai.com/blog/agent-speed-pass/</link>
       <guid>https://sunrisegenai.com/blog/agent-speed-pass/</guid>
