@@ -57,6 +57,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta property="og:email" content={PUBLIC_CONTACT_EMAIL} />
+        <meta property="og:video" content={`${SITE_URL}/social/og-preview.mp4`} />
+        <meta property="og:video:secure_url" content={`${SITE_URL}/social/og-preview.mp4`} />
+        <meta property="og:video:type" content="video/mp4" />
+        <meta property="og:video:width" content="1200" />
+        <meta property="og:video:height" content="630" />
         <link
           rel="preload"
           href="/fonts/cormorant-garamond-latin.woff2"
