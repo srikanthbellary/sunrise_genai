@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Delete one rule and rerun: how we audit an agent's instructions</title>
+      <link>https://sunrisegenai.com/blog/instruction-ablation-audit/</link>
+      <guid>https://sunrisegenai.com/blog/instruction-ablation-audit/</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Agent instructions only grow. Every rule costs tokens and steps, and some quietly make the work worse. Here is the audit we run: freeze a case set, remove one rule, rerun, compare quality and cost, and move the rules that matter into code.</description>
+    </item>
+    <item>
       <title>Pick the harness for the bill, not the score</title>
       <link>https://sunrisegenai.com/blog/harness-token-bill/</link>
       <guid>https://sunrisegenai.com/blog/harness-token-bill/</guid>

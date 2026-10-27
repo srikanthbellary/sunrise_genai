@@ -1,5 +1,5 @@
 ---
-title: 'Delete one rule and rerun: how we audit an agent''s instructions'
+title: "Delete one rule and rerun: how we audit an agent's instructions"
 description: 'Agent instructions only grow. Every rule costs tokens and steps, and some quietly make the work worse. Here is the audit we run: freeze a case set, remove one rule, rerun, compare quality and cost, and move the rules that matter into code.'
 date: '2026-10-27'
 slug: instruction-ablation-audit
