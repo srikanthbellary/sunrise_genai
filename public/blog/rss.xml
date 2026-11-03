@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Find the exact line: why our agents search plain text before vectors</title>
+      <link>https://sunrisegenai.com/blog/exact-line-search/</link>
+      <guid>https://sunrisegenai.com/blog/exact-line-search/</guid>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 GMT</pubDate>
+      <description>The default recipe for letting an AI read your documents is chunk, embed, store in a vector database. It works, but it is often the second step taken first. Here is how we start agent search with plain keyword search over raw files, make every answer quote a line it can prove, and add vectors only when a measured gap says so.</description>
+    </item>
+    <item>
       <title>A model has to earn its route: swapping models with tests built from real failures</title>
       <link>https://sunrisegenai.com/blog/model-route-gates/</link>
       <guid>https://sunrisegenai.com/blog/model-route-gates/</guid>
