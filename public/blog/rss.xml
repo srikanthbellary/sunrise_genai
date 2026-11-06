@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>The agent comes to you. Approval still ships.</title>
+      <link>https://sunrisegenai.com/blog/proactive-approval-gates/</link>
+      <guid>https://sunrisegenai.com/blog/proactive-approval-gates/</guid>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 GMT</pubDate>
+      <description>A production agent can wake on a schedule, read connected systems, and prepare a PR or a message on its own. Every send and every ship still waits for a human. Proactive is not unsupervised.</description>
+    </item>
+    <item>
       <title>Find the exact line: why our agents search plain text before vectors</title>
       <link>https://sunrisegenai.com/blog/exact-line-search/</link>
       <guid>https://sunrisegenai.com/blog/exact-line-search/</guid>
