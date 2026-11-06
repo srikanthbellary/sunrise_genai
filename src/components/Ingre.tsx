@@ -25,6 +25,17 @@ const FINDINGS: { name: string; why: string; tag: string; level: 'high' | 'watch
   { name: 'Fragrance (parfum)', why: 'Undisclosed mixture', tag: 'Beauty', level: 'watch' },
 ]
 
+const APP_STORE_URL = 'https://apps.apple.com/us/app/id6822124463'
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=ai.ingre.app'
+
+function OutboundMark() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <path d="M7 17 17 7M9 7h8v8" />
+    </svg>
+  )
+}
+
 export default function Ingre({ reduced }: { reduced: boolean }) {
   const rootRef = useRef<HTMLElement>(null)
   const scoreRef = useRef<HTMLElement>(null)
@@ -147,6 +158,9 @@ export default function Ingre({ reduced }: { reduced: boolean }) {
             the same compound under six different names, and tells you which ones are worth caring about — and why — in
             the aisle, before you buy it.
           </p>
+          <p className="ingre-body js-rise">
+            Available on the App Store for iPhone and on Google Play for Android.
+          </p>
           <div className="ingre-meta js-rise">
             <span className="chip">Android</span>
             <span className="chip">iOS</span>
@@ -154,11 +168,17 @@ export default function Ingre({ reduced }: { reduced: boolean }) {
             <span className="chip">Beauty labels</span>
           </div>
           <div className="ingre-actions js-rise">
+            <Magnetic href={APP_STORE_URL} className="cta cta-ink cta-lg" external>
+              <span>App Store</span>
+              <OutboundMark />
+            </Magnetic>
+            <Magnetic href={PLAY_STORE_URL} className="cta cta-ink cta-lg" external>
+              <span>Google Play</span>
+              <OutboundMark />
+            </Magnetic>
             <Magnetic href="https://ingre.ai" className="cta cta-ink cta-lg" external>
               <span>ingre.ai</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                <path d="M7 17 17 7M9 7h8v8" />
-              </svg>
+              <OutboundMark />
             </Magnetic>
           </div>
         </div>
@@ -204,14 +224,14 @@ export default function Ingre({ reduced }: { reduced: boolean }) {
               ))}
             </div>
           </div>
-          <p className="scanner-note">Illustrative scan · Ingre for Android and iOS · ingre.ai</p>
+          <p className="scanner-note">Illustrative scan · App Store and Google Play · ingre.ai</p>
         </div>
       </div>
 
       <div className="ingre-figure-wrap js-rise" data-cursor="figure">
         <div className="ingre-figure-legend">
           <span className="mono">Fig. 03 — scan · parse · flag · call</span>
-          <span className="mono">Food and beauty labels · Android and iOS · ingre.ai</span>
+          <span className="mono">Food and beauty labels · iPhone and Android · ingre.ai</span>
         </div>
         <div className="ingre-figure">
           <IngreCanvas reduced={reduced} />
