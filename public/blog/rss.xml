@@ -6,6 +6,20 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Ask for a label, not a paragraph: confidence-gated decisions in agent pipelines</title>
+      <link>https://sunrisegenai.com/blog/confidence-gated-decisions/</link>
+      <guid>https://sunrisegenai.com/blog/confidence-gated-decisions/</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Many of the model calls in a production agent are not writing anything. They are choosing: which queue, which intent, ship or hold. We treat those calls as typed judgments with a closed set of answers, a confidence score we actually check, and three bands that decide whether the agent acts, asks, or hands off.</description>
+    </item>
+    <item>
+      <title>Photos in chat, text in the tool: designing MCP tools text-first</title>
+      <link>https://sunrisegenai.com/blog/mcp-tools-text-first/</link>
+      <guid>https://sunrisegenai.com/blog/mcp-tools-text-first/</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Under the MCP spec, a tool takes JSON Schema arguments and nothing else. There is no native image or file input. So we let the host chat model read the photo, pass the tool plain text, keep limits on the server, and add a documented file-input variant only on hosts that publish one.</description>
+    </item>
+    <item>
       <title>The agent comes to you. Approval still ships.</title>
       <link>https://sunrisegenai.com/blog/proactive-approval-gates/</link>
       <guid>https://sunrisegenai.com/blog/proactive-approval-gates/</guid>
