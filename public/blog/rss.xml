@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>The agent should not guess what revenue means: a semantic layer for data agents</title>
+      <link>https://sunrisegenai.com/blog/agent-semantic-layer/</link>
+      <guid>https://sunrisegenai.com/blog/agent-semantic-layer/</guid>
+      <pubDate>Tue, 17 Nov 2026 00:00:00 GMT</pubDate>
+      <description>The hard part of agent analytics is not writing SQL. It is agreeing on what business words mean. We give data agents an approved terms file, expose only those terms through read-only tools, validate every query against certified definitions, and show the number, the SQL, and sample rows with every answer.</description>
+    </item>
+    <item>
       <title>Ask for a label, not a paragraph: confidence-gated decisions in agent pipelines</title>
       <link>https://sunrisegenai.com/blog/confidence-gated-decisions/</link>
       <guid>https://sunrisegenai.com/blog/confidence-gated-decisions/</guid>
