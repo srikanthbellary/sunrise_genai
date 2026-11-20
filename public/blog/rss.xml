@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Your screen is already a state machine. Make it say so</title>
+      <link>https://sunrisegenai.com/blog/explicit-ui-state/</link>
+      <guid>https://sunrisegenai.com/blog/explicit-ui-state/</guid>
+      <pubDate>Fri, 20 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Most app screens run on a pile of loose flags: isLoading, hasError, isRetrying. Together they form a state machine nobody wrote down. Here is the agent pass we use to find those hidden machines, pin current behavior with tests, and fold the flags into one named state without breaking anything.</description>
+    </item>
+    <item>
       <title>The agent should not guess what revenue means: a semantic layer for data agents</title>
       <link>https://sunrisegenai.com/blog/agent-semantic-layer/</link>
       <guid>https://sunrisegenai.com/blog/agent-semantic-layer/</guid>
