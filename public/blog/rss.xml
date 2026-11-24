@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>A database snapshot cannot unsend an email</title>
+      <link>https://sunrisegenai.com/blog/agent-undo-ledger/</link>
+      <guid>https://sunrisegenai.com/blog/agent-undo-ledger/</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
+      <description>A one-click undo for agent mistakes sounds like the safety net autonomy needs. It covers the rows you own and nothing else. Here is how we sort agent actions by how they can be reversed, record each one in a ledger before it runs, and gate the ones that have no way back.</description>
+    </item>
+    <item>
       <title>Your screen is already a state machine. Make it say so</title>
       <link>https://sunrisegenai.com/blog/explicit-ui-state/</link>
       <guid>https://sunrisegenai.com/blog/explicit-ui-state/</guid>
