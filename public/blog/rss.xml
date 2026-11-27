@@ -6,6 +6,13 @@
     <description>Production essays on agents, retrieval, and data platforms from Sunrise Gen AI.</description>
     <language>en-us</language>
     <item>
+      <title>Five first-time users, none of them human</title>
+      <link>https://sunrisegenai.com/blog/first-user-agent-qa/</link>
+      <guid>https://sunrisegenai.com/blog/first-user-agent-qa/</guid>
+      <pubDate>Fri, 27 Nov 2026 00:00:00 GMT</pubDate>
+      <description>The people who build an app are the worst people to test its first five minutes. Before we launch, we send five browser agents through it as first-time users, each with one behavior rule, and fix what they hit before a real person does.</description>
+    </item>
+    <item>
       <title>A database snapshot cannot unsend an email</title>
       <link>https://sunrisegenai.com/blog/agent-undo-ledger/</link>
       <guid>https://sunrisegenai.com/blog/agent-undo-ledger/</guid>
